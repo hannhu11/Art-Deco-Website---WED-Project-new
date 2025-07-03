@@ -1,0 +1,350 @@
+/* ===== ART DECO DESIGN SYSTEM ===== */
+
+/* Color Palette */
+:root {
+  /* Primary Colors */
+  --primary-dark: #0B0C10;        /* Dark background */
+  --primary-light: #F8F4E3;       /* Light background */
+  --primary-gold: #D4AF37;        /* Gold accent */
+  --primary-navy: #1C3F60;        /* Navy blue */
+  --primary-burgundy: #841C26;    /* Button background */
+  --primary-bronze: #B08D57;      /* Metallic accent */
+
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #B08D57 100%);
+  --gradient-dark: linear-gradient(135deg, #0B0C10 0%, #1C3F60 100%);
+  
+  /* Shadows */
+  --shadow-gold: 0 4px 20px rgba(212, 175, 55, 0.3);
+  --shadow-dark: 0 8px 32px rgba(11, 12, 16, 0.5);
+}
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
+
+/* Font Families - Fallback for Crostan & Clemente */
+body {
+  font-family: 'Cormorant Garamond', serif; /* Clemente fallback */
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--primary-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cinzel', serif; /* Crostan fallback */
+  font-weight: 600;
+  color: var(--primary-gold);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Art Deco Typography Styles */
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  background: var(--gradient-gold);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-gold);
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--gradient-gold);
+}
+
+/* Art Deco Geometric Elements */
+.art-deco-border {
+  border: 3px solid var(--primary-gold);
+  border-radius: 0;
+  position: relative;
+}
+
+.art-deco-border::before {
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+  border: 1px solid var(--primary-bronze);
+  z-index: -1;
+}
+
+/* Geometric Patterns */
+.zigzag-pattern {
+  background-image: 
+    linear-gradient(45deg, var(--primary-gold) 25%, transparent 25%), 
+    linear-gradient(-45deg, var(--primary-gold) 25%, transparent 25%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px;
+  height: 4px;
+  opacity: 0.8;
+}
+
+.chevron-pattern {
+  background: 
+    linear-gradient(135deg, var(--primary-bronze) 25%, transparent 25%),
+    linear-gradient(225deg, var(--primary-bronze) 25%, transparent 25%);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+/* Navigation Styles */
+.navbar {
+  background: rgba(11, 12, 16, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--primary-gold);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1rem 0;
+}
+
+.nav-link {
+  color: var(--primary-light);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: var(--primary-gold);
+  border: 1px solid var(--primary-gold);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Button Styles */
+.btn-art-deco {
+  background: var(--primary-burgundy);
+  color: var(--primary-light);
+  border: none;
+  padding: 1rem 2rem;
+  font-family: 'Cinzel', serif;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-art-deco::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-gold);
+  transition: left 0.3s ease;
+  z-index: 0;
+}
+
+.btn-art-deco:hover::before {
+  left: 0;
+}
+
+.btn-art-deco span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-art-deco:hover {
+  color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
+
+/* Card Styles */
+.art-deco-card {
+  background: var(--primary-light);
+  border: 2px solid var(--primary-gold);
+  padding: 2rem;
+  margin: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.art-deco-card::before {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  border: 1px solid var(--primary-bronze);
+  pointer-events: none;
+}
+
+.art-deco-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-dark);
+}
+
+/* Layout Styles */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.hero-section {
+  background: var(--gradient-dark);
+  color: var(--primary-light);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, var(--primary-gold) 1px, transparent 1px),
+    radial-gradient(circle at 75% 75%, var(--primary-bronze) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.1;
+}
+
+.section {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.section:nth-child(even) {
+  background: var(--primary-light);
+}
+
+.section:nth-child(odd) {
+  background: linear-gradient(45deg, #f8f4e3 0%, #ffffff 100%);
+}
+
+/* Art Deco Decorative Elements */
+.sun-rays {
+  position: relative;
+}
+
+.sun-rays::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(
+    from 0deg,
+    var(--primary-gold) 0deg 10deg,
+    transparent 10deg 20deg,
+    var(--primary-gold) 20deg 30deg,
+    transparent 30deg 40deg,
+    var(--primary-gold) 40deg 50deg,
+    transparent 50deg 60deg
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.2;
+  z-index: -1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .navbar-nav {
+    gap: 1rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+
+/* Animation Classes */
+.fade-in {
+  animation: fadeIn 1s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Art Deco specific patterns and textures */
+.metallic-texture {
+  background: linear-gradient(45deg, 
+    var(--primary-gold) 0%, 
+    var(--primary-bronze) 25%, 
+    var(--primary-gold) 50%, 
+    var(--primary-bronze) 75%, 
+    var(--primary-gold) 100%);
+  background-size: 4px 4px;
+}
+
+.geometric-grid {
+  background-image: 
+    linear-gradient(var(--primary-gold) 1px, transparent 1px),
+    linear-gradient(90deg, var(--primary-gold) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.1;
+} 

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Deco - Phong Cách Nghệ Thuật Tinh Tế</title>
+    <link rel="stylesheet" href="art-deco-design-system.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-nav">
+                <a href="index.html" class="nav-link active">Trang Chủ</a>
+                <a href="artists.html" class="nav-link">Nghệ Sĩ</a>
+                <a href="designers.html" class="nav-link">Nhà Thiết Kế</a>
+                <a href="news.html" class="nav-link">Tin Tức</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section sun-rays" id="hero">
+        <div class="container">
+            <div class="fade-in">
+                <!-- Hero Background Image: 1440x800px Art Deco building/pattern -->
+                <div class="hero-image-placeholder">
+                    <img src="images/art-deco-hero-bg.jpg" alt="Art Deco Architecture" style="width: 100%; height: 600px; object-fit: cover; opacity: 0.3; position: absolute; top: 0; left: 0; z-index: -1;">
+                </div>
+                <h1 class="hero-title">ART DECO</h1>
+                <p style="font-size: 1.5rem; margin: 2rem 0; color: var(--primary-light); font-style: italic;">
+                    Phong cách nghệ thuật - thiết kế sang trọng của thế kỷ 20
+                </p>
+                <div class="zigzag-pattern" style="margin: 3rem auto; width: 300px;"></div>
+                <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--primary-light);">
+                    Khám phá vẻ đẹp hình học táo bạo, sự cân đối chính xác và vật liệu sang trọng 
+                    của phong cách Art Deco - biểu tượng của sự hiện đại và tinh tế.
+                </p>
+                <button class="btn-art-deco" style="margin-top: 2rem;" onclick="scrollToHistory()">
+                    <span>KHÁM PHÁ NGAY</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lịch sử & Nguồn gốc -->
+    <section class="section slide-up" id="history">
+        <div class="container">
+            <h2 class="section-title">Lịch Sử & Nguồn Gốc</h2>
+            
+            <!-- Timeline với ảnh lịch sử -->
+            <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; margin-bottom: 3rem;">
+                <div class="art-deco-card">
+                    <!-- Image: 400x500px - Ảnh Paris 1920s hoặc Art Deco exhibition -->
+                    <img src="images/paris-1920s.jpg" alt="Paris 1920s Art Deco Era" style="width: 100%; height: 400px; object-fit: cover; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 1rem;">Paris 1920-1930</h3>
+                    <p style="text-align: center; font-style: italic;">"Trung tâm của Art Deco"</p>
+                </div>
+                <div>
+                    <div class="art-deco-card" style="max-width: 100%;">
+                        <p style="font-size: 1.2rem; line-height: 1.8; text-align: justify;">
+                            <strong>Art Deco</strong> (còn viết là Art Déco) là một phong cách nghệ thuật – thiết kế thịnh hành từ đầu thế kỷ 20, 
+                            gắn liền với sang trọng, hiện đại và hình học mạnh mẽ. Ra đời như một phản ứng chống lại sự mềm mại của Art Nouveau, 
+                            phong cách này thể hiện qua sự kết hợp giữa đường thẳng, hình khối sắc nét, và việc sử dụng chất liệu cao cấp 
+                            để tạo nên vẻ đẹp công nghiệp nhưng vẫn mỹ miều.
+                        </p>
+                        <div class="zigzag-pattern" style="margin: 2rem 0;"></div>
+                        <p style="font-size: 1.1rem; line-height: 1.8; text-align: justify;">
+                            Trung tâm của Art Deco là <strong style="color: var(--primary-gold);">Paris những năm 1920–1930</strong>, 
+                            lan rộng sang Mỹ và toàn cầu, xuất hiện trong kiến trúc, nội thất, thời trang, đồ họa, sản phẩm công nghiệp.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Đặc điểm thẩm mỹ -->
+    <section class="section" id="features">
+        <div class="container">
+            <h2 class="section-title">Ngôn Ngữ Thẩm Mỹ</h2>
+            <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: var(--primary-navy); font-style: italic;">
+                Art Deco có thể dễ dàng nhận ra qua các yếu tố hình học táo bạo, sự cân đối chính xác và vật liệu sang trọng
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <!-- Hình học & Đối xứng -->
+                <div class="art-deco-card">
+                    <!-- Image: 320x200px - Geometric patterns, zigzag designs -->
+                    <img src="images/geometric-patterns.jpg" alt="Art Deco Geometric Patterns" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--primary-navy); font-size: 1.4rem; margin-bottom: 1rem;">Hình Học & Đối Xứng</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Hình dạng hình học: tam giác, zigzag, chevron</li>
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Hình thang, nan quạt</li>
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Bố cục cân đối và đường nét đối xứng</li>
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Tạo cảm giác hài hoà và sang trọng</li>
+                    </ul>
+                </div>
+
+                <!-- Chất liệu & Màu sắc -->
+                <div class="art-deco-card">
+                    <!-- Image: 320x200px - Luxury materials: gold, marble, wood -->
+                    <img src="images/luxury-materials.jpg" alt="Art Deco Luxury Materials" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--primary-navy); font-size: 1.4rem; margin-bottom: 1rem;">Chất Liệu & Màu Sắc Cao Cấp</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Kim loại: nhôm, chrome, thép không gỉ</li>
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Đá hoa cương, gỗ mun, da cá mập</li>
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Phối màu tương phản: đen – vàng kim</li>
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Hiệu ứng bóng sang trọng</li>
+                    </ul>
+                </div>
+
+                <!-- Tính quốc tế -->
+                <div class="art-deco-card">
+                    <!-- Image: 320x200px - Global Art Deco buildings montage -->
+                    <img src="images/global-art-deco.jpg" alt="Art Deco Around the World" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1.5rem;">
+                    <h3 style="color: var(--primary-navy); font-size: 1.4rem; margin-bottom: 1rem;">Tính Quốc Tế & Đa Văn Hóa</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Phong cách toàn cầu</li>
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Kiến trúc, nội thất, thời trang</li>
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Đồ trang sức, ô tô, poster</li>
+                        <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Phản ánh đặc thù địa phương</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Famous Buildings Section -->
+    <section class="section" style="background: var(--primary-light);">
+        <div class="container">
+            <h2 class="section-title">Kiến Trúc Art Deco Nổi Tiếng</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                
+                <div class="art-deco-card">
+                    <!-- Image: 300x400px - Chrysler Building -->
+                    <img src="images/chrysler-building.jpg" alt="Chrysler Building New York" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-burgundy); margin-bottom: 0.5rem;">Tòa Nhà Chrysler</h3>
+                    <p style="color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">New York, USA (1930)</p>
+                    <p style="line-height: 1.6;">Biểu tượng Art Deco với đỉnh kim loại đặc trưng và những đường nét hình học tinh xảo.</p>
+                </div>
+
+                <div class="art-deco-card">
+                    <!-- Image: 300x400px - Empire State Building -->
+                    <img src="images/empire-state-building.jpg" alt="Empire State Building" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-burgundy); margin-bottom: 0.5rem;">Tòa Nhà Empire State</h3>
+                    <p style="color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">New York, USA (1931)</p>
+                    <p style="line-height: 1.6;">Kiệt tác kiến trúc Art Deco với thiết kế bậc thang đặc trưng và đỉnh tòa nhà iconic.</p>
+                </div>
+
+                <div class="art-deco-card">
+                    <!-- Image: 300x400px - Miami Beach Art Deco District -->
+                    <img src="images/miami-beach-art-deco.jpg" alt="Miami Beach Art Deco District" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-burgundy); margin-bottom: 0.5rem;">Khu Art Deco Miami</h3>
+                    <p style="color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">Miami Beach, USA (1930s)</p>
+                    <p style="line-height: 1.6;">Khu phố Art Deco lớn nhất thế giới với màu sắc pastel và thiết kế streamline moderne.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Section -->
+    <section class="section" style="background: var(--gradient-dark); color: var(--primary-light); text-align: center;">
+        <div class="container">
+            <div class="zigzag-pattern" style="margin: 0 auto 3rem; width: 200px;"></div>
+            <blockquote style="font-size: 2rem; font-style: italic; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                "Art Deco có sức sống bền bỉ không chỉ vì vẻ đẹp hình thức, mà còn vì nó đại diện cho một niềm tin mãnh liệt vào tương lai."
+            </blockquote>
+            <cite style="display: block; margin-top: 2rem; font-size: 1.2rem; color: var(--primary-gold);">
+                — V&A Museum
+            </cite>
+            <div class="zigzag-pattern" style="margin: 3rem auto 0; width: 200px;"></div>
+        </div>
+    </section>
+
+    <!-- Ứng dụng hiện đại -->
+    <section class="section" id="applications">
+        <div class="container">
+            <h2 class="section-title">Ứng Dụng Trong Nhiều Lĩnh Vực</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                
+                <div class="art-deco-card">
+                    <!-- Image: 320x200px - Modern Art Deco architecture -->
+                    <img src="images/modern-architecture.jpg" alt="Modern Art Deco Architecture" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">🏛️ Kiến Trúc</h3>
+                    <p>Tòa nhà Chrysler (New York), Nhà hát Radio City, khách sạn ở Miami Beach với những đường nét hình học đặc trưng.</p>
+                </div>
+
+                <div class="art-deco-card">
+                    <!-- Image: 320x200px - Art Deco graphic design, posters -->
+                    <img src="images/graphic-design.jpg" alt="Art Deco Graphic Design" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">🎨 Thiết Kế Đồ Họa</h3>
+                    <p>Áp phích quảng cáo, bìa sách, mẫu logo với kiểu chữ serif thanh mảnh và trang trí hình học.</p>
+                </div>
+
+                <div class="art-deco-card">
+                    <!-- Image: 320x200px - Art Deco fashion and furniture -->
+                    <img src="images/fashion-furniture.jpg" alt="Art Deco Fashion and Furniture" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">👗 Thời Trang & Nội Thất</h3>
+                    <p>Váy flapper, đồ trang sức hình học, ghế và bàn với viền kim loại và mặt kính.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background: var(--primary-dark); color: var(--primary-light); padding: 3rem 0; text-align: center;">
+        <div class="container">
+            <div class="zigzag-pattern" style="margin: 0 auto 2rem; width: 300px;"></div>
+            <h3 style="color: var(--primary-gold); margin-bottom: 1rem;">ART DECO</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                Phong cách này không chỉ định hình thị giác – mà còn gợi nhắc đến một thời đại con người vươn đến đỉnh cao của nghệ thuật sống.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem;">
+                <a href="artists.html" class="nav-link">Nghệ Sĩ</a>
+                <a href="designers.html" class="nav-link">Nhà Thiết Kế</a>
+                <a href="news.html" class="nav-link">Tin Tức</a>
+            </div>
+            <div class="zigzag-pattern" style="margin: 2rem auto 0; width: 300px;"></div>
+        </div>
+    </footer>
+
+    <script>
+        // Fix button "Khám phá ngay" - scroll to history section
+        function scrollToHistory() {
+            const historySection = document.getElementById('history');
+            historySection.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+
+        // Smooth scrolling cho navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.art-deco-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Stagger animation
+        document.querySelectorAll('.art-deco-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+        });
+    </script>
+</body>
+</html> 
