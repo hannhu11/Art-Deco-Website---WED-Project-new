@@ -4,11 +4,331 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nhà Thiết Kế Art Deco - Bậc Thầy Của Nghề Thủ Công</title>
+    
+    <!-- Performance Optimizations -->
+    <link rel="preload" href="art-deco-design-system.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
     <link rel="stylesheet" href="art-deco-design-system.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS for Above-the-fold -->
+    <style>
+        /* Critical CSS - inline for faster loading */
+        .hero-section { min-height: 65vh; position: relative; }
+        .hero-image-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .hero-image { width: 100%; height: 100%; object-fit: cover; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .hero-content { position: relative; z-index: 2; text-align: center; padding: 5rem 0; }
+        .hero-title { font-size: 4rem; font-weight: 700; color: var(--primary-gold); margin-bottom: 2rem; }
+        .navbar { background: var(--primary-dark); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        .art-deco-card { background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        
+        /* Art Deco Loading Animation */
+        .art-deco-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .art-deco-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-container {
+            text-align: center;
+            color: var(--primary-gold);
+        }
+
+        .loader-diamond {
+            width: 80px;
+            height: 80px;
+            border: 4px solid var(--primary-gold);
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            animation: diamondRotate 2s linear infinite;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .loader-diamond::before,
+        .loader-diamond::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid transparent;
+        }
+
+        .loader-diamond::before {
+            border-left: 4px solid var(--primary-gold);
+            border-right: 4px solid var(--primary-gold);
+            animation: diamondRotate 1.5s linear infinite reverse;
+        }
+
+        .loader-diamond::after {
+            border-top: 4px solid var(--primary-gold);
+            border-bottom: 4px solid var(--primary-gold);
+            animation: diamondRotate 1s linear infinite;
+        }
+
+        @keyframes diamondRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-zigzag {
+            width: 200px;
+            height: 20px;
+            background: linear-gradient(45deg, transparent 30%, var(--primary-gold) 30%, var(--primary-gold) 70%, transparent 70%),
+                        linear-gradient(-45deg, transparent 30%, var(--primary-gold) 30%, var(--primary-gold) 70%, transparent 70%);
+            background-size: 30px 20px;
+            animation: zigzagMove 2s linear infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes zigzagMove {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 30px 0, -30px 0; }
+        }
+
+        .loader-sunburst {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 2rem auto;
+            animation: sunburstRotate 3s linear infinite;
+        }
+
+        .loader-sunburst::before,
+        .loader-sunburst::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 40px;
+            background: var(--primary-gold);
+            transform-origin: 2px 2px;
+        }
+
+        .loader-sunburst::before {
+            transform: translate(-50%, -50%) rotate(0deg);
+            box-shadow: 0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold);
+        }
+
+        .loader-sunburst::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+            box-shadow: 0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold);
+        }
+
+        @keyframes sunburstRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            animation: textPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes textPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* Particle System */
+        .art-deco-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: particleFloat 8s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Typewriter Effect */
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--primary-gold);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.1em;
+            animation: typewriter 4s steps(18) 1s both, blink 0.7s infinite;
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--primary-gold); }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-element.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Parallax Effects */
+        .parallax-slow {
+            will-change: transform;
+        }
+
+        /* Enhanced Hover Effects */
+        .clickable-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .clickable-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .click-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.9), rgba(139, 69, 19, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .clickable-card:hover .click-overlay {
+            opacity: 1;
+        }
+
+        .click-hint {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Golden Sweep Effect */
+        .golden-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .golden-sweep::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            transition: transform 0.6s ease;
+        }
+
+        .golden-sweep:hover::before {
+            transform: translateX(100%) translateY(100%) rotate(45deg);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-content { padding: 3rem 0; }
+            .loader-diamond { width: 60px; height: 60px; }
+            .loader-zigzag { width: 150px; }
+            .loader-sunburst { width: 80px; height: 80px; }
+        }
+
+        /* Performance optimizations */
+        @media (prefers-reduced-motion: reduce) {
+            .particle,
+            .typewriter,
+            .reveal-element,
+            .art-deco-card,
+            .golden-sweep::before,
+            .click-overlay {
+                animation: none;
+                transition: none;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Art Deco Loading Animation -->
+    <div id="art-deco-loader" class="art-deco-loader">
+        <div class="loader-container">
+            <div class="loader-diamond"></div>
+            <div class="loader-zigzag"></div>
+            <div class="loader-sunburst"></div>
+            <div class="loader-text">NHÀ THIẾT KẾ ART DECO</div>
+        </div>
+    </div>
+
+    <!-- Particle System -->
+    <div id="art-deco-particles" class="art-deco-particles"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -25,16 +345,16 @@
     <section class="hero-section" style="min-height: 65vh;">
         <!-- Hero Image Container -->
         <div class="hero-image-container">
-            <img src="images/design-studio-hero.jpg" alt="Design Studio" class="hero-image" style="opacity: 0.35; object-position: center;">
+            <img src="images/design-studio-hero.jpg" alt="Design Studio" class="hero-image parallax-slow" style="opacity: 0.35; object-position: center;" loading="eager">
         </div>
         
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">NHÀ THIẾT KẾ ART DECO</h1>
+                <h1 class="hero-title typewriter">NHÀ THIẾT KẾ ART DECO</h1>
                 <p style="font-size: 1.5rem; margin: 2rem 0; color: var(--primary-light); font-style: italic;">
                     Bậc thầy kết hợp vẻ đẹp cổ điển với công nghệ hiện đại
                 </p>
-                <div class="zigzag-pattern" style="margin: 3rem auto; width: 300px;"></div>
+                <div class="zigzag-pattern parallax-slow" style="margin: 3rem auto; width: 300px;"></div>
                 <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--primary-light);">
                     Khám phá những nhà thiết kế vĩ đại đã định hình phong cách Art Deco qua nội thất, kiến trúc và nghề thủ công tinh xảo
                 </p>
@@ -43,12 +363,12 @@
     </section>
 
     <!-- Designers Overview -->
-    <section class="section">
+    <section class="section reveal-element">
         <div class="container">
             <h2 class="section-title">Bậc Thầy Thiết Kế Art Deco</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
                 
-                <div class="art-deco-card clickable-card" data-modal="ruhlmann-modal">
+                <div class="art-deco-card clickable-card golden-sweep" data-modal="ruhlmann-modal">
                     <!-- Image: 300x300px - Ruhlmann portrait or furniture -->
                     <img src="images/ruhlmann-portrait.jpg" alt="Émile-Jacques Ruhlmann" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 0.5rem;">Émile-Jacques Ruhlmann</h3>
@@ -59,7 +379,7 @@
                     </div>
                 </div>
 
-                <div class="art-deco-card clickable-card" data-modal="chareau-modal">
+                <div class="art-deco-card clickable-card golden-sweep" data-modal="chareau-modal">
                     <!-- Image: 300x300px - Pierre Chareau or Maison de Verre -->
                     <img src="images/chareau-portrait.jpg" alt="Pierre Chareau" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 0.5rem;">Pierre Chareau</h3>
@@ -70,7 +390,7 @@
                     </div>
                 </div>
 
-                <div class="art-deco-card clickable-card" data-modal="dunand-modal">
+                <div class="art-deco-card clickable-card golden-sweep" data-modal="dunand-modal">
                     <!-- Image: 300x300px - Jean Dunand or lacquer work -->
                     <img src="images/dunand-portrait.jpg" alt="Jean Dunand" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 0.5rem;">Jean Dunand</h3>
@@ -2186,6 +2506,146 @@
     </footer>
 
     <script>
+        // Art Deco Performance & Effects Manager
+        class ArtDecoEffects {
+            constructor() {
+                this.isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                this.particles = [];
+                this.init();
+            }
+
+            init() {
+                this.handleLoading();
+                if (!this.isReducedMotion) {
+                    this.initParticles();
+                    this.initParallax();
+                    this.initScrollReveal();
+                    this.initTypewriter();
+                }
+                this.initLazyLoading();
+            }
+
+            handleLoading() {
+                const loader = document.getElementById('art-deco-loader');
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                        setTimeout(() => {
+                            loader.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            initParticles() {
+                const particleContainer = document.getElementById('art-deco-particles');
+                const particleCount = Math.min(window.innerWidth / 50, 10); // Responsive particle count
+
+                for (let i = 0; i < particleCount; i++) {
+                    this.createParticle(particleContainer);
+                }
+
+                // Create new particles periodically
+                setInterval(() => {
+                    if (this.particles.length < particleCount) {
+                        this.createParticle(particleContainer);
+                    }
+                }, 2000);
+            }
+
+            createParticle(container) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 4 + 2;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 8;
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = left + '%';
+                particle.style.animationDelay = delay + 's';
+                
+                container.appendChild(particle);
+                this.particles.push(particle);
+
+                // Remove particle after animation
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                        this.particles = this.particles.filter(p => p !== particle);
+                    }
+                }, 8000 + delay * 1000);
+            }
+
+            initParallax() {
+                const parallaxElements = document.querySelectorAll('.parallax-slow');
+                
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.5;
+                    
+                    parallaxElements.forEach(element => {
+                        if (element.getBoundingClientRect().top < window.innerHeight) {
+                            element.style.transform = `translateY(${rate}px)`;
+                        }
+                    });
+                });
+            }
+
+            initScrollReveal() {
+                const revealElements = document.querySelectorAll('.reveal-element');
+                
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                revealElements.forEach(element => {
+                    revealObserver.observe(element);
+                });
+            }
+
+            initTypewriter() {
+                const heroTitle = document.querySelector('.hero-title');
+                if (heroTitle) {
+                    heroTitle.classList.add('typewriter');
+                }
+            }
+
+            initLazyLoading() {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                
+                if ('IntersectionObserver' in window) {
+                    const imageObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                img.style.transition = 'opacity 0.3s ease';
+                                img.style.opacity = '0';
+                                
+                                img.onload = () => {
+                                    img.style.opacity = '1';
+                                };
+                                
+                                imageObserver.unobserve(img);
+                            }
+                        });
+                    });
+
+                    images.forEach(img => imageObserver.observe(img));
+                }
+            }
+        }
+
+        // Initialize Art Deco Effects
+        document.addEventListener('DOMContentLoaded', () => {
+            window.artDecoEffectsInstance = new ArtDecoEffects();
+        });
+
         // Animation on scroll
         const observerOptions = {
             threshold: 0.1,
