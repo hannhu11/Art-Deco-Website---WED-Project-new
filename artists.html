@@ -45,28 +45,37 @@
             <h2 class="section-title">Chân Dung Những Nghệ Sĩ Vĩ Đại</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
                 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="tamara-modal">
                     <!-- Image: 300x300px - Tamara de Lempicka portrait -->
-                    <img src="images/tamara-portrait.jpg" alt="Tamara de Lempicka" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/tamara-portrait.jpg" alt="Tamara de Lempicka" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 0.5rem;">Tamara de Lempicka</h3>
                     <p style="text-align: center; color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">1898-1980 | Ba Lan</p>
                     <p style="text-align: center; line-height: 1.6;">Biểu tượng Art Deco trong hội họa với phong cách chân dung hiện đại, quyến rũ</p>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="lalique-modal">
                     <!-- Image: 300x300px - René Lalique portrait -->
-                    <img src="images/lalique-portrait.jpg" alt="René Lalique" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/lalique-portrait.jpg" alt="René Lalique" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 0.5rem;">René Lalique</h3>
                     <p style="text-align: center; color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">1860-1945 | Pháp</p>
                     <p style="text-align: center; line-height: 1.6;">Nghệ nhân thủy tinh thiên tài, sáng tạo nên những tác phẩm trang sức kỳ ảo</p>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="erte-modal">
                     <!-- Image: 300x300px - Erté portrait -->
-                    <img src="images/erte-portrait.jpg" alt="Erté (Romain de Tirtoff)" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/erte-portrait.jpg" alt="Erté (Romain de Tirtoff)" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 0.5rem;">Erté</h3>
                     <p style="text-align: center; color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">1892-1990 | Nga-Pháp</p>
                     <p style="text-align: center; line-height: 1.6;">Nhà minh họa thời trang định hình hình ảnh phụ nữ Art Deco thanh lịch</p>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
             </div>
@@ -77,12 +86,15 @@
     <section class="section" style="background: var(--primary-light);">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="tamara-large-modal">
                     <!-- Image: 500x600px - Tamara de Lempicka high-quality portrait -->
-                    <img src="images/tamara-large-portrait.jpg" alt="Tamara de Lempicka Portrait" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/tamara-large-portrait.jpg" alt="Tamara de Lempicka Portrait" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <div style="text-align: center; padding: 1rem; background: var(--gradient-gold); color: var(--primary-dark);">
                         <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">TAMARA DE LEMPICKA</h3>
                         <p style="font-style: italic;">"Nữ hoàng Art Deco"</p>
+                    </div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
                     </div>
                 </div>
                 <div>
@@ -108,17 +120,23 @@
             <div class="art-deco-card" style="background: var(--gradient-dark); color: var(--primary-light);">
                 <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 2rem; font-size: 2rem;">Tác Phẩm Biểu Tượng</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="bugatti-modal" style="text-align: center; position: relative;">
                         <!-- Image: 350x400px - Autoportrait Tamara in Green Bugatti -->
-                        <img src="images/tamara-green-bugatti.jpg" alt="Autoportrait Tamara in Green Bugatti" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--primary-gold);">
+                        <img src="images/tamara-green-bugatti.jpg" alt="Autoportrait Tamara in Green Bugatti" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold); margin-bottom: 0.5rem;">Autoportrait (Tamara in a Green Bugatti)</h4>
                         <p style="font-size: 1.1rem;">Hình ảnh người phụ nữ lái xe thể hiện quyền lực, độc lập và hiện đại - biểu tượng của thời đại mới</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="rafaela-modal" style="text-align: center; position: relative;">
                         <!-- Image: 350x400px - La Belle Rafaela -->
-                        <img src="images/tamara-belle-rafaela.jpg" alt="La Belle Rafaela" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--primary-gold);">
+                        <img src="images/tamara-belle-rafaela.jpg" alt="La Belle Rafaela" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold); margin-bottom: 0.5rem;">La Belle Rafaela</h4>
                         <p style="font-size: 1.1rem;">Chân dung phụ nữ với phong cách Art Deco tinh tế, thể hiện vẻ đẹp và sức mạnh nội tâm</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -146,12 +164,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="lalique-works-modal">
                     <!-- Image: 400x500px - René Lalique portrait with his works -->
-                    <img src="images/lalique-with-works.jpg" alt="René Lalique with his glass works" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/lalique-with-works.jpg" alt="René Lalique with his glass works" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, var(--primary-navy) 0%, var(--primary-bronze) 100%); color: var(--primary-light);">
                         <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">RENÉ LALIQUE</h3>
                         <p style="font-style: italic;">"Thạo thủ của thủy tinh"</p>
+                    </div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
                     </div>
                 </div>
             </div>
@@ -160,23 +181,32 @@
             <div class="art-deco-card" style="background: var(--primary-navy); color: var(--primary-light);">
                 <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 2rem; font-size: 2rem;">Kiệt Tác Thủy Tinh</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="lalique-perfume-modal" style="text-align: center; position: relative;">
                         <!-- Image: 250x300px - Lalique perfume bottles -->
-                        <img src="images/lalique-perfume-bottles.jpg" alt="Lalique Perfume Bottles" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/lalique-perfume-bottles.jpg" alt="Lalique Perfume Bottles" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold);">Lọ Nước Hoa</h4>
                         <p>Thiết kế tinh tế với hoạ tiết hoa lá, côn trùng được stylized theo phong cách Art Deco</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="lalique-jewelry-modal" style="text-align: center; position: relative;">
                         <!-- Image: 250x300px - Lalique jewelry -->
-                        <img src="images/lalique-jewelry.jpg" alt="Lalique Glass Jewelry" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/lalique-jewelry.jpg" alt="Lalique Glass Jewelry" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold);">Trang Sức Thủy Tinh</h4>
                         <p>Thủy tinh mờ kết hợp kim loại, tạo ra những món trang sức độc đáo và sang trọng</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="lalique-lamps-modal" style="text-align: center; position: relative;">
                         <!-- Image: 250x300px - Lalique decorative lamps -->
-                        <img src="images/lalique-lamps.jpg" alt="Lalique Decorative Lamps" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/lalique-lamps.jpg" alt="Lalique Decorative Lamps" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold);">Đèn Trang Trí</h4>
                         <p>Vẻ đẹp kỳ ảo trong ánh sáng với những hoạ tiết nữ thần và thiên nhiên</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -187,13 +217,16 @@
     <section class="section" style="background: var(--primary-light);">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="erte-fashion-modal">
                     <!-- Image: 400x500px - Erté fashion illustration -->
-                    <img src="images/erte-fashion-illustration.jpg" alt="Erté Fashion Illustration" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/erte-fashion-illustration.jpg" alt="Erté Fashion Illustration" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-gold) 100%); color: var(--primary-light);">
                         <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">ERTÉ</h3>
                         <p style="font-style: italic; font-size: 0.9rem;">(Romain de Tirtoff)</p>
                         <p style="font-style: italic;">"Bậc thầy thời trang Art Deco"</p>
+                    </div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
                     </div>
                 </div>
                 <div>
@@ -219,23 +252,32 @@
             <div class="art-deco-card" style="background: var(--gradient-gold); color: var(--primary-dark);">
                 <h3 style="color: var(--primary-burgundy); text-align: center; margin-bottom: 2rem; font-size: 2rem;">Phong Cách Nghệ Thuật</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="erte-bazaar-modal" style="text-align: center; position: relative;">
                         <!-- Image: 300x400px - Erté Harper's Bazaar covers -->
-                        <img src="images/erte-harpers-bazaar.jpg" alt="Erté Harper's Bazaar Covers" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-burgundy);">
+                        <img src="images/erte-harpers-bazaar.jpg" alt="Erté Harper's Bazaar Covers" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-burgundy); cursor: pointer;">
                         <h4 style="color: var(--primary-navy); margin-bottom: 1rem;">Harper's Bazaar</h4>
                         <p>Những bìa tạp chí iconic định hình thẩm mỹ thời trang thập niên 1920-1930</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="erte-costumes-modal" style="text-align: center; position: relative;">
                         <!-- Image: 300x400px - Erté costume designs -->
-                        <img src="images/erte-costumes.jpg" alt="Erté Costume Designs" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-burgundy);">
+                        <img src="images/erte-costumes.jpg" alt="Erté Costume Designs" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-burgundy); cursor: pointer;">
                         <h4 style="color: var(--primary-navy); margin-bottom: 1rem;">Trang Phục Sân Khấu</h4>
                         <p>Thiết kế trang phục với đường nét mềm mại nhưng hình học, tạo silhouette đặc trưng</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="erte-alphabet-modal" style="text-align: center; position: relative;">
                         <!-- Image: 300x400px - Erté alphabet series -->
-                        <img src="images/erte-alphabet.jpg" alt="Erté Alphabet Series" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-burgundy);">
+                        <img src="images/erte-alphabet.jpg" alt="Erté Alphabet Series" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-burgundy); cursor: pointer;">
                         <h4 style="color: var(--primary-navy); margin-bottom: 1rem;">Bộ Chữ Cái Nghệ Thuật</h4>
                         <p>Series alphabet nổi tiếng với phụ nữ được stylized thành các chữ cái Art Deco</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -255,25 +297,34 @@
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
                 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="modern-portrait-modal">
                     <!-- Image: 320x200px - Modern portrait painting influenced by Art Deco -->
-                    <img src="images/modern-portrait-art.jpg" alt="Modern Portrait Art" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/modern-portrait-art.jpg" alt="Modern Portrait Art" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Trong Hội Họa Hiện Đại</h3>
                     <p>Phong cách chân dung hiện đại, sử dụng ánh sáng và màu sắc để thể hiện cá tính mạnh mẽ của người mẫu, tiếp tục được các họa sĩ đương đại áp dụng.</p>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="modern-glass-modal">
                     <!-- Image: 320x200px - Modern glass art and jewelry -->
-                    <img src="images/modern-glass-art.jpg" alt="Modern Glass Art" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/modern-glass-art.jpg" alt="Modern Glass Art" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Trong Nghề Thủ Công</h3>
                     <p>Kỹ thuật chế tác tinh xảo, kết hợp vật liệu cao cấp với thiết kế hình học độc đáo, được các nghệ nhân hiện đại kế thừa và phát triển.</p>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="modern-fashion-modal">
                     <!-- Image: 320x200px - Modern fashion influenced by Art Deco -->
-                    <img src="images/modern-fashion-deco.jpg" alt="Modern Fashion Art Deco" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/modern-fashion-deco.jpg" alt="Modern Fashion Art Deco" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Trong Thời Trang Đương Đại</h3>
                     <p>Định hình hình ảnh phụ nữ hiện đại với phong cách thanh lịch, quyền lực và tinh tế, ảnh hưởng đến fashion design ngày nay.</p>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
             </div>
@@ -294,6 +345,842 @@
             <div class="zigzag-pattern" style="margin: 3rem auto 0; width: 200px;"></div>
         </div>
     </section>
+
+    <!-- Modal System -->
+    <!-- Tamara de Lempicka Modal -->
+    <div id="tamara-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Tamara de Lempicka: Nữ Hoàng Art Deco</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/tamara-portrait.jpg" alt="Tamara de Lempicka" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Cuộc Đời Và Sự Nghiệp</h3>
+                    <p>Tamara de Lempicka (tên thật: Maria Górska, 1898-1980) là họa sĩ người Ba Lan gốc quý tộc, trở thành biểu tượng của phong cách Art Deco trong hội họa. Sau khi di cư đến Paris vào năm 1918, bà đã tạo nên một phong cách riêng biệt và trở thành một trong những nghệ sĩ nữ thành công nhất thời bấy giờ.</p>
+                    
+                    <h4>Phong Cách Nghệ Thuật Độc Đáo:</h4>
+                    <ul>
+                        <li><strong>Ánh sáng kim loại đặc trưng:</strong> Sử dụng ánh sáng lạnh, kim loại để tạo chiều sâu và kịch tính</li>
+                        <li><strong>Màu sắc tương phản mạnh:</strong> Thường dùng xanh dương, bạc, vàng kim và đỏ burgundy</li>
+                        <li><strong>Hình khối hình học:</strong> Con người được vẽ với những đường nét góc cạnh, stylized</li>
+                        <li><strong>Biểu hiện quyền lực nữ giới:</strong> Phụ nữ trong tranh thường mạnh mẽ, tự tin và hiện đại</li>
+                        <li><strong>Cảm hứng từ Cubism:</strong> Kết hợp yếu tố lập thể với tính trang trí Art Deco</li>
+                    </ul>
+                    
+                    <h4>Tác Phẩm Nổi Bật:</h4>
+                    <ul>
+                        <li><strong>"Autoportrait (Tamara in a Green Bugatti)" (1929):</strong> Biểu tượng của sự tự do và hiện đại</li>
+                        <li><strong>"La Belle Rafaela" (1927):</strong> Thể hiện vẻ đẹp cổ điển qua góc nhìn hiện đại</li>
+                        <li><strong>"Portrait de Madame M" (1930):</strong> Đại diện cho phong cách chân dung Art Deco</li>
+                        <li><strong>"Young Lady with Gloves" (1930):</strong> Sự tinh tế trong biểu hiện thời trang</li>
+                    </ul>
+                    
+                    <h4>Ảnh Hưởng Đến Nghệ Thuật:</h4>
+                    <p>Tamara de Lempicka không chỉ là họa sĩ mà còn là biểu tượng văn hóa. Bà đã định hình hình ảnh người phụ nữ hiện đại: độc lập, mạnh mẽ, có quyền lực kinh tế và xã hội. Phong cách của bà ảnh hưởng đến nhiều nghệ sĩ đương đại và thường được sử dụng trong thiết kế thời trang, quảng cáo cao cấp.</p>
+                    
+                    <h4>Di Sản Và Định Giá:</h4>
+                    <p>Ngày nay, các tác phẩm của Tamara de Lempicka được bán với giá hàng triệu đô la tại các phiên đấu giá quốc tế. Bà được coi là một trong những nghệ sĩ nữ có giá trị thương mại cao nhất lịch sử nghệ thuật.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- René Lalique Modal -->
+    <div id="lalique-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>René Lalique: Bậc Thầy Thủy Tinh Art Deco</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/lalique-portrait.jpg" alt="René Lalique" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Hành Trình Từ Trang Sức Đến Thủy Tinh</h3>
+                    <p>René Lalique (1860-1945) bắt đầu sự nghiệp như một nghệ nhân trang sức trong phong trào Art Nouveau, nhưng đã chuyển hướng sang thủy tinh và trở thành tên tuổi huyền thoại của Art Deco. Ông là người đầu tiên đưa thủy tinh từ nghề thủ công truyền thống lên tầm nghệ thuật cao.</p>
+                    
+                    <h4>Cách Mạng Trong Nghề Thủy Tinh:</h4>
+                    <ul>
+                        <li><strong>Kỹ thuật ép khuôn:</strong> Phát triển phương pháp sản xuất hàng loạt mà vẫn giữ được chất lượng nghệ thuật</li>
+                        <li><strong>Thủy tinh mờ (Frosted glass):</strong> Tạo hiệu ứng ánh sáng độc đáo và bí ẩn</li>
+                        <li><strong>Kết hợp vật liệu:</strong> Thủy tinh + kim loại + đá quý tạo nên tác phẩm đa tầng</li>
+                        <li><strong>Họa tiết tự nhiên cách điệu:</strong> Hoa lá, côn trùng, nữ thần được stylized theo Art Deco</li>
+                        <li><strong>Màu sắc tinh tế:</strong> Từ trong suốt đến xanh dương, amber, đen</li>
+                    </ul>
+                    
+                    <h4>Các Dòng Sản Phẩm Iconic:</h4>
+                    <ul>
+                        <li><strong>Lọ nước hoa:</strong> Hợp tác với Coty, Worth, Houbigant tạo ra những thiết kế bất hủ</li>
+                        <li><strong>Trang sức thủy tinh:</strong> Vòng cổ, ghim cài, vòng tay với kỹ thuật chưa từng có</li>
+                        <li><strong>Đồ gia dụng:</strong> Ly, bình, đĩa cho tầng lớp thượng lưu</li>
+                        <li><strong>Đèn trang trí:</strong> Kết hợp ánh sáng và thủy tinh tạo hiệu ứng ma thuật</li>
+                        <li><strong>Điêu khắc:</strong> Tượng nhỏ và panel trang trí kiến trúc</li>
+                    </ul>
+                    
+                    <h4>Đóng Góp Cho Art Deco:</h4>
+                    <p>Lalique đã chứng minh rằng vật liệu công nghiệp như thủy tinh có thể trở thành nghệ thuật cao. Ông mở đường cho việc sử dụng vật liệu hiện đại trong trang trí nội thất và kiến trúc Art Deco. Nhiều tòa nhà Art Deco nổi tiếng đều có các panel thủy tinh của Lalique.</p>
+                    
+                    <h4>Thương Hiệu Lalique Ngày Nay:</h4>
+                    <p>Công ty Lalique vẫn hoạt động cho đến ngày nay, tiếp tục sản xuất đồ trang sức, nước hoa và đồ gia dụng cao cấp. Các tác phẩm vintage của René Lalique được săn lùng trên toàn thế giới với giá trị hàng chục nghìn đô la.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Erté Modal -->
+    <div id="erte-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Erté: Bậc Thầy Thời Trang Art Deco</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/erte-portrait.jpg" alt="Erté" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Romain de Tirtoff: Từ Quý Tộc Nga Đến Biểu Tượng Paris</h3>
+                    <p>Erté (tên thật: Romain de Tirtoff, 1892-1990) sinh ra trong gia đình quý tộc Nga nhưng đã chọn Paris làm nơi phát triển tài năng. Ông trở thành một trong những nhà thiết kế thời trang và minh họa có ảnh hưởng nhất thế kỷ 20, định hình hình ảnh phụ nữ Art Deco.</p>
+                    
+                    <h4>Phong Cách Thiết Kế Đặc Trưng:</h4>
+                    <ul>
+                        <li><strong>Đường nét mềm mại nhưng hình học:</strong> Kết hợp sự uyển chuyển của Art Nouveau với cấu trúc của Art Deco</li>
+                        <li><strong>Silhouette kéo dài:</strong> Làm cho hình người trở nên thanh mảnh và thanh lịch</li>
+                        <li><strong>Chi tiết trang trí phức tạp:</strong> Sử dụng những họa tiết hình học tinh vi</li>
+                        <li><strong>Màu sắc tinh tế:</strong> Thường dùng đen, trắng, vàng và các tông màu pastel</li>
+                        <li><strong>Cảm hứng từ phương Đông:</strong> Kimonos, fan patterns, và motifs châu Á</li>
+                    </ul>
+                    
+                    <h4>Sự Nghiệp Đa Dạng:</h4>
+                    <ul>
+                        <li><strong>Harper's Bazaar:</strong> Vẽ hơn 240 bìa tạp chí từ 1915-1937</li>
+                        <li><strong>Folies Bergère:</strong> Thiết kế trang phục cho các vũ công nổi tiếng</li>
+                        <li><strong>Opera và Ballet:</strong> Costume design cho các vở diễn lớn</li>
+                        <li><strong>Hollywood:</strong> Thiết kế trang phục cho các ngôi sao điện ảnh</li>
+                        <li><strong>Nghệ thuật thương mại:</strong> Poster quảng cáo và packaging design</li>
+                    </ul>
+                    
+                    <h4>Series Alphabet Nổi Tiếng:</h4>
+                    <p>Một trong những tác phẩm nổi tiếng nhất của Erté là bộ series "Alphabet" - 26 bức minh họa mỗi chữ cái được thể hiện qua hình ảnh một người phụ nữ mặc trang phục được thiết kế để tạo thành chữ cái đó. Đây là tác phẩm thể hiện tài năng kết hợp typography và fashion design.</p>
+                    
+                    <h4>Ảnh Hưởng Đến Văn Hóa Đại Chúng:</h4>
+                    <p>Erté đã định hình khái niệm "glamour" trong thời đại hiện đại. Những thiết kế của ông không chỉ ảnh hưởng đến thời trang cao cấp mà còn đến văn hóa đại chúng, từ thiết kế sân khấu đến minh họa tạp chí. Phong cách của ông vẫn được tham khảo trong thiết kế thời trang và entertainment cho đến ngày nay.</p>
+                    
+                    <h4>Sự Hồi Sinh Trong Thập Niên 1960-70:</h4>
+                    <p>Sau nhiều thập kỷ bị lãng quên, Erté trở lại trong thập niên 1960s khi phong cách retro và Art Deco revival bùng nổ. Ông tiếp tục sáng tác cho đến tuổi 90 và trở thành biểu tượng của sự tinh tế và thanh lịch vượt thời gian.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tamara Bugatti Painting Modal -->
+    <div id="bugatti-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Autoportrait: Tamara trong chiếc Bugatti Xanh</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/tamara-green-bugatti.jpg" alt="Tamara in Green Bugatti" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Biểu Tượng Của Phụ Nữ Hiện Đại</h3>
+                    <p>Bức "Autoportrait (Tamara in a Green Bugatti)" được hoàn thành năm 1929, là một trong những tác phẩm iconic nhất của Tamara de Lempicka. Đây không chỉ là một bức chân dung mà còn là tuyên ngôn về sự tự do và quyền lực của phụ nữ thời đại mới.</p>
+                    
+                    <h4>Bối Cảnh Sáng Tác:</h4>
+                    <p>Bức tranh được vẽ theo đặt hàng của tạp chí Đức "Die Dame" cho một số đặc biệt về phụ nữ và ô tô. Tamara đã chọn vẽ chính mình đang lái chiếc Bugatti xanh lá cây - một trong những dòng xe thể thao xa xỉ nhất thời bấy giờ.</p>
+                    
+                    <h4>Phân Tích Nghệ Thuật:</h4>
+                    <ul>
+                        <li><strong>Góc nhìn từ dưới lên:</strong> Tạo cảm giác uy quyền và sự thống trị</li>
+                        <li><strong>Ánh sáng kim loại:</strong> Phản chiếu trên kính và kim loại xe, tạo hiện đại cảm</li>
+                        <li><strong>Màu xanh lá cây:</strong> Biểu tượng của sự tươi mới và năng lượng</li>
+                        <li><strong>Trang phục đơn giản:</strong> Khăn quàng và găng tay thể hiện practical elegance</li>
+                        <li><strong>Biểu cảm tự tin:</strong> Ánh mắt nhìn thẳng người xem với sự kiêu hãnh</li>
+                    </ul>
+                    
+                    <h4>Ý Nghĩa Biểu Tượng:</h4>
+                    <ul>
+                        <li><strong>Phụ nữ và công nghệ:</strong> Thể hiện sự thành thạo của phụ nữ với máy móc hiện đại</li>
+                        <li><strong>Tự do di chuyển:</strong> Ô tô như biểu tượng của sự độc lập và khả năng tự quyết định</li>
+                        <li><strong>Địa vị kinh tế:</strong> Chỉ có phụ nữ giàu có mới có thể sở hữu Bugatti</li>
+                        <li><strong>Phá vỡ rào cản giới:</strong> Lái xe từng là đặc quyền của đàn ông</li>
+                        <li><strong>Thời trang và thực dụng:</strong> Kết hợp vẻ đẹp với tính năng</li>
+                    </ul>
+                    
+                    <h4>Tác Động Văn Hóa:</h4>
+                    <p>Bức tranh này đã trở thành biểu tượng của "New Woman" - khái niệm về người phụ nữ hiện đại trong thập niên 1920s. Hình ảnh này được sử dụng rộng rãi trong quảng cáo, thời trang và nghệ thuật đại chúng, định hình quan niệm về phụ nữ độc lập và mạnh mẽ.</p>
+                    
+                    <h4>Giá Trị Hiện Tại:</h4>
+                    <p>Tác phẩm hiện được bảo quản tại một bộ sưu tập tư nhân và được định giá hàng chục triệu đô la. Nó thường được trưng bày tại các triển lãm nghệ thuật lớn trên toàn thế giới và được coi là một trong những masterpiece của Art Deco.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- La Belle Rafaela Modal -->
+    <div id="rafaela-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>La Belle Rafaela: Vẻ Đẹp Art Deco</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/tamara-belle-rafaela.jpg" alt="La Belle Rafaela" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Chân Dung Của Sự Tinh Tế</h3>
+                    <p>"La Belle Rafaela" (1927) là một trong những tác phẩm tinh tế nhất của Tamara de Lempicka, thể hiện hoàn hảo phong cách chân dung Art Deco của bà. Bức tranh mô tả một phụ nữ tên Rafaela với vẻ đẹp cổ điển được diễn giải qua góc nhìn hiện đại.</p>
+                    
+                    <h4>Mô Tả Tác Phẩm:</h4>
+                    <p>Rafaela được vẽ trong tư thế nghiêng một bên, với ánh mắt buồn bã nhưng quyến rũ. Cô mặc một chiếc áo có cổ cao màu trắng tương phản với làn da có tông màu ấm. Tóc được uốn sóng theo kiểu thời trang thập niên 1920s, và trang sức được vẽ với những chi tiết tinh xảo.</p>
+                    
+                    <h4>Kỹ Thuật Hội Họa:</h4>
+                    <ul>
+                        <li><strong>Chiaroscuro hiện đại:</strong> Sử dụng ánh sáng và bóng tối để tạo chiều sâu</li>
+                        <li><strong>Màu sắc hài hòa:</strong> Tông màu ấm và lạnh được cân bằng tinh tế</li>
+                        <li><strong>Nét vẽ chắc chắn:</strong> Đường nét rõ ràng, không mờ nhạt</li>
+                        <li><strong>Kết cấu bề mặt:</strong> Thể hiện chất liệu vải, da và trang sức</li>
+                        <li><strong>Hình học hóa:</strong> Gương mặt được đơn giản hóa thành các hình khối cơ bản</li>
+                    </ul>
+                    
+                    <h4>Biểu Tượng Trong Tác Phẩm:</h4>
+                    <ul>
+                        <li><strong>Ánh mắt buồn:</strong> Thể hiện sự sâu sắc và bí ẩn của tâm hồn phụ nữ</li>
+                        <li><strong>Trang sức:</strong> Biểu hiện địa vị xã hội và thị hiếu thẩm mỹ</li>
+                        <li><strong>Kiểu tóc thời thượng:</strong> Thể hiện sự theo kịp xu hướng và hiện đại</li>
+                        <li><strong>Tư thế thanh lịch:</strong> Sự tự tin và kiêu hãnh của phụ nữ thời đại mới</li>
+                        <li><strong>Nền đơn giản:</strong> Tập trung sự chú ý vào nhân vật chính</li>
+                    </ul>
+                    
+                    <h4>So Sánh Với Các Chân Dung Khác:</h4>
+                    <p>Khác với "Autoportrait in Green Bugatti" thể hiện sự mạnh mẽ và năng động, "La Belle Rafaela" lại tập trung vào vẻ đẹp nội tâm và sự tinh tế. Bức tranh này đại diện cho một khía cạnh khác của phụ nữ Art Deco - không chỉ mạnh mẽ mà còn sâu sắc và bí ẩn.</p>
+                    
+                    <h4>Ảnh Hưởng Đến Nghệ Thuật Chân Dung:</h4>
+                    <p>Tác phẩm này đã ảnh hưởng đến nhiều họa sĩ chân dung về cách kết hợp giữa yếu tố cổ điển và hiện đại. Cách Tamara sử dụng ánh sáng để tạo drama và cách stylize hóa gương mặt đã trở thành đặc trưng của portrait painting trong thời kỳ Art Deco.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Modals for New Clickable Images -->
+    <!-- Tamara Large Portrait Modal -->
+    <div id="tamara-large-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Tamara de Lempicka: Phong Cách Chân Dung Art Deco</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/tamara-large-portrait.jpg" alt="Tamara de Lempicka Large Portrait" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Kỹ Thuật Chân Dung Đặc Trưng</h3>
+                    <p>Phong cách chân dung của Tamara de Lempicka được đặc trưng bởi sự kết hợp hoàn hảo giữa yếu tố cổ điển và hiện đại. Bà đã tạo ra một ngôn ngữ hình ảnh độc đáo trong việc biểu hiện con người thời đại mới.</p>
+                    
+                    <h4>Đặc Điểm Kỹ Thuật:</h4>
+                    <ul>
+                        <li><strong>Ánh sáng kim loại:</strong> Sử dụng ánh sáng lạnh để tạo chiều sâu và kịch tính</li>
+                        <li><strong>Góc nhìn độc đáo:</strong> Thường vẽ từ góc thấp để tăng tính uy quyền</li>
+                        <li><strong>Màu sắc tinh tế:</strong> Palette màu hạn chế nhưng hiệu quả cao</li>
+                        <li><strong>Đường nét sắc nét:</strong> Contur rõ ràng, không mờ nhạt</li>
+                        <li><strong>Hình học hóa gương mặt:</strong> Đơn giản hóa thành các hình khối cơ bản</li>
+                    </ul>
+                    
+                    <h4>Quá Trình Sáng Tác:</h4>
+                    <p>Tamara thường bắt đầu với những bản phác thảo nhanh, sau đó phát triển thành những bức tranh hoàn chỉnh. Bà ưa thích vẽ những người phụ nữ hiện đại - độc lập, mạnh mẽ và tự tin. Mỗi bức chân dung đều mang tính biểu tượng về sự thay đổi của phụ nữ trong xã hội thập niên 1920s.</p>
+                    
+                    <h4>Ảnh Hưởng Từ Cubism:</h4>
+                    <p>Mặc dù không hoàn toàn theo trường phái Cubism, Tamara đã học hỏi kỹ thuật phân tích hình khối từ Picasso và Braque. Bà áp dụng những kiến thức này vào phong cách riêng, tạo ra sự kết hợp hài hòa giữa tính trang trí và nghệ thuật cao.</p>
+                    
+                    <h4>Thị Trường Nghệ Thuật:</h4>
+                    <p>Ngày nay, các chân dung của Tamara de Lempicka là những tác phẩm được săn lùng nhất trong thị trường nghệ thuật. Giá trị của chúng không ngừng tăng, phản ánh sự công nhận ngày càng cao đối với tài năng của bà.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lalique Works Modal -->
+    <div id="lalique-works-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>René Lalique: Nghệ Nhân Và Tác Phẩm</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/lalique-with-works.jpg" alt="René Lalique with Works" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Xưởng Chế Tác Lalique</h3>
+                    <p>Xưởng chế tác của René Lalique tại Wingen-sur-Moder, Alsace là nơi ra đời những kiệt tác thủy tinh Art Deco. Đây không chỉ là nơi sản xuất mà còn là phòng thí nghiệm nghệ thuật, nơi Lalique thử nghiệm các kỹ thuật mới và phát triển phong cách độc đáo.</p>
+                    
+                    <h4>Quy Trình Sáng Tác:</h4>
+                    <ul>
+                        <li><strong>Thiết kế ban đầu:</strong> Lalique tự tay vẽ phác thảo mọi sản phẩm</li>
+                        <li><strong>Tạo khuôn:</strong> Chế tác khuôn thạch cao với độ chính xác cao</li>
+                        <li><strong>Pha chế thủy tinh:</strong> Công thức riêng để tạo màu sắc độc đáo</li>
+                        <li><strong>Ép khuôn:</strong> Kỹ thuật ép khuôn được Lalique hoàn thiện</li>
+                        <li><strong>Hoàn thiện:</strong> Đánh bóng, khắc chữ ký và kiểm tra chất lượng</li>
+                    </ul>
+                    
+                    <h4>Đội Ngũ Thợ Thủ Công:</h4>
+                    <p>Lalique làm việc với đội ngũ thợ thủ công lành nghề, nhiều người trong số họ được đào tạo trong truyền thống thủy tinh Bohemia. Ông đã truyền đạt kỹ thuật và triết lý nghệ thuật của mình cho họ, tạo ra một "trường phái Lalique" đặc biệt.</p>
+                    
+                    <h4>Sự Kết Hợp Nghệ Thuật - Công Nghiệp:</h4>
+                    <p>Điều đặc biệt ở Lalique là khả năng kết hợp nghệ thuật cao với sản xuất công nghiệp. Ông đã chứng minh rằng có thể tạo ra những sản phẩm vừa đẹp, vừa có thể sản xuất với số lượng lớn mà vẫn giữ được chất lượng nghệ thuật.</p>
+                    
+                    <h4>Di Sản Kỹ Thuật:</h4>
+                    <p>Nhiều kỹ thuật mà Lalique phát triển vẫn được sử dụng trong ngành thủy tinh ngày nay. Công ty Lalique hiện tại vẫn tiếp tục sử dụng những phương pháp mà ông đã thiết lập từ gần một thế kỷ trước.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lalique Perfume Modal -->
+    <div id="lalique-perfume-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Lalique: Lọ Nước Hoa Nghệ Thuật</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/lalique-perfume-bottles.jpg" alt="Lalique Perfume Bottles" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Cách Mạng Trong Ngành Nước Hoa</h3>
+                    <p>René Lalique đã cách mạng hóa ngành công nghiệp nước hoa bằng cách biến lọ đựng từ vật dụng thông thường thành tác phẩm nghệ thuật. Ông hợp tác với các nhà chế tạo nước hoa hàng đầu để tạo ra những thiết kế iconic.</p>
+                    
+                    <h4>Hợp Tác Với Các Thương Hiệu:</h4>
+                    <ul>
+                        <li><strong>Coty:</strong> "L'Effleurt" (1908) - lọ nước hoa đầu tiên của Lalique</li>
+                        <li><strong>Worth:</strong> "Dans la Nuit" với thiết kế bầu trời đêm sao</li>
+                        <li><strong>Houbigant:</strong> "Quelques Fleurs" với họa tiết hoa lá tinh tế</li>
+                        <li><strong>Roger & Gallet:</strong> Nhiều thiết kế với chủ đề thiên nhiên</li>
+                        <li><strong>Guerlain:</strong> Những lọ nước hoa cao cấp với kỹ thuật độc đáo</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Thiết Kế:</h4>
+                    <ul>
+                        <li><strong>Thủy tinh mờ:</strong> Tạo hiệu ứng ánh sáng mềm mại</li>
+                        <li><strong>Khắc chìm:</strong> Họa tiết được khắc sâu vào bề mặt</li>
+                        <li><strong>Nhuộm màu:</strong> Thủy tinh có màu từ xanh dương đến amber</li>
+                        <li><strong>Chi tiết kim loại:</strong> Nắp và phụ kiện bằng đồng hoặc bạc</li>
+                        <li><strong>Họa tiết phù điêu:</strong> Hình ảnh nổi trên bề mặt lọ</li>
+                    </ul>
+                    
+                    <h4>Chủ Đề Thiết Kế:</h4>
+                    <p>Lalique thường sử dụng các chủ đề từ thiên nhiên: hoa lá, côn trùng (đặc biệt là bướm và chuồn chuồn), chim, và hình ảnh phụ nữ. Những motif này được cách điệu theo phong cách Art Deco với đường nét hình học rõ ràng.</p>
+                    
+                    <h4>Ảnh Hưởng Đến Ngành Công Nghiệp:</h4>
+                    <p>Lalique đã đặt tiêu chuẩn mới cho ngành công nghiệp nước hoa. Từ đó, việc thiết kế bao bì trở thành một phần quan trọng không kém của sản phẩm nước hoa. Nhiều thương hiệu ngày nay vẫn học hỏi từ phong cách thiết kế của ông.</p>
+                    
+                    <h4>Giá Trị Thu Tập:</h4>
+                    <p>Các lọ nước hoa vintage của Lalique ngày nay được săn lùng bởi các nhà sưu tập trên toàn thế giới. Giá trị của chúng có thể lên đến hàng chục nghìn đô la, đặc biệt là những thiết kế hiếm hoặc trong tình trạng hoàn hảo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lalique Jewelry Modal -->
+    <div id="lalique-jewelry-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Lalique: Trang Sức Thủy Tinh Độc Đáo</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/lalique-jewelry.jpg" alt="Lalique Glass Jewelry" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Thủy Tinh Trở Thành Trang Sức</h3>
+                    <p>René Lalique đã mở ra một chương mới trong lịch sử trang sức bằng cách sử dụng thủy tinh như một vật liệu quý. Ông chứng minh rằng trang sức không nhất thiết phải làm từ kim loại quý và đá quý truyền thống.</p>
+                    
+                    <h4>Kỹ Thuật Chế Tác Trang Sức:</h4>
+                    <ul>
+                        <li><strong>Thủy tinh mờ:</strong> Tạo hiệu ứng mềm mại, không chói mắt</li>
+                        <li><strong>Đúc khuôn phức tạp:</strong> Những chi tiết tinh vi như lông chim, cánh hoa</li>
+                        <li><strong>Kết hợp vật liệu:</strong> Thủy tinh + bạc + đá bán quý</li>
+                        <li><strong>Nhuộm màu tự nhiên:</strong> Màu sắc từ trong suốt đến đen tuyền</li>
+                        <li><strong>Khắc chạm thủ công:</strong> Chi tiết được hoàn thiện bằng tay</li>
+                    </ul>
+                    
+                    <h4>Các Loại Trang Sức Đặc Trưng:</h4>
+                    <ul>
+                        <li><strong>Vòng cổ:</strong> Với pendant hình động vật hoặc hoa lá</li>
+                        <li><strong>Ghim cài áo:</strong> Motif côn trùng và chim phượng</li>
+                        <li><strong>Vòng tay:</strong> Thiết kế liền khối với họa tiết phù điêu</li>
+                        <li><strong>Nhẫn:</strong> Cabochon thủy tinh với setting bạc</li>
+                        <li><strong>Khuyên tai:</strong> Thiết kế đối xứng với chủ đề thiên nhiên</li>
+                    </ul>
+                    
+                    <h4>Đặc Điểm Nghệ Thuật:</h4>
+                    <p>Trang sức Lalique không chỉ được đánh giá bởi giá trị vật chất mà còn bởi giá trị nghệ thuật. Mỗi món trang sức đều là một tác phẩm điêu khắc nhỏ, thể hiện sự tinh tế và sáng tạo của nghệ nhân.</p>
+                    
+                    <h4>Ảnh Hưởng Đến Thời Trang:</h4>
+                    <p>Lalique đã định hình xu hướng trang sức Art Deco với những thiết kế táo bạo và không theo quy tắc. Ông khuyến khích phụ nữ thể hiện cá tính thông qua trang sức, thay vì chỉ theo đuổi giá trị vật chất.</p>
+                    
+                    <h4>Thị Trường Hiện Tại:</h4>
+                    <p>Trang sức vintage của Lalique là mục tiêu săn lùng của các nhà sưu tập và người yêu thích trang sức độc đáo. Công ty Lalique hiện tại vẫn sản xuất trang sức theo tinh thần của người sáng lập, kết hợp truyền thống với hiện đại.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lalique Lamps Modal -->
+    <div id="lalique-lamps-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Lalique: Đèn Trang Trí Nghệ Thuật</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/lalique-lamps.jpg" alt="Lalique Decorative Lamps" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Ánh Sáng Và Nghệ Thuật</h3>
+                    <p>Đèn trang trí của René Lalique thể hiện sự kết hợp hoàn hảo giữa chức năng chiếu sáng và nghệ thuật trang trí. Ông đã biến những chiếc đèn thông thường trở thành những tác phẩm nghệ thuật phát sáng.</p>
+                    
+                    <h4>Thiết Kế Đặc Trưng:</h4>
+                    <ul>
+                        <li><strong>Chóa đèn thủy tinh:</strong> Với họa tiết nữ thần, động vật, thực vật</li>
+                        <li><strong>Chân đèn kim loại:</strong> Đồng thau hoặc bạc với chi tiết Art Deco</li>
+                        <li><strong>Hiệu ứng ánh sáng:</strong> Thủy tinh mờ tạo ánh sáng mềm mại</li>
+                        <li><strong>Kích thước đa dạng:</strong> Từ đèn bàn nhỏ đến đèn sàn lớn</li>
+                        <li><strong>Màu sắc tinh tế:</strong> Trong suốt, xanh dương, amber</li>
+                    </ul>
+                    
+                    <h4>Chủ Đề Nghệ Thuật:</h4>
+                    <ul>
+                        <li><strong>"Sirenes" (Nữ thần biển):</strong> Hình ảnh nữ thần với đuôi cá</li>
+                        <li><strong>"Coquilles" (Vỏ sò):</strong> Motif biển cả với vỏ sò stylized</li>
+                        <li><strong>"Dahlia":</strong> Hoa dahlia với cánh hoa xếp lớp</li>
+                        <li><strong>"Paons" (Chim công):</strong> Lông chim công rực rỡ</li>
+                        <li><strong>"Feuilles" (Lá cây):</strong> Lá cây mùa thu với vân lá tinh xảo</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Chế Tác:</h4>
+                    <p>Lalique sử dụng kỹ thuật ép khuôn để tạo ra những chi tiết phức tạp trên chóa đèn. Sau đó, ông áp dụng các kỹ thuật hoàn thiện như đánh bóng selectively để tạo hiệu ứng ánh sáng và bóng tối khi đèn được bật.</p>
+                    
+                    <h4>Ứng Dụng Trong Kiến Trúc:</h4>
+                    <p>Nhiều kiến trúc sư Art Deco đã sử dụng đèn Lalique trong các dự án của họ. Những chiếc đèn này không chỉ cung cấp ánh sáng mà còn là điểm nhấn nghệ thuật quan trọng trong không gian nội thất.</p>
+                    
+                    <h4>Di Sản Thiết Kế:</h4>
+                    <p>Phong cách thiết kế đèn của Lalique đã ảnh hưởng đến nhiều thế hệ nhà thiết kế lighting sau này. Nguyên tắc kết hợp giữa chức năng và nghệ thuật trong thiết kế đèn vẫn được áp dụng rộng rãi ngày nay.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Erté Fashion Modal -->
+    <div id="erte-fashion-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Erté: Minh Họa Thời Trang Nghệ Thuật</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/erte-fashion-illustration.jpg" alt="Erté Fashion Illustration" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Nghệ Thuật Minh Họa Thời Trang</h3>
+                    <p>Erté đã nâng nghệ thuật minh họa thời trang lên một tầm cao mới. Những bức minh họa của ông không chỉ thể hiện trang phục mà còn truyền tải cả một tầm nhìn thẩm mỹ về phụ nữ hiện đại thời Art Deco.</p>
+                    
+                    <h4>Phong Cách Minh Họa Đặc Trưng:</h4>
+                    <ul>
+                        <li><strong>Đường nét mềm mại:</strong> Kết hợp sự uyển chuyển với cấu trúc hình học</li>
+                        <li><strong>Silhouette kéo dài:</strong> Làm cho hình người trở nên thanh mảnh và thanh lịch</li>
+                        <li><strong>Chi tiết trang trí:</strong> Họa tiết hình học tinh vi trên trang phục</li>
+                        <li><strong>Màu sắc tinh tế:</strong> Palette màu hạn chế nhưng hiệu quả</li>
+                        <li><strong>Tư thế biểu cảm:</strong> Mỗi pose đều truyền tải cảm xúc riêng</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Vẽ:</h4>
+                    <ul>
+                        <li><strong>Gouache và tempera:</strong> Sử dụng màu bột để tạo độ che phủ hoàn hảo</li>
+                        <li><strong>Airbrush:</strong> Tạo hiệu ứng chuyển màu mềm mại</li>
+                        <li><strong>Chi tiết vàng kim:</strong> Sử dụng màu metallic cho phụ kiện</li>
+                        <li><strong>Nền đơn giản:</strong> Để tập trung vào nhân vật chính</li>
+                        <li><strong>Layering:</strong> Xây dựng hình ảnh qua nhiều lớp màu</li>
+                    </ul>
+                    
+                    <h4>Chủ Đề Thiết Kế:</h4>
+                    <p>Erté thường khám phá các chủ đề về sự biến đổi, vẻ đẹp nữ tính, và sức mạnh của thời trang trong việc thể hiện cá tính. Ông coi trang phục như một ngôn ngữ để truyền đạt cảm xúc và địa vị xã hội.</p>
+                    
+                    <h4>Ảnh Hưởng Đến Ngành Thời Trang:</h4>
+                    <p>Những minh họa của Erté đã định hình cách thức trình bày thời trang trong tạp chí và quảng cáo. Ông đặt tiêu chuẩn cho fashion illustration với sự kết hợp giữa nghệ thuật và thương mại.</p>
+                    
+                    <h4>Di Sản Trong Thiết Kế:</h4>
+                    <p>Phong cách minh họa của Erté vẫn ảnh hưởng đến các illustrator thời trang ngày nay. Sự kết hợp giữa elegance và drama trong tác phẩm của ông trở thành chuẩn mực cho nhiều thế hệ sau.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Erté Harper's Bazaar Modal -->
+    <div id="erte-bazaar-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Erté: Bìa Harper's Bazaar Huyền Thoại</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/erte-harpers-bazaar.jpg" alt="Erté Harper's Bazaar Covers" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Hợp Tác Với Harper's Bazaar</h3>
+                    <p>Từ năm 1915 đến 1937, Erté đã tạo ra hơn 240 bìa tạp chí cho Harper's Bazaar, định hình thẩm mỹ thời trang của toàn bộ thập niên 1920s và 1930s. Đây được coi là một trong những hợp tác thành công nhất trong lịch sử tạp chí thời trang.</p>
+                    
+                    <h4>Đặc Điểm Bìa Tạp Chí:</h4>
+                    <ul>
+                        <li><strong>Composition hoàn hảo:</strong> Bố cục cân bằng giữa hình ảnh và typography</li>
+                        <li><strong>Seasonal themes:</strong> Phản ánh từng mùa trong năm</li>
+                        <li><strong>Celebrity portraits:</strong> Chân dung các ngôi sao thời bấy giờ</li>
+                        <li><strong>Fashion forecast:</strong> Dự báo xu hướng thời trang</li>
+                        <li><strong>Art Deco elements:</strong> Tích hợp các yếu tố hình học đặc trưng</li>
+                    </ul>
+                    
+                    <h4>Quy Trình Sáng Tác:</h4>
+                    <p>Erté thường bắt đầu với việc thảo luận với ban biên tập về chủ đề của số tạp chí. Sau đó, ông phát triển concept thông qua các bản phác thảo, cuối cùng hoàn thiện bằng kỹ thuật mixed media với độ chính xác cao.</p>
+                    
+                    <h4>Tác Động Văn Hóa:</h4>
+                    <ul>
+                        <li><strong>Định hình xu hướng:</strong> Bìa tạp chí trở thành nguồn cảm hứng thời trang</li>
+                        <li><strong>Nâng tầm minh họa:</strong> Biến fashion illustration thành nghệ thuật</li>
+                        <li><strong>Ảnh hưởng quốc tế:</strong> Harper's Bazaar được đọc khắp thế giới</li>
+                        <li><strong>Collector's items:</strong> Các số tạp chí cũ trở thành đồ sưu tập</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Đặc Biệt:</h4>
+                    <p>Erté sử dụng kỹ thuật pochoir (stencil) để tạo ra những màu sắc rực rỡ và nhất quán. Ông cũng thường xuyên sử dụng vàng kim và bạc để tạo điểm nhấn luxury cho những trang bìa đặc biệt.</p>
+                    
+                    <h4>Legacy:</h4>
+                    <p>Hợp tác giữa Erté và Harper's Bazaar đã đặt tiêu chuẩn cho tất cả các tạp chí thời trang về sau. Nhiều designer và illustrator ngày nay vẫn tham khảo những bìa tạp chí kinh điển này.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Erté Costumes Modal -->
+    <div id="erte-costumes-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Erté: Thiết Kế Trang Phục Sân Khấu</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/erte-costumes.jpg" alt="Erté Costume Designs" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Nghệ Thuật Costume Design</h3>
+                    <p>Erté không chỉ là illustrator mà còn là một costume designer tài ba. Ông đã thiết kế trang phục cho nhiều show diễn nổi tiếng tại Paris, đặc biệt là tại Folies Bergère và Ziegfeld Follies ở New York.</p>
+                    
+                    <h4>Đặc Điểm Thiết Kế Trang Phục:</h4>
+                    <ul>
+                        <li><strong>Dramatic silhouettes:</strong> Tạo hình dáng ấn tượng trên sân khấu</li>
+                        <li><strong>Luxurious materials:</strong> Sử dụng lụa, lông vũ, sequins, và beads</li>
+                        <li><strong>Color coordination:</strong> Phối màu hài hòa cho toàn bộ production</li>
+                        <li><strong>Movement consideration:</strong> Thiết kế phù hợp với động tác múa</li>
+                        <li><strong>Theatrical impact:</strong> Tối ưu hóa hiệu ứng dưới ánh đèn sân khấu</li>
+                    </ul>
+                    
+                    <h4>Các Production Nổi Tiếng:</h4>
+                    <ul>
+                        <li><strong>Folies Bergère:</strong> Thiết kế cho các vũ công và ca sĩ</li>
+                        <li><strong>Casino de Paris:</strong> Trang phục cho revue shows</li>
+                        <li><strong>Ziegfeld Follies:</strong> Hợp tác với Florenz Ziegfeld ở New York</li>
+                        <li><strong>George White's Scandals:</strong> Costume design cho Broadway</li>
+                        <li><strong>Opera productions:</strong> Trang phục cho các vở opera cổ điển</li>
+                    </ul>
+                    
+                    <h4>Quy Trình Thiết Kế:</h4>
+                    <p>Erté bắt đầu bằng việc nghiên cứu kịch bản và âm nhạc để hiểu được mood và character của từng vai diễn. Sau đó, ông phát triển concept tổng thể cho toàn bộ production trước khi chi tiết hóa từng trang phục.</p>
+                    
+                    <h4>Innovations:</h4>
+                    <ul>
+                        <li><strong>Feather arrangements:</strong> Cách sắp xếp lông vũ độc đáo</li>
+                        <li><strong>Headdress design:</strong> Mũ đội đầu với hình dáng Art Deco</li>
+                        <li><strong>Transformation costumes:</strong> Trang phục có thể thay đổi trên sân khấu</li>
+                        <li><strong>Light-responsive materials:</strong> Vật liệu phản chiếu ánh sáng đặc biệt</li>
+                    </ul>
+                    
+                    <h4>Ảnh Hưởng Đến Thời Trang:</h4>
+                    <p>Nhiều thiết kế trang phục sân khấu của Erté đã được chuyển thể thành thời trang cao cấp. Ông chứng minh rằng ranh giới giữa costume design và fashion design có thể được xóa nhòa.</p>
+                    
+                    <h4>Technical Excellence:</h4>
+                    <p>Erté làm việc chặt chẽ với các thợ may và craftsmen để đảm bảo trang phục không chỉ đẹp mà còn practical. Ông hiểu rõ về kỹ thuật may và construction, cho phép ông tạo ra những thiết kế phức tạp nhưng vẫn functional.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Erté Alphabet Modal -->
+    <div id="erte-alphabet-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Erté: Bộ Sưu Tập Alphabet Nghệ Thuật</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/erte-alphabet.jpg" alt="Erté Alphabet Series" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Alphabet Series: Kiệt Tác Typography Nghệ Thuật</h3>
+                    <p>Bộ sưu tập Alphabet của Erté (1927) là một trong những tác phẩm nổi tiếng và được yêu thích nhất của ông. Gồm 26 bức minh họa, mỗi chữ cái được thể hiện qua hình ảnh một người phụ nữ mặc trang phục được thiết kế để tạo thành chính chữ cái đó.</p>
+                    
+                    <h4>Concept Sáng Tạo:</h4>
+                    <ul>
+                        <li><strong>Typography as Art:</strong> Biến chữ viết thành nghệ thuật thị giác</li>
+                        <li><strong>Human Letters:</strong> Cơ thể người tạo thành hình dáng chữ cái</li>
+                        <li><strong>Fashion Integration:</strong> Trang phục trở thành phần của typography</li>
+                        <li><strong>Consistent Style:</strong> Phong cách thống nhất xuyên suốt 26 chữ</li>
+                        <li><strong>Decorative Elements:</strong> Họa tiết Art Deco đồng nhất</li>
+                    </ul>
+                    
+                    <h4>Các Chữ Cái Iconic:</h4>
+                    <ul>
+                        <li><strong>"A":</strong> Người phụ nữ với trang phục hình tam giác</li>
+                        <li><strong>"B":</strong> Thiết kế với hai phần bầu cong đặc trưng</li>
+                        <li><strong>"C":</strong> Trang phục hình vòng cung mở</li>
+                        <li><strong>"O":</strong> Váy hình tròn hoàn hảo</li>
+                        <li><strong>"S":</strong> Đường cong quyến rũ của hình thể</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Thực Hiện:</h4>
+                    <p>Erté sử dụng kỹ thuật pochoir (stencil) để tạo ra những màu sắc rực rỡ và đồng nhất. Mỗi bức minh họa được in trên giấy cao cấp với độ chính xác cao, tạo ra những limited edition prints được săn lùng.</p>
+                    
+                    <h4>Triết Lý Thiết Kế:</h4>
+                    <p>Qua Alphabet Series, Erté thể hiện tầm nhìn về sự kết hợp giữa văn bản và hình ảnh. Ông tin rằng chữ viết có thể trở thành nghệ thuật thị giác, và cơ thể con người là medium hoàn hảo để thể hiện điều này.</p>
+                    
+                    <h4>Thành Công Thương Mại:</h4>
+                    <ul>
+                        <li><strong>Limited Edition Prints:</strong> Được bán với giá cao ngay từ đầu</li>
+                        <li><strong>International Recognition:</strong> Được trưng bày trên toàn thế giới</li>
+                        <li><strong>Collector's Items:</strong> Giá trị tăng theo thời gian</li>
+                        <li><strong>Reproductions:</strong> Được in lại nhiều lần vì nhu cầu cao</li>
+                    </ul>
+                    
+                    <h4>Ảnh Hưởng Đến Typography:</h4>
+                    <p>Alphabet Series đã mở ra hướng nghiên cứu mới về decorative typography. Nhiều typographer và graphic designer sau này đã học hỏi cách kết hợp giữa chữ viết và hình ảnh từ tác phẩm này.</p>
+                    
+                    <h4>Legacy:</h4>
+                    <p>Ngày nay, Alphabet Series vẫn là một trong những tác phẩm được reproduction nhiều nhất của Erté. Nó xuất hiện trên poster, postcard, và các sản phẩm trang trí, chứng minh sức hấp dẫn vượt thời gian của thiết kế này.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Portrait Modal -->
+    <div id="modern-portrait-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Art Deco Trong Hội Họa Hiện Đại</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/modern-portrait-art.jpg" alt="Modern Portrait Art" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Di Sản Art Deco Trong Hội Họa Đương Đại</h3>
+                    <p>Phong cách chân dung Art Deco không chỉ dừng lại ở thập niên 1920-1930s mà tiếp tục ảnh hưởng đến các họa sĩ hiện đại. Ngôn ngữ hình học, ánh sáng kim loại và cách biểu hiện con người mạnh mẽ vẫn được sử dụng trong nghệ thuật đương đại.</p>
+                    
+                    <h4>Ảnh Hưởng Kỹ Thuật:</h4>
+                    <ul>
+                        <li><strong>Hình học hóa gương mặt:</strong> Đơn giản hóa thành các khối cơ bản</li>
+                        <li><strong>Ánh sáng kịch tính:</strong> Sử dụng chiaroscuro hiện đại</li>
+                        <li><strong>Màu sắc táo bạo:</strong> Palette màu tương phản mạnh</li>
+                        <li><strong>Composition mạnh mẽ:</strong> Bố cục ấn tượng và có tác động</li>
+                        <li><strong>Stylization:</strong> Cách điệu hóa thay vì tái hiện thực</li>
+                    </ul>
+                    
+                    <h4>Họa Sĩ Hiện Đại Chịu Ảnh Hưởng:</h4>
+                    <ul>
+                        <li><strong>Patrick Nagel:</strong> Nổi tiếng với poster Duran Duran</li>
+                        <li><strong>David Hockney:</strong> Pool series với elements Art Deco</li>
+                        <li><strong>Alex Katz:</strong> Chân dung simplified với màu sắc flat</li>
+                        <li><strong>Kehinde Wiley:</strong> Kết hợp classical với decorative patterns</li>
+                    </ul>
+                    
+                    <h4>Ứng Dụng Trong Digital Art:</h4>
+                    <p>Nghệ thuật số hiện đại thường tham khảo Art Deco cho:</p>
+                    <ul>
+                        <li><strong>Vector illustrations:</strong> Đường nét clean và geometric</li>
+                        <li><strong>Character design:</strong> Nhân vật trong game và animation</li>
+                        <li><strong>Poster design:</strong> Phong cách retro-futuristic</li>
+                        <li><strong>Logo design:</strong> Typography và symbols Art Deco</li>
+                    </ul>
+                    
+                    <h4>Thị Trường Nghệ Thuật:</h4>
+                    <p>Các tác phẩm họa kết hợp phong cách Art Deco với chủ đề hiện đại đang được quan tâm đặc biệt trong thị trường nghệ thuật. Collector đánh giá cao những tác phẩm này vì sự kết hợp giữa nostalgia và contemporary relevance.</p>
+                    
+                    <h4>Giáo Dục Nghệ Thuật:</h4>
+                    <p>Nhiều trường nghệ thuật đưa Art Deco vào chương trình giảng dạy như một case study về cách kết hợp nghệ thuật với design commercial. Sinh viên học cách áp dụng nguyên tắc Art Deco vào tác phẩm hiện đại.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Glass Modal -->
+    <div id="modern-glass-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Art Deco Trong Nghề Thủ Công Hiện Đại</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/modern-glass-art.jpg" alt="Modern Glass Art" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Kế Thừa Lalique Trong Nghề Thủ Công Đương Đại</h3>
+                    <p>Di sản của René Lalique và các nghệ nhân Art Deco tiếp tục sống trong nghề thủ công hiện đại. Các nghệ nhân ngày nay áp dụng triết lý và kỹ thuật Art Deco vào tác phẩm đương đại.</p>
+                    
+                    <h4>Ngành Thủy Tinh Hiện Đại:</h4>
+                    <ul>
+                        <li><strong>Studio Glass Movement:</strong> Harvey Littleton và Dale Chihuly</li>
+                        <li><strong>Baccarat:</strong> Tiếp tục truyền thống Pháp với design Art Deco</li>
+                        <li><strong>Steuben Glass:</strong> Mỹ với style geometric patterns</li>
+                        <li><strong>Daum Nancy:</strong> Kỹ thuật pâte de verre từ thời Art Deco</li>
+                        <li><strong>Independent Artists:</strong> Nghệ nhân độc lập trên toàn thế giới</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Được Kế Thừa:</h4>
+                    <ul>
+                        <li><strong>Cased Glass:</strong> Thủy tinh nhiều lớp màu</li>
+                        <li><strong>Acid Etching:</strong> Khắc họa tiết bằng axit</li>
+                        <li><strong>Mold Blowing:</strong> Thổi khuôn để tạo hình chính xác</li>
+                        <li><strong>Kiln Forming:</strong> Tạo hình trong lò nung</li>
+                        <li><strong>Cold Working:</strong> Gia công sau khi thủy tinh nguội</li>
+                    </ul>
+                    
+                    <h4>Ứng Dụng Hiện Đại:</h4>
+                    <ul>
+                        <li><strong>Architectural Glass:</strong> Panel trang trí cho tòa nhà</li>
+                        <li><strong>Art Glass:</strong> Tác phẩm nghệ thuật cho gallery</li>
+                        <li><strong>Luxury Items:</strong> Đồ gia dụng cao cấp</li>
+                        <li><strong>Jewelry:</strong> Trang sức thủy tinh contemporary</li>
+                        <li><strong>Lighting:</strong> Đèn trang trí hiện đại</li>
+                    </ul>
+                    
+                    <h4>Nhà Thiết Kế Nổi Bật:</h4>
+                    <ul>
+                        <li><strong>Jeff Koons:</strong> Sculptures với surface treatment như Art Deco</li>
+                        <li><strong>Kiki Smith:</strong> Glass works với motif tự nhiên</li>
+                        <li><strong>William Morris:</strong> Glass artist với téchnique phức tạp</li>
+                        <li><strong>Lino Tagliapietra:</strong> Master glassblower từ Murano</li>
+                    </ul>
+                    
+                    <h4>Thị Trường Hiện Tại:</h4>
+                    <p>Thị trường nghệ thuật thủy tinh hiện đại rất sôi động. Collector đặc biệt quan tâm đến những tác phẩm kết hợp kỹ thuật truyền thống với design contemporary, tạo ra cầu nối giữa quá khứ và hiện tại.</p>
+                    
+                    <h4>Giáo Dục Và Đào Tạo:</h4>
+                    <p>Nhiều trường nghệ thuật có chương trình đào tạo glass art, trong đó lịch sử Art Deco và kỹ thuật Lalique là phần quan trọng. Sinh viên học cách áp dụng những nguyên tắc cổ điển vào tác phẩm hiện đại.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Fashion Modal -->
+    <div id="modern-fashion-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Art Deco Trong Thời Trang Đương Đại</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/modern-fashion-deco.jpg" alt="Modern Fashion Art Deco" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Erté Và Di Sản Trong Thời Trang Hiện Đại</h3>
+                    <p>Phong cách thiết kế của Erté và các nghệ sĩ Art Deco khác tiếp tục ảnh hưởng mạnh mẽ đến thời trang đương đại. Từ haute couture đến ready-to-wear, chúng ta vẫn thấy dấu ấn của Art Deco trong nhiều collection hiện đại.</p>
+                    
+                    <h4>Nhà Thiết Kế Hiện Đại Chịu Ảnh Hưởng:</h4>
+                    <ul>
+                        <li><strong>Giorgio Armani:</strong> Structured shoulders và clean lines</li>
+                        <li><strong>Thierry Mugler:</strong> Geometric cuts và metallic materials</li>
+                        <li><strong>Jean Paul Gaultier:</strong> Architectural shapes</li>
+                        <li><strong>Alexander McQueen:</strong> Dramatic silhouettes</li>
+                        <li><strong>Tom Ford:</strong> Glamour và luxury aesthetics</li>
+                    </ul>
+                    
+                    <h4>Elements Art Deco Trong Thời Trang:</h4>
+                    <ul>
+                        <li><strong>Geometric patterns:</strong> Họa tiết hình học trên fabric</li>
+                        <li><strong>Metallic accents:</strong> Chi tiết kim loại và sequins</li>
+                        <li><strong>Structured silhouettes:</strong> Dáng váy có cấu trúc rõ ràng</li>
+                        <li><strong>Art Deco prints:</strong> In hoa văn theo phong cách Art Deco</li>
+                        <li><strong>Statement accessories:</strong> Phụ kiện đậm chất Art Deco</li>
+                    </ul>
+                    
+                    <h4>Runway Shows Nổi Bật:</h4>
+                    <ul>
+                        <li><strong>Chanel Pre-Fall 2019:</strong> Collection tại Métiers d'Art</li>
+                        <li><strong>Louis Vuitton SS 2016:</strong> Nicolas Ghesquiere's geometric vision</li>
+                        <li><strong>Dior Haute Couture:</strong> Maria Grazia Chiuri's structural approach</li>
+                        <li><strong>Versace Atelier:</strong> Donatella's glamorous interpretations</li>
+                    </ul>
+                    
+                    <h4>Jewelry Và Accessories:</h4>
+                    <p>Trang sức hiện đại rất nhiều khi tham khảo Art Deco:</p>
+                    <ul>
+                        <li><strong>Cartier:</strong> Panthere và geometric collections</li>
+                        <li><strong>Van Cleef & Arpels:</strong> Zip necklace và Mystery Setting</li>
+                        <li><strong>Bulgari:</strong> Serpenti với Art Deco influences</li>
+                        <li><strong>Independent Designers:</strong> Emerging artists sử dụng Art Deco motifs</li>
+                    </ul>
+                    
+                    <h4>Street Style Và Popular Fashion:</h4>
+                    <p>Art Deco không chỉ ảnh hưởng đến haute couture mà còn xuất hiện trong:</p>
+                    <ul>
+                        <li><strong>Gatsby-inspired parties:</strong> Trang phục themed events</li>
+                        <li><strong>Wedding fashion:</strong> Váy cưới với beading Art Deco</li>
+                        <li><strong>Evening wear:</strong> Đầm dạ hội geometric</li>
+                        <li><strong>Accessories brands:</strong> Túi xách và giày với motifs Art Deco</li>
+                    </ul>
+                    
+                    <h4>Tương Lai Của Art Deco Fashion:</h4>
+                    <p>Với sự quan tâm ngày càng tăng đối với craftsmanship và heritage design, Art Deco fashion đang trải qua một sự hồi sinh. Các nhà thiết kế trẻ học cách kết hợp classic elements với technology và sustainability hiện đại.</p>
+                    
+                    <h4>Digital Fashion Và NFTs:</h4>
+                    <p>Thậm chí trong thế giới digital fashion, Art Deco patterns và aesthetics được sử dụng rộng rãi cho virtual clothing và NFT collections, chứng minh sức hấp dẫn vượt thời gian của phong cách này.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer style="background: var(--primary-dark); color: var(--primary-light); padding: 3rem 0; text-align: center;">
@@ -339,6 +1226,84 @@
         document.querySelectorAll('.art-deco-card').forEach((card, index) => {
             card.style.transitionDelay = `${index * 0.1}s`;
         });
+
+        // Modal System
+        class ModalManager {
+            constructor() {
+                this.initializeModals();
+            }
+
+            initializeModals() {
+                // Get all clickable cards
+                const clickableCards = document.querySelectorAll('.clickable-card');
+                
+                // Add click event listeners
+                clickableCards.forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        const modalId = card.getAttribute('data-modal');
+                        this.openModal(modalId);
+                    });
+                });
+
+                // Close buttons
+                const closeButtons = document.querySelectorAll('.detail-close');
+                closeButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        this.closeModal();
+                    });
+                });
+
+                // Close when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('detail-modal')) {
+                        this.closeModal();
+                    }
+                });
+
+                // Close with ESC key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        this.closeModal();
+                    }
+                });
+            }
+
+            openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.style.display = 'flex';
+                    modal.style.opacity = '0';
+                    modal.style.transform = 'scale(0.9)';
+                    
+                    // Animate in
+                    setTimeout(() => {
+                        modal.style.opacity = '1';
+                        modal.style.transform = 'scale(1)';
+                    }, 10);
+                    
+                    // Prevent body scroll
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            closeModal() {
+                const openModals = document.querySelectorAll('.detail-modal[style*="display: flex"]');
+                openModals.forEach(modal => {
+                    modal.style.opacity = '0';
+                    modal.style.transform = 'scale(0.9)';
+                    
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                    }, 300);
+                });
+                
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Initialize modal manager
+        const modalManager = new ModalManager();
     </script>
 </body>
 </html> 

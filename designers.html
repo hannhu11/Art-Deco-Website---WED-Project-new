@@ -48,28 +48,37 @@
             <h2 class="section-title">Bậc Thầy Thiết Kế Art Deco</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 4rem;">
                 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="ruhlmann-modal">
                     <!-- Image: 300x300px - Ruhlmann portrait or furniture -->
-                    <img src="images/ruhlmann-portrait.jpg" alt="Émile-Jacques Ruhlmann" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/ruhlmann-portrait.jpg" alt="Émile-Jacques Ruhlmann" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 0.5rem;">Émile-Jacques Ruhlmann</h3>
                     <p style="text-align: center; color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">1879-1933 | Pháp</p>
                     <p style="text-align: center; line-height: 1.6;">Bậc thầy nội thất Art Deco, tinh xảo trong việc kết hợp gỗ quý và kim loại</p>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="chareau-modal">
                     <!-- Image: 300x300px - Pierre Chareau or Maison de Verre -->
-                    <img src="images/chareau-portrait.jpg" alt="Pierre Chareau" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/chareau-portrait.jpg" alt="Pierre Chareau" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 0.5rem;">Pierre Chareau</h3>
                     <p style="text-align: center; color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">1883-1950 | Pháp</p>
                     <p style="text-align: center; line-height: 1.6;">Kiến trúc sư tiên phong trong việc sử dụng vật liệu công nghiệp</p>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="dunand-modal">
                     <!-- Image: 300x300px - Jean Dunand or lacquer work -->
-                    <img src="images/dunand-portrait.jpg" alt="Jean Dunand" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/dunand-portrait.jpg" alt="Jean Dunand" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 0.5rem;">Jean Dunand</h3>
                     <p style="text-align: center; color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">1877-1942 | Thụy Sĩ-Pháp</p>
                     <p style="text-align: center; line-height: 1.6;">Thạo thủ nghề sơn mài, đưa kỹ thuật châu Á vào Art Deco</p>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
             </div>
@@ -80,12 +89,15 @@
     <section class="section" style="background: var(--primary-light);">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="ruhlmann-workshop-modal">
                     <!-- Image: 500x600px - Ruhlmann with his furniture -->
-                    <img src="images/ruhlmann-workshop.jpg" alt="Ruhlmann in his workshop" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/ruhlmann-workshop.jpg" alt="Ruhlmann in his workshop" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <div style="text-align: center; padding: 1rem; background: var(--gradient-dark); color: var(--primary-light);">
                         <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">ÉMILE-JACQUES RUHLMANN</h3>
                         <p style="font-style: italic;">"Bậc thầy nội thất Art Deco"</p>
+                    </div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
                     </div>
                 </div>
                 <div>
@@ -112,23 +124,32 @@
             <div class="art-deco-card" style="background: var(--gradient-gold); color: var(--primary-dark);">
                 <h3 style="color: var(--primary-burgundy); text-align: center; margin-bottom: 2rem; font-size: 2rem;">Kiệt Tác Nội Thất</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="ruhlmann-table-modal" style="text-align: center; position: relative;">
                         <!-- Image: 350x400px - Ruhlmann Corner table -->
-                        <img src="images/ruhlmann-corner-table.jpg" alt="Ruhlmann Corner Table" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--primary-burgundy);">
+                        <img src="images/ruhlmann-corner-table.jpg" alt="Ruhlmann Corner Table" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--primary-burgundy); cursor: pointer;">
                         <h4 style="color: var(--primary-navy); margin-bottom: 0.5rem;">Bàn Corner</h4>
                         <p style="font-size: 1.1rem;">Thiết kế đơn giản với gỗ mun và trang trí bạc tinh xảo, thể hiện sự thanh lịch tuyệt đối</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="ruhlmann-cabinet-modal" style="text-align: center; position: relative;">
                         <!-- Image: 350x400px - Ruhlmann Amboyna cabinet -->
-                        <img src="images/ruhlmann-cabinet.jpg" alt="Ruhlmann Amboyna Cabinet" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--primary-burgundy);">
+                        <img src="images/ruhlmann-cabinet.jpg" alt="Ruhlmann Amboyna Cabinet" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--primary-burgundy); cursor: pointer;">
                         <h4 style="color: var(--primary-navy); margin-bottom: 0.5rem;">Tủ Amboyna</h4>
                         <p style="font-size: 1.1rem;">Gỗ amboyna quý hiếm với chi tiết kim loại tinh xảo, đắt giá nhất thời đại</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div class="clickable-card" data-modal="ruhlmann-chair-modal" style="text-align: center; position: relative;">
                         <!-- Image: 350x400px - Ruhlmann Bergère chair -->
-                        <img src="images/ruhlmann-chair.jpg" alt="Ruhlmann Bergère Chair" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--primary-burgundy);">
+                        <img src="images/ruhlmann-chair.jpg" alt="Ruhlmann Bergère Chair" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 3px solid var(--primary-burgundy); cursor: pointer;">
                         <h4 style="color: var(--primary-navy); margin-bottom: 0.5rem;">Ghế Bergère</h4>
                         <p style="font-size: 1.1rem;">Đệm da cao cấp kết hợp khung gỗ thanh lịch, tiêu chuẩn luxury</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -157,12 +178,15 @@
                         </ul>
                     </div>
                 </div>
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="maison-verre-modal">
                     <!-- Image: 400x500px - Maison de Verre or Chareau design -->
-                    <img src="images/maison-de-verre.jpg" alt="Maison de Verre by Pierre Chareau" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/maison-de-verre.jpg" alt="Maison de Verre by Pierre Chareau" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <div style="text-align: center; padding: 1rem; background: linear-gradient(45deg, var(--primary-navy), var(--primary-gold)); color: var(--primary-light);">
                         <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">PIERRE CHAREAU</h3>
                         <p style="font-style: italic;">"Maison de Verre"</p>
+                    </div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
                     </div>
                 </div>
             </div>
@@ -171,23 +195,32 @@
             <div class="art-deco-card" style="background: var(--primary-navy); color: var(--primary-light);">
                 <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 2rem; font-size: 2rem;">Đột Phá Thiết Kế</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center;">
+                    <div style="text-align: center;" class="clickable-card" data-modal="glass-block-modal">
                         <!-- Image: 300x250px - Glass block walls -->
-                        <img src="images/glass-block-wall.jpg" alt="Glass Block Architecture" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/glass-block-wall.jpg" alt="Glass Block Architecture" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold);">Tường Kính Khối</h4>
                         <p>Sử dụng glass blocks để tạo ánh sáng mềm mại, vừa riêng tư vừa thông thoáng</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div style="text-align: center;" class="clickable-card" data-modal="steel-furniture-modal">
                         <!-- Image: 300x250px - Steel frame furniture -->
-                        <img src="images/steel-furniture.jpg" alt="Steel Frame Furniture" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/steel-furniture.jpg" alt="Steel Frame Furniture" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold);">Nội Thất Thép</h4>
                         <p>Khung thép kết hợp da và vải, tạo sự bền bỉ và hiện đại</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div style="text-align: center;" class="clickable-card" data-modal="mobile-partitions-modal">
                         <!-- Image: 300x250px - Mobile partitions -->
-                        <img src="images/mobile-partitions.jpg" alt="Mobile Partitions" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/mobile-partitions.jpg" alt="Mobile Partitions" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold);">Vách Ngăn Di Động</h4>
                         <p>Giải pháp không gian linh hoạt, thích ứng với nhu cầu sử dụng</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -198,12 +231,15 @@
     <section class="section" style="background: var(--primary-light);">
         <div class="container">
             <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 4rem; align-items: center; margin-bottom: 4rem;">
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="dunand-lacquer-modal">
                     <!-- Image: 400x500px - Jean Dunand with lacquer work -->
-                    <img src="images/dunand-lacquer-work.jpg" alt="Jean Dunand Lacquer Work" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/dunand-lacquer-work.jpg" alt="Jean Dunand Lacquer Work" style="width: 100%; height: 500px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <div style="text-align: center; padding: 1rem; background: linear-gradient(135deg, var(--primary-burgundy) 0%, var(--primary-bronze) 100%); color: var(--primary-light);">
                         <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem;">JEAN DUNAND</h3>
                         <p style="font-style: italic;">"Thạo thủ sơn mài"</p>
+                    </div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
                     </div>
                 </div>
                 <div>
@@ -230,23 +266,32 @@
             <div class="art-deco-card" style="background: var(--gradient-dark); color: var(--primary-light);">
                 <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 2rem; font-size: 2rem;">Nghệ Thuật Sơn Mài</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
-                    <div style="text-align: center;">
+                    <div style="text-align: center;" class="clickable-card" data-modal="lacquer-panels-modal">
                         <!-- Image: 300x300px - Lacquer panels -->
-                        <img src="images/lacquer-panels.jpg" alt="Dunand Lacquer Panels" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/lacquer-panels.jpg" alt="Dunand Lacquer Panels" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold);">Vách Sơn Mài</h4>
                         <p>Panels trang trí với hoạ tiết châu Á được stylized theo phong cách Art Deco</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div style="text-align: center;" class="clickable-card" data-modal="lacquer-furniture-modal">
                         <!-- Image: 300x300px - Lacquer furniture -->
-                        <img src="images/lacquer-furniture.jpg" alt="Lacquer Furniture" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/lacquer-furniture.jpg" alt="Lacquer Furniture" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold);">Nội Thất Sơn Mài</h4>
                         <p>Bàn ghế với bề mặt sơn mài bóng loáng, tạo hiệu ứng phản chiếu tuyệt đẹp</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div style="text-align: center;">
+                    <div style="text-align: center;" class="clickable-card" data-modal="lacquer-objects-modal">
                         <!-- Image: 300x300px - Decorative objects -->
-                        <img src="images/lacquer-objects.jpg" alt="Lacquer Decorative Objects" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/lacquer-objects.jpg" alt="Lacquer Decorative Objects" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold);">Đồ Trang Trí</h4>
                         <p>Bình hoa, hộp đựng trang sức với kỹ thuật sơn mài tinh xảo</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -263,64 +308,82 @@
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="exotic-woods-modal">
                     <!-- Image: 280x200px - Exotic woods -->
-                    <img src="images/exotic-woods.jpg" alt="Exotic Woods" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/exotic-woods.jpg" alt="Exotic Woods" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Gỗ Quý Hiếm</h3>
                     <p style="line-height: 1.7; margin-bottom: 1rem;">
                         Gỗ mun (ebony), gỗ amboyna, gỗ palisander với vân gỗ tự nhiên tuyệt đẹp và độ bền cao.
                     </p>
                     <div style="height: 4px; background: var(--gradient-gold);"></div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="metal-work-modal">
                     <!-- Image: 280x200px - Metal work -->
-                    <img src="images/metal-work.jpg" alt="Art Deco Metal Work" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/metal-work.jpg" alt="Art Deco Metal Work" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Kim Loại Cao Cấp</h3>
                     <p style="line-height: 1.7; margin-bottom: 1rem;">
                         Đồng thau, chrome, thép không gỉ, bạc với kỹ thuật mạ và đánh bóng hoàn hảo.
                     </p>
                     <div style="height: 4px; background: var(--gradient-gold);"></div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="marble-stone-modal">
                     <!-- Image: 280x200px - Marble and stone -->
-                    <img src="images/marble-stone.jpg" alt="Marble and Stone" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/marble-stone.jpg" alt="Marble and Stone" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Đá Quý Tự Nhiên</h3>
                     <p style="line-height: 1.7; margin-bottom: 1rem;">
                         Đá cẩm thạch, granite, đá hoa cương với họa tiết tự nhiên độc đáo và màu sắc phong phú.
                     </p>
                     <div style="height: 4px; background: var(--gradient-gold);"></div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="lacquer-technique-modal">
                     <!-- Image: 280x200px - Lacquer technique -->
-                    <img src="images/lacquer-technique.jpg" alt="Lacquer Technique" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/lacquer-technique.jpg" alt="Lacquer Technique" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Sơn Mài Truyền Thống</h3>
                     <p style="line-height: 1.7; margin-bottom: 1rem;">
                         Kỹ thuật sơn mài châu Á tạo bề mặt bóng loáng, phản chiếu ánh sáng đẹp mắt.
                     </p>
                     <div style="height: 4px; background: var(--gradient-gold);"></div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="luxury-leather-modal">
                     <!-- Image: 280x200px - Luxury leather -->
-                    <img src="images/luxury-leather.jpg" alt="Luxury Leather" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/luxury-leather.jpg" alt="Luxury Leather" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Da Cao Cấp</h3>
                     <p style="line-height: 1.7; margin-bottom: 1rem;">
                         Da cá mập (shagreen), da cá đuối, da bò tốt nhất với kỹ thuật thuộc tinh xảo.
                     </p>
                     <div style="height: 4px; background: var(--gradient-gold);"></div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
-                <div class="art-deco-card">
+                <div class="art-deco-card clickable-card" data-modal="crafting-techniques-modal">
                     <!-- Image: 280x200px - Crafting techniques -->
-                    <img src="images/crafting-techniques.jpg" alt="Art Deco Crafting" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem;">
+                    <img src="images/crafting-techniques.jpg" alt="Art Deco Crafting" style="width: 100%; height: 180px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
                     <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Kỹ Thuật Chế Tác</h3>
                     <p style="line-height: 1.7; margin-bottom: 1rem;">
                         Marquetry (khảm gỗ), inlay (chạm trổ), metal work (gia công kim loại) tinh vi.
                     </p>
                     <div style="height: 4px; background: var(--gradient-gold);"></div>
+                    <div class="click-overlay">
+                        <span class="click-hint">Nhấp để khám phá</span>
+                    </div>
                 </div>
 
             </div>
@@ -334,23 +397,32 @@
             <div class="art-deco-card" style="background: var(--primary-navy); color: var(--primary-light); text-align: center; padding: 3rem;">
                 <h3 style="color: var(--primary-gold); margin-bottom: 2rem; font-size: 2rem;">Ảnh Hưởng Đến Ngày Nay</h3>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
-                    <div>
+                    <div class="clickable-card" data-modal="luxury-interior-modal">
                         <!-- Image: 250x200px - Luxury interior design -->
-                        <img src="images/luxury-interior-modern.jpg" alt="Modern Luxury Interior" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/luxury-interior-modern.jpg" alt="Modern Luxury Interior" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold); margin-bottom: 1rem;">Nội Thất Luxury</h4>
                         <p>Các thương hiệu cao cấp vẫn áp dụng nguyên tắc Art Deco trong thiết kế nội thất sang trọng</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div>
+                    <div class="clickable-card" data-modal="hotel-design-modal">
                         <!-- Image: 250x200px - 5-star hotel design -->
-                        <img src="images/hotel-design-modern.jpg" alt="Modern Hotel Design" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/hotel-design-modern.jpg" alt="Modern Hotel Design" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold); margin-bottom: 1rem;">Khách Sạn 5 Sao</h4>
                         <p>Nhiều khách sạn hạng sang sử dụng phong cách Art Deco để tạo không gian đẳng cấp</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
-                    <div>
+                    <div class="clickable-card" data-modal="product-design-modal">
                         <!-- Image: 250x200px - Product design -->
-                        <img src="images/product-design-modern.jpg" alt="Modern Product Design" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold);">
+                        <img src="images/product-design-modern.jpg" alt="Modern Product Design" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; border: 2px solid var(--primary-gold); cursor: pointer;">
                         <h4 style="color: var(--primary-gold); margin-bottom: 1rem;">Product Design</h4>
                         <p>Thiết kế sản phẩm hiện đại học hỏi tính hình học và vật liệu cao cấp của Art Deco</p>
+                        <div class="click-overlay">
+                            <span class="click-hint">Nhấp để khám phá</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -371,6 +443,1730 @@
             <div class="zigzag-pattern" style="margin: 3rem auto 0; width: 200px;"></div>
         </div>
     </section>
+
+    <!-- Modal System -->
+    <!-- Ruhlmann Modal -->
+    <div id="ruhlmann-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Émile-Jacques Ruhlmann: Bậc Thầy Nội Thất Art Deco</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/ruhlmann-portrait.jpg" alt="Émile-Jacques Ruhlmann" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Cuộc Đời Và Sự Nghiệp</h3>
+                    <p>Émile-Jacques Ruhlmann (1879-1933) được coi là bậc thầy của nghệ thuật nội thất Art Deco. Ông bắt đầu sự nghiệp với một công ty sơn và giấy dán tường của gia đình, nhưng nhanh chóng phát triển thành một nhà thiết kế nội thất danh tiếng với khách hàng là giới thượng lưu Paris.</p>
+                    
+                    <h4>Triết Lý Thiết Kế:</h4>
+                    <ul>
+                        <li><strong>Chất lượng tuyệt đối:</strong> Chỉ sử dụng vật liệu cao cấp nhất và thợ thủ công lành nghề nhất</li>
+                        <li><strong>Đơn giản nhưng sang trọng:</strong> Tránh trang trí phức tạp, tập trung vào đường nét thanh lịch</li>
+                        <li><strong>Hài hòa màu sắc:</strong> Sử dụng palette màu trung tính với điểm nhấn vàng kim</li>
+                        <li><strong>Chức năng và thẩm mỹ:</strong> Mỗi sản phẩm vừa đẹp vừa thực dụng</li>
+                        <li><strong>Tinh thần thời đại:</strong> Phản ánh sự hiện đại và tiến bộ của thập niên 1920s</li>
+                    </ul>
+                    
+                    <h4>Vật Liệu Đặc Trưng:</h4>
+                    <ul>
+                        <li><strong>Gỗ Amboyna:</strong> Loại gỗ quý hiếm từ Indonesia với vân gỗ xoáy độc đáo</li>
+                        <li><strong>Gỗ Mun (Ebony):</strong> Gỗ đen tuyền từ châu Phi, cực kỳ cứng và bền</li>
+                        <li><strong>Gỗ Palisander:</strong> Gỗ tím đỏ với mùi hương đặc trưng</li>
+                        <li><strong>Ngà voi:</strong> Dùng cho các chi tiết trang trí tinh xảo</li>
+                        <li><strong>Kim loại quý:</strong> Bạc, đồng thau, và chrome cho phần cứng</li>
+                    </ul>
+                    
+                    <h4>Tác Phẩm Nổi Bật:</h4>
+                    <ul>
+                        <li><strong>Bàn "Corner":</strong> Thiết kế đơn giản với chân bàn hình elip đặc trưng</li>
+                        <li><strong>Tủ Amboyna:</strong> Sử dụng gỗ amboyna với chi tiết ngà voi và bạc</li>
+                        <li><strong>Ghế Bergère:</strong> Ghế bành với đệm da cao cấp và khung gỗ thanh lịch</li>
+                        <li><strong>Bàn viết "Soleil":</strong> Với mặt bàn hình bán nguyệt độc đáo</li>
+                    </ul>
+                    
+                    <h4>Ảnh Hưởng Và Di Sản:</h4>
+                    <p>Ruhlmann đã nâng nghề làm nội thất lên tầm nghệ thuật cao. Ông chứng minh rằng đồ nội thất có thể vừa là vật dụng sinh hoạt vừa là tác phẩm nghệ thuật. Các sản phẩm của ông ngày nay được bán với giá hàng triệu đô la và được trưng bày tại các bảo tàng nghệ thuật hàng đầu thế giới.</p>
+                    
+                    <h4>Kỹ Thuật Chế Tác:</h4>
+                    <p>Ruhlmann làm việc với những thợ thủ công lành nghề nhất, sử dụng kỹ thuật marquetry (khảm gỗ) truyền thống kết hợp với công nghệ hiện đại. Mỗi sản phẩm đều được hoàn thiện bằng tay với độ chính xác millimeter.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chareau Modal -->
+    <div id="chareau-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Pierre Chareau: Kiến Trúc Sư Tiên Phong</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/chareau-portrait.jpg" alt="Pierre Chareau" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Nhà Cách Mạng Thiết Kế</h3>
+                    <p>Pierre Chareau (1883-1950) là kiến trúc sư và nhà thiết kế nội thất người Pháp, được biết đến là người tiên phong trong việc sử dụng vật liệu công nghiệp trong thiết kế nội thất và kiến trúc. Ông được coi là cầu nối giữa Art Deco và phong trào Modernist.</p>
+                    
+                    <h4>Maison de Verre - Kiệt Tác Kiến Trúc:</h4>
+                    <p>Công trình nổi tiếng nhất của Chareau là "Maison de Verre" (Ngôi nhà Thủy tinh) được xây dựng từ 1928-1932 tại Paris. Đây là một trong những công trình kiến trúc hiện đại quan trọng nhất thế kỷ 20.</p>
+                    
+                    <h4>Đặc Điểm Maison de Verre:</h4>
+                    <ul>
+                        <li><strong>Tường thủy tinh khối:</strong> Sử dụng 13.000 khối thủy tinh để tạo tường trong suốt</li>
+                        <li><strong>Khung thép:</strong> Cấu trúc khung thép tiền chế, hiện đại cho thời bấy giờ</li>
+                        <li><strong>Ánh sáng tự nhiên:</strong> Tối ưu hóa việc sử dụng ánh sáng tự nhiên</li>
+                        <li><strong>Không gian linh hoạt:</strong> Vách ngăn di động có thể thay đổi theo nhu cầu</li>
+                        <li><strong>Tích hợp công nghệ:</strong> Hệ thống điều hòa không khí và chiếu sáng hiện đại</li>
+                    </ul>
+                    
+                    <h4>Triết Lý Thiết Kế:</h4>
+                    <ul>
+                        <li><strong>Chất liệu thật:</strong> Không che giấu vật liệu, để chúng tự thể hiện vẻ đẹp</li>
+                        <li><strong>Chức năng quyết định hình thức:</strong> Thiết kế phục vụ mục đích sử dụng</li>
+                        <li><strong>Ánh sáng là yếu tố quan trọng:</strong> Sử dụng ánh sáng như một vật liệu thiết kế</li>
+                        <li><strong>Tích hợp nghệ thuật:</strong> Kết hợp nghệ thuật vào không gian sống</li>
+                        <li><strong>Linh hoạt không gian:</strong> Không gian có thể thay đổi theo nhu cầu</li>
+                    </ul>
+                    
+                    <h4>Đồ Nội Thất Đặc Trưng:</h4>
+                    <ul>
+                        <li><strong>Ghế thép ống:</strong> Sử dụng thép ống cong với đệm da</li>
+                        <li><strong>Bàn thủy tinh:</strong> Mặt bàn thủy tinh với chân kim loại</li>
+                        <li><strong>Tủ kim loại:</strong> Tủ để đồ bằng thép với tay nắm hình học</li>
+                        <li><strong>Đèn đa chức năng:</strong> Đèn có thể điều chỉnh và di chuyển</li>
+                    </ul>
+                    
+                    <h4>Ảnh Hưởng Đến Kiến Trúc Hiện Đại:</h4>
+                    <p>Chareau đã tiên phong trong việc sử dụng vật liệu công nghiệp như thép, thủy tinh, và bê tông trong kiến trúc dân dụng. Ông ảnh hưởng đến nhiều kiến trúc sư sau này như Le Corbusier và Mies van der Rohe.</p>
+                    
+                    <h4>Di Sản Trong Thiết Kế:</h4>
+                    <p>Nguyên tắc thiết kế của Chareau về việc sử dụng vật liệu công nghiệp, tối ưu hóa ánh sáng tự nhiên và tạo không gian linh hoạt vẫn được áp dụng rộng rãi trong kiến trúc và thiết kế nội thất hiện đại.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dunand Modal -->
+    <div id="dunand-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Jean Dunand: Thạo Thủ Nghệ Thuật Sơn Mài</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/dunand-portrait.jpg" alt="Jean Dunand" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Người Đưa Nghệ Thuật Phương Đông Vào Art Deco</h3>
+                    <p>Jean Dunand (1877-1942) sinh ra ở Thụy Sĩ nhưng làm việc chủ yếu tại Paris. Ông ban đầu là một nghệ nhân kim loại, nhưng sau đó chuyển sang nghệ thuật sơn mài và trở thành bậc thầy trong lĩnh vực này, đưa kỹ thuật châu Á vào phong cách Art Deco.</p>
+                    
+                    <h4>Hành Trình Nghệ Thuật:</h4>
+                    <p>Dunand bắt đầu sự nghiệp với nghề kim hoàn, sau đó học nghệ thuật sơn mài từ Seizo Sugawara - một nghệ nhân Nhật Bản. Ông đã mất 4 năm để thành thạo kỹ thuật này và sau đó phát triển thành phong cách riêng kết hợp giữa kỹ thuật châu Á và thẩm mỹ Art Deco.</p>
+                    
+                    <h4>Kỹ Thuật Sơn Mài Đặc Trưng:</h4>
+                    <ul>
+                        <li><strong>Urushi truyền thống:</strong> Sử dụng nhựa cây từ Nhật Bản để tạo lớp sơn</li>
+                        <li><strong>Nhiều lớp sơn:</strong> Thường phải thoa 20-30 lớp sơn mài</li>
+                        <li><strong>Đánh bóng hoàn hảo:</strong> Mỗi lớp đều được đánh bóng bằng tay</li>
+                        <li><strong>Trang trí cẩn trứng:</strong> Sử dụng cẩn trứng để tạo họa tiết</li>
+                        <li><strong>Phối màu độc đáo:</strong> Kết hợp màu đen, đỏ, vàng kim và bạc</li>
+                    </ul>
+                    
+                    <h4>Các Loại Sản Phẩm:</h4>
+                    <ul>
+                        <li><strong>Vách ngăn trang trí:</strong> Panels lớn với họa tiết phong cảnh và động vật</li>
+                        <li><strong>Nội thất sơn mài:</strong> Bàn, ghế, tủ với bề mặt sơn mài bóng loáng</li>
+                        <li><strong>Đồ trang trí:</strong> Bình hoa, hộp đựng đồ trang sức</li>
+                        <li><strong>Đồ dùng cá nhân:</strong> Hộp đựng thuốc lá, gương trang điểm</li>
+                        <li><strong>Nghệ thuật tường:</strong> Trang trí tường cho các tòa nhà cao cấp</li>
+                    </ul>
+                    
+                    <h4>Họa Tiết Và Chủ Đề:</h4>
+                    <ul>
+                        <li><strong>Động vật châu Á:</strong> Rồng, hổ, hạc, cá chép</li>
+                        <li><strong>Phong cảnh:</strong> Núi non, sông nước theo phong cách cổ điển châu Á</li>
+                        <li><strong>Hoa văn hình học:</strong> Kết hợp motif châu Á với hình học Art Deco</li>
+                        <li><strong>Nhân vật:</strong> Vũ công, nghệ sĩ, quý tộc</li>
+                        <li><strong>Thiên nhiên cách điệu:</strong> Cây lá, hoa quả được stylized</li>
+                    </ul>
+                    
+                    <h4>Khách Hàng Và Dự Án Nổi Bật:</h4>
+                    <p>Dunand làm việc cho những khách hàng giàu có nhất thời bấy giờ, bao gồm cả các nhà sưu tập nghệ thuật và giới quý tộc. Ông đã trang trí nội thất cho du thuyền "Normandie" - một trong những du thuyền xa xỉ nhất thế giới.</p>
+                    
+                    <h4>Kỹ Thuật Gia Công:</h4>
+                    <p>Mỗi tác phẩm của Dunand đều mất từ vài tháng đến vài năm để hoàn thành. Quá trình bao gồm: chuẩn bị bề mặt, thoa nhiều lớp sơn mài, trang trí, và hoàn thiện. Độ bóng của sơn mài Dunand có thể phản chiếu như gương.</p>
+                    
+                    <h4>Ảnh Hưởng Đến Nghệ Thuật:</h4>
+                    <p>Dunand đã chứng minh rằng kỹ thuật truyền thống châu Á có thể được ứng dụng thành công vào nghệ thuật trang trí phương Tây. Ông mở đường cho sự giao thoa văn hóa trong nghệ thuật và ảnh hưởng đến nhiều nghệ nhân về sau.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Glass Block Modal -->
+    <div id="glass-block-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Tường Kính Khối: Đột Phá Kiến Trúc</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/glass-block-wall.jpg" alt="Glass Block Architecture" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Công Nghệ Tường Kính Khối</h3>
+                    <p>Pierre Chareau là người tiên phong trong việc sử dụng glass blocks (khối kính) trong kiến trúc dân dụng. Ông đã sử dụng 13.000 khối kính Nevada để xây dựng Maison de Verre, tạo ra một bức tường trong suốt nhưng vẫn đảm bảo sự riêng tư.</p>
+                    
+                    <h4>Đặc Tính Kỹ Thuật:</h4>
+                    <ul>
+                        <li><strong>Kích thước chuẩn:</strong> 19x19x8cm, được sản xuất tại nhà máy Saint-Gobain</li>
+                        <li><strong>Trọng lượng:</strong> Mỗi khối nặng 2.5kg, tổng trọng lượng tường lên tới 32.5 tấn</li>
+                        <li><strong>Cấu tạo:</strong> Hai nửa thủy tinh được hàn lại với nhau, tạo khoang không khí bên trong</li>
+                        <li><strong>Độ dày:</strong> 8cm đảm bảo cách âm và cách nhiệt tốt</li>
+                        <li><strong>Hệ số ánh sáng:</strong> Cho phép 70% ánh sáng tự nhiên đi qua</li>
+                    </ul>
+                    
+                    <h4>Ưu Điểm Vượt Trội:</h4>
+                    <ul>
+                        <li><strong>Ánh sáng tự nhiên:</strong> Tạo ánh sáng diffuse, mềm mại, không tạo bóng cứng</li>
+                        <li><strong>Bảo mật:</strong> Trong suốt từ bên trong nhưng khó nhìn thấy từ bên ngoài</li>
+                        <li><strong>Cách nhiệt:</strong> Khoang không khí bên trong tạo lớp cách nhiệt hiệu quả</li>
+                        <li><strong>Chống cháy:</strong> Thủy tinh không cháy, chống lửa lan truyền</li>
+                        <li><strong>Chống thấm:</strong> Bề mặt nhẵn không thấm nước</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Thi Công:</h4>
+                    <p>Chareau đã phát triển hệ thống khung thép đặc biệt để gắn các khối kính. Mỗi khối được đặt trong khung kim loại riêng biệt, tạo đường nối geometric đặc trưng. Công việc này đòi hỏi độ chính xác millimeter.</p>
+                    
+                    <h4>Ảnh Hưởng Đến Kiến Trúc:</h4>
+                    <p>Việc sử dụng glass blocks của Chareau đã ảnh hưởng đến nhiều kiến trúc sư hiện đại như Le Corbusier, Mies van der Rohe. Ngày nay, kỹ thuật này được áp dụng rộng rãi trong các công trình văn phòng, trung tâm thương mại và nhà ở hiện đại.</p>
+                    
+                    <h4>Bảo Trì Và Tuổi Thọ:</h4>
+                    <p>Glass blocks có tuổi thọ trên 100 năm, chỉ cần vệ sinh định kỳ. Maison de Verre sau gần 90 năm vẫn giữ nguyên vẻ đẹp ban đầu, chứng minh độ bền của vật liệu này.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Steel Furniture Modal -->
+    <div id="steel-furniture-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Nội Thất Thép: Hiện Đại Hóa Thiết Kế</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/steel-furniture.jpg" alt="Steel Frame Furniture" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Cách Mạng Nội Thất Thép</h3>
+                    <p>Chareau đã tiên phong trong việc sử dụng thép công nghiệp để chế tạo đồ nội thất. Ông không che giấu chất liệu mà để thép thể hiện vẻ đẹp tự nhiên của nó, kết hợp với da và vải để tạo sự thoải mái.</p>
+                    
+                    <h4>Chất Liệu Sử Dụng:</h4>
+                    <ul>
+                        <li><strong>Thép ống:</strong> Đường kính 25-30mm, được uốn cong bằng máy chính xác</li>
+                        <li><strong>Thép tấm:</strong> Dày 2-3mm, được cắt laser theo hình dạng geometric</li>
+                        <li><strong>Chrome plating:</strong> Lớp mạ chrome dày 0.1mm tạo bề mặt sáng bóng</li>
+                        <li><strong>Da thật:</strong> Da bò Italy được thuộc theo công nghệ truyền thống</li>
+                        <li><strong>Vải cao cấp:</strong> Wool và cotton được dệt theo thiết kế riêng</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Chế Tác:</h4>
+                    <ul>
+                        <li><strong>Hàn TIG:</strong> Hàn khí bảo vệ để tạo đường hàn nhẵn, không xỉ</li>
+                        <li><strong>Bending:</strong> Uốn cong thép bằng máy hydraulic với độ chính xác cao</li>
+                        <li><strong>Polishing:</strong> Đánh bóng bề mặt đạt độ nhám Ra 0.1</li>
+                        <li><strong>Assembly:</strong> Lắp ráp bằng bulông và ốc vít inox không gỉ</li>
+                        <li><strong>Upholstery:</strong> Bọc nệm theo kỹ thuật thủ công truyền thống</li>
+                    </ul>
+                    
+                    <h4>Các Mẫu Ghế Đặc Trưng:</h4>
+                    <ul>
+                        <li><strong>Ghế Cantilever:</strong> Khung thép uốn cong chữ S, không chân sau</li>
+                        <li><strong>Ghế Bergère:</strong> Khung thép với tay vịn bọc da</li>
+                        <li><strong>Ghế Bar:</strong> Chân cao với footrest bằng thép</li>
+                        <li><strong>Ghế Xoay:</strong> Có cơ cấu xoay 360 độ bằng thép</li>
+                    </ul>
+                    
+                    <h4>Ưu Điểm Của Nội Thất Thép:</h4>
+                    <ul>
+                        <li><strong>Độ bền:</strong> Tuổi thọ trên 50 năm, không bị mục ruỗng</li>
+                        <li><strong>Chịu tải:</strong> Có thể chịu trọng lượng lớn mà không biến dạng</li>
+                        <li><strong>Vệ sinh:</strong> Bề mặt nhẵn dễ dàng vệ sinh và khử trùng</li>
+                        <li><strong>Tái chế:</strong> 100% có thể tái chế, thân thiện môi trường</li>
+                        <li><strong>Flexibility:</strong> Có thể điều chỉnh và sửa chữa dễ dàng</li>
+                    </ul>
+                    
+                    <h4>Ảnh Hưởng Đến Thiết Kế:</h4>
+                    <p>Phong cách nội thất thép của Chareau đã ảnh hưởng đến Bauhaus movement và trở thành nền tảng cho International Style. Các thương hiệu như Knoll, Herman Miller đã commercialize hóa nhiều thiết kế tương tự.</p>
+                    
+                    <h4>Ứng Dụng Hiện Đại:</h4>
+                    <p>Ngày nay, nội thất thép được sử dụng rộng rãi trong văn phòng, nhà hàng, khách sạn. Các công ty như Vitra, Cassina vẫn sản xuất reproduction của những thiết kế kinh điển này.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Partitions Modal -->
+    <div id="mobile-partitions-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Vách Ngăn Di Động: Không Gian Linh Hoạt</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/mobile-partitions.jpg" alt="Mobile Partitions" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Concept Không Gian Linh Hoạt</h3>
+                    <p>Chareau đã phát minh ra hệ thống vách ngăn di động để tối ưu hóa việc sử dụng không gian. Trong Maison de Verre, ông đã thiết kế nhiều loại vách ngăn khác nhau có thể thay đổi cấu trúc không gian theo nhu cầu sử dụng.</p>
+                    
+                    <h4>Các Loại Vách Ngăn:</h4>
+                    <ul>
+                        <li><strong>Vách trượt:</strong> Chạy trên ray thép, có thể mở rộng hoặc thu hẹp không gian</li>
+                        <li><strong>Vách xếp:</strong> Gấp lại như accordion, tiết kiệm không gian tối đa</li>
+                        <li><strong>Vách xoay:</strong> Có thể xoay 90-180 độ để thay đổi hướng không gian</li>
+                        <li><strong>Vách nâng:</strong> Có thể nâng lên trần hoặc hạ xuống sàn</li>
+                        <li><strong>Vách module:</strong> Các panels nhỏ có thể tháo lắp tùy ý</li>
+                    </ul>
+                    
+                    <h4>Cơ Cấu Vận Hành:</h4>
+                    <ul>
+                        <li><strong>Ray treo:</strong> Hệ thống ray thép treo trần chịu tải 200kg/m</li>
+                        <li><strong>Bánh xe:</strong> Bánh xe thép với bearing precision, chạy êm</li>
+                        <li><strong>Tay cầm:</strong> Thiết kế ergonomic, dễ dàng vận hành</li>
+                        <li><strong>Khóa cố định:</strong> Hệ thống khóa hydraulic giữ vách cố định</li>
+                        <li><strong>Amortisseur:</strong> Giảm chấn để vách dừng lại êm ái</li>
+                    </ul>
+                    
+                    <h4>Vật Liệu Sử Dụng:</h4>
+                    <ul>
+                        <li><strong>Khung thép:</strong> Thép hộp 40x40mm, dày 3mm</li>
+                        <li><strong>Tấm ốp:</strong> Thủy tinh, gỗ, kim loại, hoặc composite</li>
+                        <li><strong>Chất cách âm:</strong> Lớp wool glass dày 5cm</li>
+                        <li><strong>Bề mặt hoàn thiện:</strong> Sơn epoxy hoặc powder coating</li>
+                        <li><strong>Seal:</strong> Gioăng cao su chống thấm và cách âm</li>
+                    </ul>
+                    
+                    <h4>Lợi Ích Thiết Kế:</h4>
+                    <ul>
+                        <li><strong>Đa chức năng:</strong> Một không gian có thể phục vụ nhiều mục đích</li>
+                        <li><strong>Tối ưu diện tích:</strong> Sử dụng hiệu quả mỗi m² không gian</li>
+                        <li><strong>Thay đổi theo thời gian:</strong> Có thể điều chỉnh theo nhu cầu thay đổi</li>
+                        <li><strong>Kiểm soát ánh sáng:</strong> Điều chỉnh lượng ánh sáng vào từng khu vực</li>
+                        <li><strong>Kiểm soát âm thanh:</strong> Tạo không gian yên tĩnh khi cần</li>
+                    </ul>
+                    
+                    <h4>Ứng Dụng Trong Maison de Verre:</h4>
+                    <ul>
+                        <li><strong>Phòng khách:</strong> Có thể mở rộng để tiếp khách đông</li>
+                        <li><strong>Phòng ăn:</strong> Kết nối với bếp khi nấu ăn, tách biệt khi ăn</li>
+                        <li><strong>Phòng ngủ:</strong> Tách biệt với khu vực làm việc</li>
+                        <li><strong>Phòng tắm:</strong> Mở rộng khi tắm, thu hẹp khi không dùng</li>
+                        <li><strong>Phòng làm việc:</strong> Tách biệt với khu vực giải trí</li>
+                    </ul>
+                    
+                    <h4>Ảnh Hưởng Đến Kiến Trúc:</h4>
+                    <p>Concept vách ngăn di động của Chareau đã trở thành standard trong kiến trúc hiện đại. Các kiến trúc sư như Mies van der Rohe, Tadao Ando đã phát triển ý tưởng này thành "flexible architecture".</p>
+                    
+                    <h4>Ứng Dụng Hiện Đại:</h4>
+                    <p>Ngày nay, vách ngăn di động được sử dụng rộng rãi trong: văn phòng co-working, showroom, nhà hàng, khách sạn, và căn hộ compact. Công nghệ hiện đại đã cho phép tự động hóa việc vận hành bằng motor điện.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lacquer Panels Modal -->
+    <div id="lacquer-panels-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Vách Sơn Mài: Nghệ Thuật Phương Đông</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/lacquer-panels.jpg" alt="Dunand Lacquer Panels" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Vách Sơn Mài Dunand</h3>
+                    <p>Jean Dunand đã tạo ra những tấm vách sơn mài quy mô lớn với họa tiết phong cảnh và động vật châu Á được stylized theo phong cách Art Deco. Những tác phẩm này thường có kích thước 2-3 mét, được sử dụng để trang trí các phòng khách và dining room của giới quý tộc.</p>
+                    
+                    <h4>Quy Trình Chế Tác:</h4>
+                    <ul>
+                        <li><strong>Chuẩn bị nền:</strong> Gỗ beech hoặc poplar được xử lý kỹ, làm nhẵn</li>
+                        <li><strong>Lớp primer:</strong> Thoa 3-4 lớp sơn lót để tạo nền bám</li>
+                        <li><strong>Lớp sơn mài:</strong> Thoa 15-20 lớp urushi, mỗi lớp phơi khô 24h</li>
+                        <li><strong>Đánh bóng:</strong> Mỗi lớp được đánh bóng bằng giấy nhám mịn</li>
+                        <li><strong>Trang trí:</strong> Vẽ họa tiết bằng sơn mài màu và cẩn trứng</li>
+                        <li><strong>Hoàn thiện:</strong> 5-7 lớp sơn mài trong suốt để bảo vệ</li>
+                    </ul>
+                    
+                    <h4>Họa Tiết Đặc Trưng:</h4>
+                    <ul>
+                        <li><strong>Phong cảnh:</strong> Núi non, sông hồ theo phong cách Nhật Bản</li>
+                        <li><strong>Động vật:</strong> Rồng, hổ, hạc, cá chép trong tư thế dynamic</li>
+                        <li><strong>Thực vật:</strong> Hoa anh đào, tre, cúc stylized theo Art Deco</li>
+                        <li><strong>Hình học:</strong> Zigzag, sunburst, chevron patterns</li>
+                        <li><strong>Nhân vật:</strong> Geisha, samurai, vũ công trong costume period</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Trang Trí:</h4>
+                    <ul>
+                        <li><strong>Maki-e:</strong> Rắc bột vàng, bạc lên sơn mài ướt</li>
+                        <li><strong>Raden:</strong> Gắn mảnh vỏ trai, ngọc trai tạo hiệu ứng</li>
+                        <li><strong>Tsuikin:</strong> Dán lá vàng, bạc lên bề mặt</li>
+                        <li><strong>Chinkin:</strong> Khắc đường nét mỏng và điền vàng</li>
+                        <li><strong>Togidashi:</strong> Đánh bóng để lộ layers màu bên dưới</li>
+                    </ul>
+                    
+                    <h4>Màu Sắc Đặc Trưng:</h4>
+                    <ul>
+                        <li><strong>Đen tuyền:</strong> Màu cơ bản, tạo nền cho các màu khác</li>
+                        <li><strong>Đỏ vermillion:</strong> Tạo điểm nhấn cho hoa và trang phục</li>
+                        <li><strong>Vàng kim:</strong> Dùng cho mặt trời, rồng, và border</li>
+                        <li><strong>Bạc:</strong> Tạo hiệu ứng ánh trăng, nước, và kim loại</li>
+                        <li><strong>Xanh lá:</strong> Cho cây cối và phong cảnh thiên nhiên</li>
+                    </ul>
+                    
+                    <h4>Kích Thước Và Thiết Kế:</h4>
+                    <ul>
+                        <li><strong>Vách đơn:</strong> 120x200cm, weight 45kg</li>
+                        <li><strong>Vách đôi:</strong> 2 panels 120x200cm, có thể gấp lại</li>
+                        <li><strong>Vách ba:</strong> 3 panels tạo thành story liên tục</li>
+                        <li><strong>Vách bốn:</strong> 4 panels thể hiện bốn mùa hoặc bốn hướng</li>
+                        <li><strong>Vách tường:</strong> Panels cố định 300x250cm</li>
+                    </ul>
+                    
+                    <h4>Khách Hàng Và Dự Án:</h4>
+                    <ul>
+                        <li><strong>Rothschild Family:</strong> Vách sơn mài cho château</li>
+                        <li><strong>Cartier:</strong> Panels trang trí showroom Paris</li>
+                        <li><strong>SS Normandie:</strong> 12 panels cho first-class dining</li>
+                        <li><strong>Musée d'Orsay:</strong> Collection panels hiện đang display</li>
+                        <li><strong>Private collectors:</strong> Hơn 200 panels cho biệt thự</li>
+                    </ul>
+                    
+                    <h4>Giá Trị Và Bảo Tồn:</h4>
+                    <p>Các vách sơn mài của Dunand hiện có giá từ 500,000 đến 2 triệu USD. Chúng được bảo quản trong điều kiện nhiệt độ 20-22°C, độ ẩm 45-55% để tránh crack và warping.</p>
+                    
+                    <h4>Ảnh Hưởng Đến Nghệ Thuật:</h4>
+                    <p>Công việc của Dunand đã bridge gap giữa nghệ thuật truyền thống Nhật Bản và Art Deco châu Âu, mở đường cho cross-cultural artistic exchange và ảnh hưởng đến nhiều artists đương đại.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lacquer Furniture Modal -->
+    <div id="lacquer-furniture-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Nội Thất Sơn Mài: Sang Trọng Phương Đông</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/lacquer-furniture.jpg" alt="Lacquer Furniture" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Nội Thất Sơn Mài Dunand</h3>
+                    <p>Jean Dunand đã revolutionize nội thất Art Deco bằng cách áp dụng kỹ thuật sơn mài truyền thống vào furniture design. Những chiếc bàn, ghế, tủ của ông có bề mặt sơn mài bóng như gương, tạo hiệu ứng phản chiếu ánh sáng tuyệt đẹp.</p>
+                    
+                    <h4>Các Loại Nội Thất:</h4>
+                    <ul>
+                        <li><strong>Bàn ăn:</strong> Mặt bàn tròn hoặc oval với chân geometric</li>
+                        <li><strong>Bàn cà phê:</strong> Thiết kế thấp với họa tiết châu Á</li>
+                        <li><strong>Tủ rượu:</strong> Tủ cao với ngăn kéo và cửa sơn mài</li>
+                        <li><strong>Ghế tựa:</strong> Khung gỗ được bọc sơn mài hoàn toàn</li>
+                        <li><strong>Tủ trang trí:</strong> Display cabinet với lighting bên trong</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Sơn Mài Furniture:</h4>
+                    <ul>
+                        <li><strong>Substrate:</strong> Gỗ poplar hoặc beech chất lượng cao</li>
+                        <li><strong>Base coat:</strong> 5-7 lớp sơn nền tạo độ bám</li>
+                        <li><strong>Main layers:</strong> 15-20 lớp urushi, mỗi lớp 0.1mm</li>
+                        <li><strong>Decoration:</strong> Áp dụng kỹ thuật maki-e và raden</li>
+                        <li><strong>Final coat:</strong> 3-5 lớp trong suốt để bảo vệ</li>
+                    </ul>
+                    
+                    <h4>Đặc Điểm Bề Mặt:</h4>
+                    <ul>
+                        <li><strong>Độ bóng:</strong> Gloss level 95-98%, phản chiếu như gương</li>
+                        <li><strong>Độ cứng:</strong> Hardness 2H, chống trầy xước</li>
+                        <li><strong>Chống nước:</strong> Waterproof 100%, dễ vệ sinh</li>
+                        <li><strong>Chống nhiệt:</strong> Chịu nhiệt đến 80°C</li>
+                        <li><strong>Tuổi thọ:</strong> Bền trên 100 năm nếu bảo quản tốt</li>
+                    </ul>
+                    
+                    <h4>Họa Tiết Và Màu Sắc:</h4>
+                    <ul>
+                        <li><strong>Solid colors:</strong> Đen tuyền, đỏ vermillion, vàng kim</li>
+                        <li><strong>Gradient:</strong> Chuyển màu từ đen sang đỏ, đen sang vàng</li>
+                        <li><strong>Textured:</strong> Bề mặt sần sùi tạo hiệu ứng đặc biệt</li>
+                        <li><strong>Pictorial:</strong> Họa tiết hoa, lá, động vật stylized</li>
+                        <li><strong>Geometric:</strong> Patterns hình học Art Deco</li>
+                    </ul>
+                    
+                    <h4>Quy Trình Sản Xuất:</h4>
+                    <ul>
+                        <li><strong>Thiết kế:</strong> Sketch và model 3D chi tiết</li>
+                        <li><strong>Woodwork:</strong> Chế tác khung gỗ bởi master craftsman</li>
+                        <li><strong>Preparation:</strong> Xử lý bề mặt, lấp đầy lỗ khuyết</li>
+                        <li><strong>Lacquering:</strong> Quá trình sơn mài 3-6 tháng</li>
+                        <li><strong>Quality control:</strong> Kiểm tra chất lượng nghiêm ngặt</li>
+                    </ul>
+                    
+                    <h4>Khách Hàng Và Dự Án:</h4>
+                    <ul>
+                        <li><strong>Couturier Jacques Doucet:</strong> Toàn bộ nội thất living room</li>
+                        <li><strong>Maison Worth:</strong> Furniture cho boutique haute couture</li>
+                        <li><strong>Private collectors:</strong> Hơn 500 pieces cho biệt thự</li>
+                        <li><strong>Museums:</strong> Pieces trong collection của Louvre, V&A</li>
+                    </ul>
+                    
+                    <h4>Giá Trị Thị Trường:</h4>
+                    <p>Nội thất sơn mài của Dunand hiện có giá từ 200,000 đến 1.5 triệu USD tùy theo size, complexity và provenance. Các pieces có signature và documentation đầy đủ có giá trị cao nhất.</p>
+                    
+                    <h4>Bảo Quản Và Maintenance:</h4>
+                    <ul>
+                        <li><strong>Temperature:</strong> 18-22°C, tránh biến động nhiệt độ</li>
+                        <li><strong>Humidity:</strong> 45-55%, tránh quá khô hoặc quá ẩm</li>
+                        <li><strong>Cleaning:</strong> Dùng microfiber cloth, không dùng chemicals</li>
+                        <li><strong>Handling:</strong> Tránh va đập, đặt trên felt pads</li>
+                    </ul>
+                    
+                    <h4>Ảnh Hưởng Đến Design:</h4>
+                    <p>Nội thất sơn mài của Dunand đã inspire nhiều designers hiện đại. Các thương hiệu luxury như Hermès, Louis Vuitton đã áp dụng kỹ thuật tương tự vào furniture collections của mình.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lacquer Objects Modal -->
+    <div id="lacquer-objects-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Đồ Trang Trí Sơn Mài: Nghệ Thuật Tinh Xảo</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/lacquer-objects.jpg" alt="Lacquer Decorative Objects" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Đồ Trang Trí Sơn Mài Dunand</h3>
+                    <p>Jean Dunand đã tạo ra thousands of decorative objects với kỹ thuật sơn mài. Từ những chiếc bình hoa nhỏ xinh đến những jewelry boxes phức tạp, mỗi piece đều thể hiện sự kết hợp hoàn hảo giữa function và beauty.</p>
+                    
+                    <h4>Danh Mục Sản Phẩm:</h4>
+                    <ul>
+                        <li><strong>Bình hoa:</strong> Vases từ 15cm đến 60cm, shapes đa dạng</li>
+                        <li><strong>Hộp trang sức:</strong> Jewelry boxes với compartments tinh xảo</li>
+                        <li><strong>Khay đựng:</strong> Trays cho serving hoặc display</li>
+                        <li><strong>Hộp thuốc lá:</strong> Cigarette cases với personalizations</li>
+                        <li><strong>Gương trang điểm:</strong> Hand mirrors với handles decorated</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Chế Tác Nhỏ:</h4>
+                    <ul>
+                        <li><strong>Micro-lacquering:</strong> Áp dụng sơn mài lên surfaces nhỏ</li>
+                        <li><strong>Detail work:</strong> Painting chi tiết bằng brushes size 000</li>
+                        <li><strong>Miniature inlay:</strong> Gắn pieces vỏ trai, ngọc trai nhỏ</li>
+                        <li><strong>Precision grinding:</strong> Đánh bóng các curves và edges</li>
+                        <li><strong>Interior finishing:</strong> Hoàn thiện cả bên trong objects</li>
+                    </ul>
+                    
+                    <h4>Themes Và Motifs:</h4>
+                    <ul>
+                        <li><strong>Floral:</strong> Hoa sen, cúc, anh đào stylized</li>
+                        <li><strong>Animal:</strong> Rồng, phượng, cá chép, bướm</li>
+                        <li><strong>Landscape:</strong> Núi non, sông hồ, trees miniatures</li>
+                        <li><strong>Geometric:</strong> Art Deco patterns, zigzag, chevron</li>
+                        <li><strong>Abstract:</strong> Color fields, gradients, textures</li>
+                    </ul>
+                    
+                    <h4>Techniques Đặc Biệt:</h4>
+                    <ul>
+                        <li><strong>Eggshell inlay:</strong> Gắn mảnh vỏ trứng tạo texture</li>
+                        <li><strong>Gold leaf:</strong> Dán lá vàng theo patterns</li>
+                        <li><strong>Pearl powder:</strong> Rắc bột ngọc trai lên wet lacquer</li>
+                        <li><strong>Metallic accents:</strong> Điểm nhấn bằng silver, copper</li>
+                        <li><strong>Raised relief:</strong> Tạo 3D effects bằng multiple layers</li>
+                    </ul>
+                    
+                    <h4>Process Tạo Objects:</h4>
+                    <ul>
+                        <li><strong>Form making:</strong> Tạo shape bằng wood hoặc papier-mâché</li>
+                        <li><strong>Base preparation:</strong> Xử lý bề mặt, prime coating</li>
+                        <li><strong>Layer building:</strong> 8-12 lớp sơn mài base</li>
+                        <li><strong>Decoration phase:</strong> Áp dụng designs và patterns</li>
+                        <li><strong>Final finishing:</strong> Protective coats và polishing</li>
+                    </ul>
+                    
+                    <h4>Sizes Và Dimensions:</h4>
+                    <ul>
+                        <li><strong>Miniatures:</strong> 5-10cm, personal accessories</li>
+                        <li><strong>Small objects:</strong> 10-20cm, desk accessories</li>
+                        <li><strong>Medium pieces:</strong> 20-40cm, decorative vases</li>
+                        <li><strong>Large objects:</strong> 40-60cm, statement pieces</li>
+                        <li><strong>Oversized:</strong> 60cm+, architectural elements</li>
+                    </ul>
+                    
+                    <h4>Signatures Và Authentication:</h4>
+                    <ul>
+                        <li><strong>Signature styles:</strong> "J. Dunand" trong different fonts</li>
+                        <li><strong>Date marks:</strong> Năm sản xuất được mark</li>
+                        <li><strong>Workshop marks:</strong> Symbols của different craftsmen</li>
+                        <li><strong>Provenance:</strong> Documentation từ original clients</li>
+                        <li><strong>Condition reports:</strong> Professional assessments</li>
+                    </ul>
+                    
+                    <h4>Collectors Và Markets:</h4>
+                    <ul>
+                        <li><strong>Private collectors:</strong> 70% pieces trong private hands</li>
+                        <li><strong>Museums:</strong> Major pieces trong public collections</li>
+                        <li><strong>Auction houses:</strong> Sotheby's, Christie's regular sales</li>
+                        <li><strong>Dealers:</strong> Specialist galleries in Paris, London, NY</li>
+                        <li><strong>Values:</strong> $5,000-$500,000 depending on piece</li>
+                    </ul>
+                    
+                    <h4>Care Và Maintenance:</h4>
+                    <ul>
+                        <li><strong>Handling:</strong> Wear cotton gloves, support properly</li>
+                        <li><strong>Storage:</strong> Padded boxes, climate controlled</li>
+                        <li><strong>Display:</strong> Away from direct sunlight, stable temp</li>
+                        <li><strong>Cleaning:</strong> Dry dusting only, professional cleaning</li>
+                        <li><strong>Restoration:</strong> Only by certified lacquer specialists</li>
+                    </ul>
+                    
+                    <h4>Contemporary Influence:</h4>
+                    <p>Các decorative objects của Dunand đã inspire contemporary artists và luxury brands. Nhiều artisans hiện đại vẫn học techniques từ works của ông và áp dụng vào modern designs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exotic Woods Modal -->
+    <div id="exotic-woods-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Gỗ Quý Hiếm: Vật Liệu Đặc Biệt Art Deco</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/exotic-woods.jpg" alt="Exotic Woods" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Gỗ Quý Hiếm Trong Art Deco</h3>
+                    <p>Các nhà thiết kế Art Deco đã cách mạng hóa việc sử dụng gỗ bằng cách tìm kiếm những loại gỗ quý hiếm nhất từ khắp nơi trên thế giới. Họ không chỉ chọn gỗ cho độ bền mà còn cho vẻ đẹp tự nhiên của vân gỗ.</p>
+                    
+                    <h4>Các Loại Gỗ Quý Phổ Biến:</h4>
+                    <ul>
+                        <li><strong>Gỗ Mun (Ebony):</strong> Từ châu Phi, màu đen tuyền, cực kỳ cứng (Janka hardness: 3,220 lbf)</li>
+                        <li><strong>Gỗ Amboyna:</strong> Từ Indonesia, vân gỗ xoáy độc đáo như mắt chim</li>
+                        <li><strong>Gỗ Palisander:</strong> Từ Nam Mỹ, màu tím đỏ với mùi hương đặc trưng</li>
+                        <li><strong>Gỗ Zebrawood:</strong> Từ châu Phi, vân sọc như ngựa vằn</li>
+                        <li><strong>Gỗ Thuya Burl:</strong> Từ Ma-rốc, vân gỗ xoáy phức tạp</li>
+                    </ul>
+                    
+                    <h4>Đặc Tính Kỹ Thuật:</h4>
+                    <ul>
+                        <li><strong>Density:</strong> 0.8-1.2 g/cm³, nặng hơn gỗ thường 50-80%</li>
+                        <li><strong>Moisture content:</strong> 6-8%, được kiln-dried cẩn thận</li>
+                        <li><strong>Stability:</strong> Ít co ngót, chống warping tốt</li>
+                        <li><strong>Workability:</strong> Khó gia công nhưng cho finish đẹp</li>
+                        <li><strong>Durability:</strong> Tuổi thọ 100+ năm với care đúng cách</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Chế Biến:</h4>
+                    <ul>
+                        <li><strong>Quartersawn:</strong> Cắt theo hướng vuông góc với growth rings</li>
+                        <li><strong>Book-matching:</strong> Ghép các tấm gỗ để tạo symmetrical patterns</li>
+                        <li><strong>Veneering:</strong> Lát mỏng 0.6-0.8mm để tiết kiệm vật liệu</li>
+                        <li><strong>Edge-banding:</strong> Viền solid wood cho veneer panels</li>
+                        <li><strong>Grain orientation:</strong> Sắp xếp hướng vân gỗ để tối ưu visual impact</li>
+                    </ul>
+                    
+                    <h4>Ứng Dụng Trong Nội Thất:</h4>
+                    <ul>
+                        <li><strong>Tabletops:</strong> Mặt bàn với grain patterns làm center piece</li>
+                        <li><strong>Cabinet doors:</strong> Cửa tủ với book-matched veneers</li>
+                        <li><strong>Inlays:</strong> Chi tiết khảm tương phản với main wood</li>
+                        <li><strong>Decorative panels:</strong> Tấm trang trí tường và room dividers</li>
+                        <li><strong>Moldings:</strong> Nẹp trang trí với contrasting woods</li>
+                    </ul>
+                    
+                    <h4>Quá Trình Finishing:</h4>
+                    <ul>
+                        <li><strong>Sanding progression:</strong> 120 → 220 → 320 → 400 grit</li>
+                        <li><strong>Grain filling:</strong> Điền đầy pores với matching paste</li>
+                        <li><strong>Staining:</strong> Nhuộm màu để enhance natural colors</li>
+                        <li><strong>Sealing:</strong> Sanding sealer để lock in stain</li>
+                        <li><strong>Top coat:</strong> 3-5 lớp lacquer hoặc polyurethane</li>
+                    </ul>
+                    
+                    <h4>Giá Trị Và Đầu Tư:</h4>
+                    <p>Gỗ quý hiếm có giá từ $50-$500/board foot tùy loại. Ebony và Amboyna là đắt nhất. Nội thất sử dụng gỗ quý thường tăng giá 200-500% so với gỗ thường.</p>
+                    
+                    <h4>Sustainability Concerns:</h4>
+                    <ul>
+                        <li><strong>CITES regulations:</strong> Nhiều loại gỗ quý bị hạn chế xuất khẩu</li>
+                        <li><strong>Reclaimed sources:</strong> Tái sử dụng từ old furniture và buildings</li>
+                        <li><strong>Certified forestry:</strong> FSC certified sustainable harvesting</li>
+                        <li><strong>Alternative species:</strong> Tìm gỗ substitute với appearance tương tự</li>
+                    </ul>
+                    
+                    <h4>Care và Maintenance:</h4>
+                    <ul>
+                        <li><strong>Humidity control:</strong> 40-60% relative humidity</li>
+                        <li><strong>Temperature stable:</strong> 65-75°F, tránh extreme changes</li>
+                        <li><strong>UV protection:</strong> Tránh direct sunlight</li>
+                        <li><strong>Regular cleaning:</strong> Microfiber cloth với wood cleaner</li>
+                        <li><strong>Refinishing:</strong> Mỗi 10-15 năm tùy usage</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Metal Work Modal -->
+    <div id="metal-work-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Kim Loại Cao Cấp: Nghệ Thuật Gia Công</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/metal-work.jpg" alt="Art Deco Metal Work" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Kim Loại Trong Art Deco</h3>
+                    <p>Art Deco đã cách mạng hóa việc sử dụng kim loại trong nội thất và trang trí. Từ bronze cast phức tạp đến chrome plating hiện đại, các nghệ nhân đã đưa metalwork lên tầm nghệ thuật cao.</p>
+                    
+                    <h4>Các Loại Kim Loại Chính:</h4>
+                    <ul>
+                        <li><strong>Đồng thau (Brass):</strong> 60-70% copper, 30-40% zinc, màu vàng ấm</li>
+                        <li><strong>Đồng đỏ (Bronze):</strong> 88% copper, 12% tin, chống corrosion tốt</li>
+                        <li><strong>Chrome:</strong> Chromium plating trên steel, finish sáng bóng</li>
+                        <li><strong>Nickel:</strong> Silvery finish, chống tarnish</li>
+                        <li><strong>Stainless Steel:</strong> 18/8 hoặc 18/10, modern và practical</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Gia Công Truyền Thống:</h4>
+                    <ul>
+                        <li><strong>Sand casting:</strong> Đúc bronze trong khuôn cát</li>
+                        <li><strong>Lost wax casting:</strong> Cire perdue cho chi tiết tinh xảo</li>
+                        <li><strong>Repoussé:</strong> Tạo hình relief bằng búa từ mặt sau</li>
+                        <li><strong>Chasing:</strong> Khắc chi tiết từ mặt trước</li>
+                        <li><strong>Engraving:</strong> Khắc patterns bằng burin</li>
+                    </ul>
+                    
+                    <h4>Kỹ Thuật Hiện Đại:</h4>
+                    <ul>
+                        <li><strong>Electroplating:</strong> Mạ điện chrome, nickel, gold</li>
+                        <li><strong>Powder coating:</strong> Sơn phun tĩnh điện</li>
+                        <li><strong>Anodizing:</strong> Tạo oxide layer trên aluminum</li>
+                        <li><strong>PVD coating:</strong> Physical Vapor Deposition cho colors</li>
+                        <li><strong>Laser cutting:</strong> Cắt patterns chính xác</li>
+                    </ul>
+                    
+                    <h4>Surface Finishes:</h4>
+                    <ul>
+                        <li><strong>Mirror polish:</strong> Ra 0.05-0.1 microns, phản chiếu 95%</li>
+                        <li><strong>Satin finish:</strong> 320-400 grit, soft sheen</li>
+                        <li><strong>Brushed:</strong> Linear grain pattern</li>
+                        <li><strong>Antique patina:</strong> Chemical patination process</li>
+                        <li><strong>Textured:</strong> Hammered, stippled, hoặc etched patterns</li>
+                    </ul>
+                    
+                    <h4>Ứng Dụng Trong Art Deco:</h4>
+                    <ul>
+                        <li><strong>Hardware:</strong> Handles, knobs, hinges với geometric designs</li>
+                        <li><strong>Lighting fixtures:</strong> Chandeliers, sconces với metallic frames</li>
+                        <li><strong>Decorative panels:</strong> Wall treatments và room dividers</li>
+                        <li><strong>Furniture accents:</strong> Table legs, chair frames, decorative inlays</li>
+                        <li><strong>Architectural elements:</strong> Elevator doors, stair railings</li>
+                    </ul>
+                    
+                    <h4>Joining Techniques:</h4>
+                    <ul>
+                        <li><strong>Soldering:</strong> Silver solder cho brass joints</li>
+                        <li><strong>Brazing:</strong> Higher temperature cho stronger joints</li>
+                        <li><strong>Welding:</strong> TIG welding cho stainless steel</li>
+                        <li><strong>Mechanical fastening:</strong> Screws, rivets, clips</li>
+                        <li><strong>Adhesive bonding:</strong> Structural adhesives cho modern assemblies</li>
+                    </ul>
+                    
+                    <h4>Quality Control:</h4>
+                    <ul>
+                        <li><strong>Thickness measurement:</strong> Coating thickness 25-50 microns</li>
+                        <li><strong>Adhesion testing:</strong> Cross-cut tape test</li>
+                        <li><strong>Corrosion resistance:</strong> Salt spray testing 96-240 hours</li>
+                        <li><strong>Color matching:</strong> Spectrophotometer cho consistency</li>
+                        <li><strong>Surface roughness:</strong> Profilometer measurements</li>
+                    </ul>
+                    
+                    <h4>Maintenance Protocols:</h4>
+                    <ul>
+                        <li><strong>Regular cleaning:</strong> Microfiber cloth với appropriate cleaners</li>
+                        <li><strong>Polishing schedule:</strong> Monthly cho high-touch areas</li>
+                        <li><strong>Protective coatings:</strong> Wax hoặc clear coat touch-ups</li>
+                        <li><strong>Inspection routine:</strong> Check for corrosion, wear patterns</li>
+                        <li><strong>Professional restoration:</strong> Re-plating khi necessary</li>
+                    </ul>
+                    
+                    <h4>Cost Considerations:</h4>
+                    <p>Chrome plating: $15-25/sq ft. Bronze casting: $50-150/lb. Custom brass hardware: $200-500/piece. Investment cao nhưng tuổi thọ 50+ years với proper care.</p>
+                    
+                    <h4>Modern Applications:</h4>
+                    <p>Luxury automotive, high-end appliances, hospitality industry vẫn sử dụng Art Deco metalwork principles. CAD/CAM technology đã made reproduction của classic designs more accessible.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Marble Stone Modal -->
+    <div id="marble-stone-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Đá Quý Tự Nhiên: Vẻ Đẹp Vĩnh Cửu</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/marble-stone.jpg" alt="Marble and Stone" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Đá Quý Trong Art Deco</h3>
+                    <p>Art Deco đã elevated việc sử dụng natural stone từ structural material thành decorative art. Các nhà thiết kế đã chọn stones không chỉ cho strength mà còn cho unique patterns và colors.</p>
+                    
+                    <h4>Các Loại Đá Cao Cấp:</h4>
+                    <ul>
+                        <li><strong>Carrara Marble:</strong> Từ Italy, trắng với grey veining tinh tế</li>
+                        <li><strong>Nero Marquina:</strong> Black marble từ Spain với white veining</li>
+                        <li><strong>Onyx:</strong> Translucent stone với dramatic banding</li>
+                        <li><strong>Travertine:</strong> Limestone với natural pitting và texture</li>
+                        <li><strong>Granite:</strong> Igneous rock với speckled patterns</li>
+                    </ul>
+                    
+                    <h4>Geological Properties:</h4>
+                    <ul>
+                        <li><strong>Hardness:</strong> Marble 3-4 Mohs, Granite 6-7 Mohs</li>
+                        <li><strong>Density:</strong> 2.5-2.8 g/cm³ cho marble, 2.6-2.7 cho granite</li>
+                        <li><strong>Porosity:</strong> 0.1-2% tùy loại đá</li>
+                        <li><strong>Compressive strength:</strong> 100-200 MPa</li>
+                        <li><strong>Thermal conductivity:</strong> 2-4 W/mK, cool to touch</li>
+                    </ul>
+                    
+                    <h4>Quarrying Process:</h4>
+                    <ul>
+                        <li><strong>Site selection:</strong> Geological surveys cho quality assessment</li>
+                        <li><strong>Block extraction:</strong> Diamond wire cutting cho clean faces</li>
+                        <li><strong>Quality grading:</strong> A, B, C grades based on defects</li>
+                        <li><strong>Transportation:</strong> Special handling để avoid cracking</li>
+                        <li><strong>Storage:</strong> Climate-controlled warehouses</li>
+                    </ul>
+                    
+                    <h4>Fabrication Techniques:</h4>
+                    <ul>
+                        <li><strong>Sawing:</strong> Gang saws với diamond blades</li>
+                        <li><strong>Calibration:</strong> Thickness standardization ±1mm</li>
+                        <li><strong>Surface finishing:</strong> Polished, honed, brushed, flamed</li>
+                        <li><strong>Edge profiling:</strong> Bullnose, beveled, ogee profiles</li>
+                        <li><strong>Drilling:</strong> Core bits cho faucet holes</li>
+                    </ul>
+                    
+                    <h4>Surface Finishes:</h4>
+                    <ul>
+                        <li><strong>Polished:</strong> 3000 grit, mirror-like finish</li>
+                        <li><strong>Honed:</strong> 400 grit, matte với subtle sheen</li>
+                        <li><strong>Leathered:</strong> Textured surface cho grip</li>
+                        <li><strong>Bush-hammered:</strong> Rough texture cho slip resistance</li>
+                        <li><strong>Sandblasted:</strong> Uniform matte finish</li>
+                    </ul>
+                    
+                    <h4>Art Deco Applications:</h4>
+                    <ul>
+                        <li><strong>Flooring:</strong> Book-matched slabs với geometric patterns</li>
+                        <li><strong>Wall cladding:</strong> Feature walls với dramatic veining</li>
+                        <li><strong>Countertops:</strong> Kitchen và bathroom surfaces</li>
+                        <li><strong>Furniture:</strong> Table tops, pedestals, decorative objects</li>
+                        <li><strong>Architectural details:</strong> Columns, moldings, trim work</li>
+                    </ul>
+                    
+                    <h4>Installation Methods:</h4>
+                    <ul>
+                        <li><strong>Mechanical anchoring:</strong> Stainless steel clips và anchors</li>
+                        <li><strong>Adhesive mounting:</strong> Structural adhesives cho thin slabs</li>
+                        <li><strong>Mortar bed:</strong> Traditional setting cho thick stones</li>
+                        <li><strong>Dry mounting:</strong> Clip systems cho curtain walls</li>
+                        <li><strong>Pin mounting:</strong> Structural pins cho heavy pieces</li>
+                    </ul>
+                    
+                    <h4>Sealing & Protection:</h4>
+                    <ul>
+                        <li><strong>Penetrating sealers:</strong> Silane/siloxane based</li>
+                        <li><strong>Topical sealers:</strong> Acrylic hoặc urethane coatings</li>
+                        <li><strong>Impregnating sealers:</strong> Deep penetration cho porous stones</li>
+                        <li><strong>Color enhancers:</strong> Wet-look finishes</li>
+                        <li><strong>Anti-graffiti coatings:</strong> Sacrificial films</li>
+                    </ul>
+                    
+                    <h4>Quality Standards:</h4>
+                    <ul>
+                        <li><strong>ASTM C615:</strong> Standard for granite dimension stone</li>
+                        <li><strong>ASTM C503:</strong> Standard for marble dimension stone</li>
+                        <li><strong>Absorption testing:</strong> <0.4% for Grade I marble</li>
+                        <li><strong>Flexural strength:</strong> Minimum 10.3 MPa</li>
+                        <li><strong>Freeze-thaw resistance:</strong> 25 cycles minimum</li>
+                    </ul>
+                    
+                    <h4>Maintenance Procedures:</h4>
+                    <ul>
+                        <li><strong>Daily cleaning:</strong> pH-neutral cleaners only</li>
+                        <li><strong>Stain removal:</strong> Poultice treatments cho organic stains</li>
+                        <li><strong>Re-polishing:</strong> Diamond polishing pads</li>
+                        <li><strong>Crack repair:</strong> Color-matched epoxy fills</li>
+                        <li><strong>Re-sealing:</strong> Annual hoặc bi-annual applications</li>
+                    </ul>
+                    
+                    <h4>Cost Analysis:</h4>
+                    <p>Carrara marble: $60-100/sq ft installed. Rare stones như Onyx: $200-500/sq ft. Fabrication adds 50-100% to material cost. Lifetime value excellent với proper maintenance.</p>
+                    
+                    <h4>Sustainability Aspects:</h4>
+                    <p>Natural stone là renewable resource nhưng extraction có environmental impact. Reclaimed stone từ demolition projects ngày càng popular. Local sourcing reduces carbon footprint.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lacquer Technique Modal -->
+    <div id="lacquer-technique-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Sơn Mài Truyền Thống: Nghệ Thuật Phương Đông</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/lacquer-technique.jpg" alt="Lacquer Technique" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Kỹ Thuật Sơn Mài Cổ Truyền</h3>
+                    <p>Sơn mài (urushi) là một trong những kỹ thuật finishing cổ nhất và tinh xảo nhất thế giới, được Art Deco artisans áp dụng để tạo ra những bề mặt có độ bóng và depth không thể đạt được bằng any other method.</p>
+                    
+                    <h4>Nguồn Gốc Urushi:</h4>
+                    <ul>
+                        <li><strong>Raw material:</strong> Nhựa từ cây Toxicodendron vernicifluum</li>
+                        <li><strong>Geographic origin:</strong> Chủ yếu từ Japan, Korea, China</li>
+                        <li><strong>Harvesting:</strong> Tapping trees 10+ years old</li>
+                        <li><strong>Annual yield:</strong> 200-300ml per tree per season</li>
+                        <li><strong>Seasonal timing:</strong> Best quality từ Jun-Oct</li>
+                    </ul>
+                    
+                    <h4>Chemical Composition:</h4>
+                    <ul>
+                        <li><strong>Urushiol:</strong> 60-65%, main polymerizing agent</li>
+                        <li><strong>Polysaccharides:</strong> 5-7%, provides adhesion</li>
+                        <li><strong>Proteins:</strong> 2-3%, contributes to curing</li>
+                        <li><strong>Water:</strong> 20-25%, evaporates during cure</li>
+                        <li><strong>Minerals:</strong> 1-3%, affects final properties</li>
+                    </ul>
+                    
+                    <h4>Processing Steps:</h4>
+                    <ul>
+                        <li><strong>Collection:</strong> Fresh sap collected in bamboo containers</li>
+                        <li><strong>Filtration:</strong> Remove bark particles và impurities</li>
+                        <li><strong>Stirring:</strong> Manual mixing để achieve homogeneity</li>
+                        <li><strong>Dehydration:</strong> Controlled water removal process</li>
+                        <li><strong>Aging:</strong> 3-5 years maturation cho optimal properties</li>
+                    </ul>
+                    
+                    <h4>Curing Mechanism:</h4>
+                    <ul>
+                        <li><strong>Humidity dependent:</strong> 75-85% RH required</li>
+                        <li><strong>Temperature range:</strong> 20-30°C optimal</li>
+                        <li><strong>Enzymatic action:</strong> Laccase enzyme catalyzes polymerization</li>
+                        <li><strong>Time frame:</strong> 6-24 hours per layer</li>
+                        <li><strong>Cross-linking:</strong> Forms irreversible polymer network</li>
+                    </ul>
+                    
+                    <h4>Traditional Application Process:</h4>
+                    <ul>
+                        <li><strong>Substrate prep:</strong> Wood sealed với several base coats</li>
+                        <li><strong>Base layers:</strong> 3-5 rough coats để build foundation</li>
+                        <li><strong>Intermediate layers:</strong> 10-15 refined coats</li>
+                        <li><strong>Final layers:</strong> 3-5 ultra-fine finishing coats</li>
+                        <li><strong>Total thickness:</strong> 100-300 microns when complete</li>
+                    </ul>
+                    
+                    <h4>Tools và Equipment:</h4>
+                    <ul>
+                        <li><strong>Brushes:</strong> Human hair, very fine và soft</li>
+                        <li><strong>Drying chamber:</strong> Humidity-controlled environment</li>
+                        <li><strong>Sanding tools:</strong> Charcoal powder, finest abrasives</li>
+                        <li><strong>Polishing stones:</strong> Natural abrasive minerals</li>
+                        <li><strong>Protective gear:</strong> Urushiol is highly allergenic</li>
+                    </ul>
+                    
+                    <h4>Finishing Techniques:</h4>
+                    <ul>
+                        <li><strong>Tsuya-dashi:</strong> High-gloss mirror finish</li>
+                        <li><strong>Kawa-dashi:</strong> Semi-matte leather-like finish</li>
+                        <li><strong>Nashi-ji:</strong> Textured pear-skin effect</li>
+                        <li><strong>Maki-e:</strong> Sprinkled metal powder decoration</li>
+                        <li><strong>Raden:</strong> Mother-of-pearl inlay work</li>
+                    </ul>
+                    
+                    <h4>Color Development:</h4>
+                    <ul>
+                        <li><strong>Natural urushi:</strong> Transparent to honey colored</li>
+                        <li><strong>Black urushi:</strong> Iron powder additions</li>
+                        <li><strong>Red urushi:</strong> Cinnabar (mercury sulfide) pigment</li>
+                        <li><strong>Colored urushi:</strong> Mineral pigments carefully selected</li>
+                        <li><strong>Layered effects:</strong> Multiple colors built up</li>
+                    </ul>
+                    
+                    <h4>Quality Standards:</h4>
+                    <ul>
+                        <li><strong>Surface smoothness:</strong> <1 micron Ra value</li>
+                        <li><strong>Gloss level:</strong> 95-98% specular reflection</li>
+                        <li><strong>Adhesion:</strong> Cross-cut test Class 0</li>
+                        <li><strong>Durability:</strong> Centuries of proven performance</li>
+                        <li><strong>Chemical resistance:</strong> Immune to most solvents</li>
+                    </ul>
+                    
+                    <h4>Art Deco Adaptations:</h4>
+                    <ul>
+                        <li><strong>Western substrates:</strong> Applied to furniture woods</li>
+                        <li><strong>Geometric patterns:</strong> Art Deco motifs incorporated</li>
+                        <li><strong>Metallic accents:</strong> Gold và silver powders</li>
+                        <li><strong>Color combinations:</strong> Black-red-gold schemes</li>
+                        <li><strong>Modern shapes:</strong> Applied to contemporary forms</li>
+                    </ul>
+                    
+                    <h4>Artisan Training:</h4>
+                    <ul>
+                        <li><strong>Apprenticeship:</strong> 5-7 years minimum training</li>
+                        <li><strong>Master certification:</strong> Traditional guild systems</li>
+                        <li><strong>Specialized skills:</strong> Different masters for different techniques</li>
+                        <li><strong>Cultural preservation:</strong> UNESCO Intangible Heritage</li>
+                        <li><strong>Modern programs:</strong> Art schools teaching traditional methods</li>
+                    </ul>
+                    
+                    <h4>Contemporary Applications:</h4>
+                    <ul>
+                        <li><strong>Luxury automotive:</strong> Interior trim pieces</li>
+                        <li><strong>Musical instruments:</strong> Piano finishes, guitar work</li>
+                        <li><strong>Jewelry:</strong> Watch faces và luxury accessories</li>
+                        <li><strong>Architecture:</strong> Decorative panels và feature walls</li>
+                        <li><strong>Art objects:</strong> Sculptures và decorative pieces</li>
+                    </ul>
+                    
+                    <h4>Maintenance Requirements:</h4>
+                    <ul>
+                        <li><strong>Cleaning:</strong> Soft dry cloth only</li>
+                        <li><strong>Environmental:</strong> Stable temperature và humidity</li>
+                        <li><strong>Handling:</strong> Avoid sharp impacts</li>
+                        <li><strong>Restoration:</strong> Only by trained specialists</li>
+                        <li><strong>Longevity:</strong> Can last 500+ years với proper care</li>
+                    </ul>
+                    
+                    <h4>Economic Aspects:</h4>
+                    <p>Master lacquer work commands $500-2000/sq ft. A single furniture piece có thể require 6-12 months completion. Investment value increases significantly over time due to rarity và craftsmanship quality.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Luxury Leather Modal -->
+    <div id="luxury-leather-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Da Cao Cấp: Chất Liệu Quý Tộc</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/luxury-leather.jpg" alt="Luxury Leather" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Da Cao Cấp Trong Art Deco</h3>
+                    <p>Art Deco period đã elevate việc sử dụng leather từ purely functional material thành luxury decorative element. Các loại da exotic và kỹ thuật thuộc sophisticated đã tạo ra những surfaces với textures và patterns độc đáo.</p>
+                    
+                    <h4>Exotic Leather Types:</h4>
+                    <ul>
+                        <li><strong>Shagreen (da cá mập):</strong> Từ stingray, texture granular đặc biệt</li>
+                        <li><strong>Crocodile skin:</strong> Từ Nile crocodile, scale patterns dramatic</li>
+                        <li><strong>Ostrich leather:</strong> Follicle patterns từ South African ostriches</li>
+                        <li><strong>Snake skin:</strong> Python và cobra với scale patterns</li>
+                        <li><strong>Calfskin:</strong> Young cattle, extremely fine grain</li>
+                    </ul>
+                    
+                    <h4>Tanning Processes:</h4>
+                    <ul>
+                        <li><strong>Chrome tanning:</strong> Fast process, 1-2 days, blue-green color</li>
+                        <li><strong>Vegetable tanning:</strong> 6-8 weeks, plant tannins, natural colors</li>
+                        <li><strong>Aldehyde tanning:</strong> White leather, washable properties</li>
+                        <li><strong>Oil tanning:</strong> Chamois process, very soft texture</li>
+                        <li><strong>Combination tanning:</strong> Multiple methods for optimal properties</li>
+                    </ul>
+                    
+                    <h4>Surface Treatments:</h4>
+                    <ul>
+                        <li><strong>Embossing:</strong> Heat-pressed patterns, geometric Art Deco designs</li>
+                        <li><strong>Gilding:</strong> Gold leaf application over sized surfaces</li>
+                        <li><strong>Lacquering:</strong> High-gloss protective coatings</li>
+                        <li><strong>Waxing:</strong> Natural beeswax finishes</li>
+                        <li><strong>Dyeing:</strong> Aniline dyes cho vibrant colors</li>
+                    </ul>
+                    
+                    <h4>Shagreen Preparation:</h4>
+                    <ul>
+                        <li><strong>Source material:</strong> Stingray skin from Southeast Asia</li>
+                        <li><strong>Cleaning process:</strong> Remove natural oils và proteins</li>
+                        <li><strong>Smoothing:</strong> Sand down natural bumps</li>
+                        <li><strong>Dyeing:</strong> Deep penetration colors</li>
+                        <li><strong>Mounting:</strong> Glued to wood substrate với precision</li>
+                    </ul>
+                    
+                    <h4>Application Techniques:</h4>
+                    <ul>
+                        <li><strong>Pattern matching:</strong> Align repeating designs</li>
+                        <li><strong>Edge finishing:</strong> Hand-stitched hoặc glued seams</li>
+                        <li><strong>Padding:</strong> Horsehair hoặc cotton batting</li>
+                        <li><strong>Tacking:</strong> Brass nails in geometric patterns</li>
+                        <li><strong>Welting:</strong> Piped edges cho professional finish</li>
+                    </ul>
+                    
+                    <h4>Furniture Applications:</h4>
+                    <ul>
+                        <li><strong>Upholstery:</strong> Chair seats, backs, arm rests</li>
+                        <li><strong>Desktop covering:</strong> Full desk top protection</li>
+                        <li><strong>Cabinet doors:</strong> Leather-clad front panels</li>
+                        <li><strong>Wall panels:</strong> Room-height decorative installations</li>
+                        <li><strong>Accessories:</strong> Blotters, frames, desk sets</li>
+                    </ul>
+                    
+                    <h4>Color Palettes:</h4>
+                    <ul>
+                        <li><strong>Classic brown:</strong> Cognac, tobacco, chocolate shades</li>
+                        <li><strong>Black:</strong> Deep black với subtle sheen</li>
+                        <li><strong>Red:</strong> Burgundy, oxblood, crimson</li>
+                        <li><strong>Green:</strong> Forest, olive, racing green</li>
+                        <li><strong>Metallics:</strong> Gold, silver leaf treatments</li>
+                    </ul>
+                    
+                    <h4>Quality Assessment:</h4>
+                    <ul>
+                        <li><strong>Grain uniformity:</strong> Consistent texture patterns</li>
+                        <li><strong>Color fastness:</strong> Lightfastness testing</li>
+                        <li><strong>Flexibility:</strong> Leather should not crack when bent</li>
+                        <li><strong>Thickness consistency:</strong> ±10% variation maximum</li>
+                        <li><strong>Edge quality:</strong> Clean cuts without fraying</li>
+                    </ul>
+                    
+                    <h4>Preservation Methods:</h4>
+                    <ul>
+                        <li><strong>Climate control:</strong> 45-55% RH, 65-70°F</li>
+                        <li><strong>UV protection:</strong> Avoid direct sunlight</li>
+                        <li><strong>Regular cleaning:</strong> Specialized leather cleaners</li>
+                        <li><strong>Conditioning:</strong> Leather balms every 6-12 months</li>
+                        <li><strong>Professional restoration:</strong> Expert repair services</li>
+                    </ul>
+                    
+                    <h4>Historical Sources:</h4>
+                    <ul>
+                        <li><strong>Hermès:</strong> Provided luxury leathers cho furniture makers</li>
+                        <li><strong>Tanners of Morocco:</strong> Traditional shagreen suppliers</li>
+                        <li><strong>English tanneries:</strong> Finest calfskin và pigskin</li>
+                        <li><strong>American suppliers:</strong> Buffalo và cattle hides</li>
+                        <li><strong>Italian craftsmen:</strong> Specialty decorative treatments</li>
+                    </ul>
+                    
+                    <h4>Modern Alternatives:</h4>
+                    <ul>
+                        <li><strong>Synthetic shagreen:</strong> Embossed vinyl reproductions</li>
+                        <li><strong>Vegan leathers:</strong> Plant-based alternatives</li>
+                        <li><strong>Recycled materials:</strong> Sustainable options</li>
+                        <li><strong>Hybrid materials:</strong> Leather-fabric combinations</li>
+                        <li><strong>Digital printing:</strong> Printed exotic patterns</li>
+                    </ul>
+                    
+                    <h4>Cost Factors:</h4>
+                    <p>Genuine shagreen: $200-500/sq ft. Crocodile: $300-800/sq ft. Fine calfskin: $50-150/sq ft. Labor-intensive applications add 200-400% to material costs. Vintage pieces với provenance command premium prices.</p>
+                    
+                    <h4>Sustainability Concerns:</h4>
+                    <ul>
+                        <li><strong>CITES regulations:</strong> Restricted trade trong exotic species</li>
+                        <li><strong>Ethical sourcing:</strong> Certified sustainable practices</li>
+                        <li><strong>Alternative materials:</strong> High-quality synthetics</li>
+                        <li><strong>Restoration over replacement:</strong> Preserve existing pieces</li>
+                        <li><strong>Vintage market:</strong> Reclaimed materials from antiques</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Crafting Techniques Modal -->
+    <div id="crafting-techniques-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Kỹ Thuật Chế Tác: Nghề Thủ Công Tinh Xảo</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/crafting-techniques.jpg" alt="Art Deco Crafting" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Kỹ Thuật Chế Tác Art Deco</h3>
+                    <p>Art Deco period đã witness sự convergence của traditional hand craftsmanship với emerging industrial techniques. Những artisans đã master được complex methods để tạo ra furniture và decorative objects với unprecedented levels của detail và sophistication.</p>
+                    
+                    <h4>Marquetry (Khảm Gỗ):</h4>
+                    <ul>
+                        <li><strong>Veneer preparation:</strong> Woods sliced to 0.6-0.8mm thickness</li>
+                        <li><strong>Pattern transfer:</strong> Templates cut từ paper hoặc thin wood</li>
+                        <li><strong>Cutting technique:</strong> Fretsaw với extremely fine blades</li>
+                        <li><strong>Assembly method:</strong> Precise fitting với minimal gaps</li>
+                        <li><strong>Adhesive application:</strong> Hide glue hoặc modern PVA</li>
+                    </ul>
+                    
+                    <h4>Inlay Work (Chạm Trổ):</h4>
+                    <ul>
+                        <li><strong>Routing precision:</strong> Hand-carved recesses với exact depth</li>
+                        <li><strong>Material selection:</strong> Contrasting woods, metals, ivory</li>
+                        <li><strong>Fitting process:</strong> Trial fitting cho perfect match</li>
+                        <li><strong>Securing methods:</strong> Pressure fitting hoặc adhesive bonding</li>
+                        <li><strong>Flush finishing:</strong> Sanding to achieve smooth surface</li>
+                    </ul>
+                    
+                    <h4>Metal Inlay Techniques:</h4>
+                    <ul>
+                        <li><strong>Wire inlay:</strong> Brass hoặc silver wire pressed into grooves</li>
+                        <li><strong>Sheet inlay:</strong> Thin metal sheets fitted into recesses</li>
+                        <li><strong>Powder inlay:</strong> Metal powder mixed với adhesive</li>
+                        <li><strong>Damascening:</strong> Pattern-welded metal surfaces</li>
+                        <li><strong>Niello work:</strong> Black metal alloy decorative technique</li>
+                    </ul>
+                    
+                    <h4>Joinery Methods:</h4>
+                    <ul>
+                        <li><strong>Dovetail joints:</strong> Hand-cut với precise angles</li>
+                        <li><strong>Mortise và tenon:</strong> Traditional strong connections</li>
+                        <li><strong>Dowel joints:</strong> Reinforced với wooden pins</li>
+                        <li><strong>Spline joints:</strong> Edge-glued panels với reinforcement</li>
+                        <li><strong>Laminated construction:</strong> Multiple layers cho strength</li>
+                    </ul>
+                    
+                    <h4>Carving Techniques:</h4>
+                    <ul>
+                        <li><strong>Relief carving:</strong> Raised designs từ background</li>
+                        <li><strong>Incised carving:</strong> Lines cut into surface</li>
+                        <li><strong>Chip carving:</strong> Geometric patterns bằng knife work</li>
+                        <li><strong>Sculptural carving:</strong> Three-dimensional forms</li>
+                        <li><strong>Machine carving:</strong> Router-based production methods</li>
+                    </ul>
+                    
+                    <h4>Geometric Pattern Creation:</h4>
+                    <ul>
+                        <li><strong>Compass work:</strong> Precise circular và arc elements</li>
+                        <li><strong>Ruler construction:</strong> Straight lines và angular patterns</li>
+                        <li><strong>Template systems:</strong> Repeatable pattern elements</li>
+                        <li><strong>Mathematical ratios:</strong> Golden ratio applications</li>
+                        <li><strong>Modular design:</strong> Scalable pattern systems</li>
+                    </ul>
+                    
+                    <h4>Surface Preparation:</h4>
+                    <ul>
+                        <li><strong>Hand sanding:</strong> Progressive grits 120-400</li>
+                        <li><strong>Scraping:</strong> Cabinet scrapers cho glass-smooth finish</li>
+                        <li><strong>Grain raising:</strong> Water treatment trước final sanding</li>
+                        <li><strong>Dust removal:</strong> Tack cloths và compressed air</li>
+                        <li><strong>Final inspection:</strong> Raking light check cho defects</li>
+                    </ul>
+                    
+                    <h4>Finishing Applications:</h4>
+                    <ul>
+                        <li><strong>French polishing:</strong> Shellac applied với rubber pad</li>
+                        <li><strong>Lacquer spraying:</strong> Multiple thin coats</li>
+                        <li><strong>Oil finishing:</strong> Penetrating oils cho natural look</li>
+                        <li><strong>Wax applications:</strong> Paste wax cho soft sheen</li>
+                        <li><strong>Modern polyurethanes:</strong> Durable clear coatings</li>
+                    </ul>
+                    
+                    <h4>Quality Control Methods:</h4>
+                    <ul>
+                        <li><strong>Dimensional accuracy:</strong> ±1mm tolerance standards</li>
+                        <li><strong>Surface quality:</strong> <2 micron Ra measurements</li>
+                        <li><strong>Joint strength:</strong> Load testing cho structural integrity</li>
+                        <li><strong>Finish durability:</strong> Abrasion và chemical resistance</li>
+                        <li><strong>Visual inspection:</strong> Color matching và pattern alignment</li>
+                    </ul>
+                    
+                    <h4>Tool Requirements:</h4>
+                    <ul>
+                        <li><strong>Hand planes:</strong> Smoothing, jack, và specialty planes</li>
+                        <li><strong>Chisels:</strong> Full range từ 3mm to 50mm widths</li>
+                        <li><strong>Saws:</strong> Dovetail, tenon, fret, và veneer saws</li>
+                        <li><strong>Measuring tools:</strong> Precision rules, squares, gauges</li>
+                        <li><strong>Sharpening equipment:</strong> Stones, strops, guides</li>
+                    </ul>
+                    
+                    <h4>Modern Adaptations:</h4>
+                    <ul>
+                        <li><strong>CNC machining:</strong> Computer-controlled precision cutting</li>
+                        <li><strong>Laser cutting:</strong> Intricate veneer patterns</li>
+                        <li><strong>Water-jet cutting:</strong> Metal inlay pieces</li>
+                        <li><strong>3D printing:</strong> Complex pattern templates</li>
+                        <li><strong>Digital design:</strong> CAD-based pattern development</li>
+                    </ul>
+                    
+                    <h4>Apprenticeship Systems:</h4>
+                    <ul>
+                        <li><strong>Traditional guilds:</strong> European craft traditions</li>
+                        <li><strong>Master craftsmen:</strong> One-on-one training</li>
+                        <li><strong>Technical schools:</strong> Formal education programs</li>
+                        <li><strong>Workshop experience:</strong> Hands-on skill development</li>
+                        <li><strong>Certification programs:</strong> Standardized skill verification</li>
+                    </ul>
+                    
+                    <h4>Time Investment:</h4>
+                    <p>Simple marquetry panel: 40-60 hours. Complex inlay work: 100-200 hours. Master-level piece: 500-1000 hours. Training to proficiency: 5-7 years. Master level expertise: 15-20 years experience.</p>
+                    
+                    <h4>Economic Value:</h4>
+                    <p>Hand-crafted details add 300-500% to furniture value. Master craftsman rates: $75-150/hour. Rare techniques command premium pricing. Investment pieces appreciate significantly over time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Luxury Interior Modal -->
+    <div id="luxury-interior-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Nội Thất Luxury: Di Sản Art Deco Hiện Đại</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/luxury-interior-modern.jpg" alt="Modern Luxury Interior" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Art Deco Trong Nội Thất Luxury Hiện Đại</h3>
+                    <p>Các thương hiệu nội thất luxury hàng đầu thế giới vẫn áp dụng nguyên tắc thiết kế Art Deco để tạo ra những không gian sang trọng và tinh tế. Từ penthouses Manhattan đến villas Riviera, Art Deco influence vẫn là symbol của sophistication.</p>
+                    
+                    <h4>Leading Luxury Brands:</h4>
+                    <ul>
+                        <li><strong>Ralph Lauren Home:</strong> Classic American luxury với Art Deco influences</li>
+                        <li><strong>Hermès Maison:</strong> French elegance với geometric patterns</li>
+                        <li><strong>Armani Casa:</strong> Italian minimalism meets Art Deco sophistication</li>
+                        <li><strong>Fendi Casa:</strong> Bold patterns và luxury materials</li>
+                        <li><strong>Bentley Home:</strong> Automotive luxury translated to interiors</li>
+                    </ul>
+                    
+                    <h4>Modern Art Deco Elements:</h4>
+                    <ul>
+                        <li><strong>Geometric patterns:</strong> Stylized sunbursts, zigzags, chevrons</li>
+                        <li><strong>Metallic accents:</strong> Brass, chrome, gold finishes</li>
+                        <li><strong>Rich materials:</strong> Marble, exotic woods, fine leather</li>
+                        <li><strong>Bold colors:</strong> Black-gold-white schemes</li>
+                        <li><strong>Streamlined forms:</strong> Clean lines với decorative elements</li>
+                    </ul>
+                    
+                    <h4>Contemporary Applications:</h4>
+                    <ul>
+                        <li><strong>Lighting design:</strong> Sculptural chandeliers với geometric forms</li>
+                        <li><strong>Furniture pieces:</strong> Statement chairs, tables với Art Deco details</li>
+                        <li><strong>Wall treatments:</strong> Geometric wallpapers, metallic accents</li>
+                        <li><strong>Flooring:</strong> Parquet patterns, marble inlays</li>
+                        <li><strong>Accessories:</strong> Mirrors, vases, decorative objects</li>
+                    </ul>
+                    
+                    <h4>High-End Projects:</h4>
+                    <ul>
+                        <li><strong>432 Park Avenue NYC:</strong> $95M penthouse với Art Deco inspired interiors</li>
+                        <li><strong>One Hyde Park London:</strong> $240M apartment featuring custom Art Deco elements</li>
+                        <li><strong>Tour Odéon Monaco:</strong> Sky penthouse với bespoke Art Deco design</li>
+                        <li><strong>The Residences at Mandarin Oriental:</strong> Global luxury residential projects</li>
+                        <li><strong>St. Regis Residences:</strong> Signature Art Deco styling worldwide</li>
+                    </ul>
+                    
+                    <h4>Design Principles Applied:</h4>
+                    <ul>
+                        <li><strong>Symmetry:</strong> Balanced compositions với central focal points</li>
+                        <li><strong>Layered lighting:</strong> Ambient, task, accent lighting systems</li>
+                        <li><strong>Textural contrast:</strong> Smooth vs. textured surfaces</li>
+                        <li><strong>Scale relationships:</strong> Proportional harmony throughout spaces</li>
+                        <li><strong>Color psychology:</strong> Sophisticated palettes creating specific moods</li>
+                    </ul>
+                    
+                    <h4>Technology Integration:</h4>
+                    <ul>
+                        <li><strong>Smart home systems:</strong> Hidden technology preserving aesthetic</li>
+                        <li><strong>Automated lighting:</strong> Programmable scenes enhancing Art Deco elements</li>
+                        <li><strong>Climate control:</strong> Invisible systems maintaining comfort</li>
+                        <li><strong>Security systems:</strong> Discrete protection for valuable furnishings</li>
+                        <li><strong>Entertainment systems:</strong> Concealed AV equipment</li>
+                    </ul>
+                    
+                    <h4>Custom Manufacturing:</h4>
+                    <ul>
+                        <li><strong>Bespoke furniture:</strong> One-off pieces cho specific projects</li>
+                        <li><strong>Artisan collaboration:</strong> Master craftsmen creating unique elements</li>
+                        <li><strong>Material sourcing:</strong> Rare woods, stones, metals</li>
+                        <li><strong>Prototype development:</strong> Multiple iterations to perfection</li>
+                        <li><strong>Quality control:</strong> Rigorous standards throughout production</li>
+                    </ul>
+                    
+                    <h4>Interior Design Process:</h4>
+                    <ul>
+                        <li><strong>Concept development:</strong> 3-6 months design phase</li>
+                        <li><strong>Material selection:</strong> Global sourcing của finest materials</li>
+                        <li><strong>Custom fabrication:</strong> 12-18 months production time</li>
+                        <li><strong>Installation coordination:</strong> White-glove delivery và setup</li>
+                        <li><strong>Final styling:</strong> Accessories và art placement</li>
+                    </ul>
+                    
+                    <h4>Investment Values:</h4>
+                    <ul>
+                        <li><strong>Project costs:</strong> $5,000-15,000/sq ft cho luxury spaces</li>
+                        <li><strong>Custom pieces:</strong> $50,000-500,000 per major item</li>
+                        <li><strong>Appreciation rates:</strong> 5-15% annually for quality pieces</li>
+                        <li><strong>Resale values:</strong> Strong market cho well-executed designs</li>
+                        <li><strong>Insurance values:</strong> Specialized coverage for unique items</li>
+                    </ul>
+                    
+                    <h4>Global Markets:</h4>
+                    <ul>
+                        <li><strong>New York:</strong> Financial district penthouses, Upper East Side</li>
+                        <li><strong>London:</strong> Mayfair, Knightsbridge luxury residences</li>
+                        <li><strong>Monaco:</strong> Monte Carlo high-end apartments</li>
+                        <li><strong>Hong Kong:</strong> Peak residences, luxury developments</li>
+                        <li><strong>Dubai:</strong> Palm Jumeirah, Downtown luxury towers</li>
+                    </ul>
+                    
+                    <h4>Celebrity Endorsements:</h4>
+                    <ul>
+                        <li><strong>Fashion designers:</strong> Karl Lagerfeld, Tom Ford interiors</li>
+                        <li><strong>Entertainment figures:</strong> Celebrity homes featuring Art Deco</li>
+                        <li><strong>Business leaders:</strong> CEO residences with signature styling</li>
+                        <li><strong>Royalty:</strong> Palace renovations incorporating modern Art Deco</li>
+                        <li><strong>Art collectors:</strong> Homes showcasing Art Deco collections</li>
+                    </ul>
+                    
+                    <h4>Sustainability Considerations:</h4>
+                    <ul>
+                        <li><strong>Material sourcing:</strong> Certified sustainable practices</li>
+                        <li><strong>Energy efficiency:</strong> LED lighting, smart systems</li>
+                        <li><strong>Longevity design:</strong> Timeless pieces reducing replacement needs</li>
+                        <li><strong>Local artisans:</strong> Supporting traditional craftsmanship</li>
+                        <li><strong>Restoration focus:</strong> Preserving existing Art Deco pieces</li>
+                    </ul>
+                    
+                    <h4>Future Trends:</h4>
+                    <p>Digital integration while maintaining classic aesthetics. Sustainable luxury materials. Global accessibility through virtual design consultations. Increased customization through advanced manufacturing. Art Deco-inspired smart homes combining tradition với cutting-edge technology.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hotel Design Modal -->
+    <div id="hotel-design-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Khách Sạn 5 Sao: Art Deco Hospitality</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/hotel-design-modern.jpg" alt="Modern Hotel Design" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Art Deco Trong Hospitality Design</h3>
+                    <p>Nhiều khách sạn 5 sao trên thế giới đã chọn Art Deco như signature design language để tạo ra những experiences đáng nhớ và differentiate trong competitive luxury market. Phong cách này evokes sense của glamour, sophistication và timeless elegance.</p>
+                    
+                    <h4>Iconic Art Deco Hotels:</h4>
+                    <ul>
+                        <li><strong>The Carlyle, NYC:</strong> Upper East Side landmark từ 1930</li>
+                        <li><strong>Claridge's, London:</strong> Art Deco renovation by Thierry Despont</li>
+                        <li><strong>Hotel Martinez, Cannes:</strong> Riviera glamour với Art Deco styling</li>
+                        <li><strong>The Savoy, London:</strong> $340M renovation honoring Art Deco heritage</li>
+                        <li><strong>Park Hyatt Tokyo:</strong> Modern interpretation của Art Deco principles</li>
+                    </ul>
+                    
+                    <h4>Contemporary Art Deco Hotels:</h4>
+                    <ul>
+                        <li><strong>1 Hotels Brooklyn Bridge:</strong> Sustainable luxury với Art Deco touches</li>
+                        <li><strong>The Ritz-Carlton, Hong Kong:</strong> Sky-high luxury với geometric elements</li>
+                        <li><strong>Four Seasons George V, Paris:</strong> Classic French elegance</li>
+                        <li><strong>Aman Tokyo:</strong> Japanese minimalism meets Art Deco</li>
+                        <li><strong>Edition Hotels:</strong> Ian Schrager's modern Art Deco interpretation</li>
+                    </ul>
+                    
+                    <h4>Design Elements Applied:</h4>
+                    <ul>
+                        <li><strong>Lobby design:</strong> Grand entrances với soaring ceilings, geometric patterns</li>
+                        <li><strong>Lighting schemes:</strong> Dramatic chandeliers, accent lighting, mood creation</li>
+                        <li><strong>Furniture selection:</strong> Custom pieces inspired by 1920s-30s designs</li>
+                        <li><strong>Materials palette:</strong> Marble, brass, exotic woods, fine textiles</li>
+                        <li><strong>Color schemes:</strong> Sophisticated blacks, golds, creams, jewel tones</li>
+                    </ul>
+                    
+                    <h4>Guest Room Features:</h4>
+                    <ul>
+                        <li><strong>Bedroom design:</strong> Geometric headboards, mirrored surfaces, luxe linens</li>
+                        <li><strong>Bathroom luxury:</strong> Marble surfaces, Art Deco fixtures, dramatic lighting</li>
+                        <li><strong>Technology integration:</strong> Hidden systems preserving aesthetic integrity</li>
+                        <li><strong>Custom furniture:</strong> Bespoke pieces reflecting Art Deco sensibility</li>
+                        <li><strong>Artwork curation:</strong> Period pieces và contemporary interpretations</li>
+                    </ul>
+                    
+                    <h4>Public Space Design:</h4>
+                    <ul>
+                        <li><strong>Restaurants:</strong> Dining venues với theatrical Art Deco atmospheres</li>
+                        <li><strong>Bars & lounges:</strong> Speakeasy-inspired spaces với period details</li>
+                        <li><strong>Ballrooms:</strong> Grand event spaces với geometric ceiling treatments</li>
+                        <li><strong>Spa facilities:</strong> Wellness areas incorporating Art Deco tranquility</li>
+                        <li><strong>Business centers:</strong> Professional spaces với elegant appointments</li>
+                    </ul>
+                    
+                    <h4>Project Investment Levels:</h4>
+                    <ul>
+                        <li><strong>Renovation costs:</strong> $500,000-2M per room depending on scope</li>
+                        <li><strong>New construction:</strong> $1M-5M per room for luxury properties</li>
+                        <li><strong>FF&E budgets:</strong> $100,000-300,000 per room for furnishings</li>
+                        <li><strong>Art & accessories:</strong> $25,000-100,000 per room</li>
+                        <li><strong>Timeline:</strong> 18-36 months for major renovations</li>
+                    </ul>
+                    
+                    <h4>Guest Experience Impact:</h4>
+                    <ul>
+                        <li><strong>Brand differentiation:</strong> Unique positioning trong competitive market</li>
+                        <li><strong>Rate premiums:</strong> 15-30% above comparable properties</li>
+                        <li><strong>Guest satisfaction:</strong> Higher scores for memorable experiences</li>
+                        <li><strong>Social media appeal:</strong> Instagram-worthy spaces driving bookings</li>
+                        <li><strong>Repeat business:</strong> Strong loyalty from design-conscious travelers</li>
+                    </ul>
+                    
+                    <h4>Design Team Collaboration:</h4>
+                    <ul>
+                        <li><strong>Interior designers:</strong> Specialists in luxury hospitality</li>
+                        <li><strong>Architects:</strong> Structural modifications respecting heritage</li>
+                        <li><strong>Lighting designers:</strong> Creating dramatic yet functional schemes</li>
+                        <li><strong>Art consultants:</strong> Curating appropriate collections</li>
+                        <li><strong>Brand consultants:</strong> Ensuring consistency với hotel identity</li>
+                    </ul>
+                    
+                    <h4>Technology Integration:</h4>
+                    <ul>
+                        <li><strong>Smart room controls:</strong> Invisible technology trong period settings</li>
+                        <li><strong>Mood lighting:</strong> Programmable systems enhancing ambiance</li>
+                        <li><strong>Sound systems:</strong> High-quality audio without visual intrusion</li>
+                        <li><strong>Climate control:</strong> Whisper-quiet systems maintaining comfort</li>
+                        <li><strong>Security systems:</strong> Discrete protection for guests và artwork</li>
+                    </ul>
+                    
+                    <h4>Operational Considerations:</h4>
+                    <ul>
+                        <li><strong>Maintenance requirements:</strong> Specialized care for luxury finishes</li>
+                        <li><strong>Staff training:</strong> Understanding design heritage và guest education</li>
+                        <li><strong>Procurement systems:</strong> Sourcing replacement items for custom pieces</li>
+                        <li><strong>Insurance coverage:</strong> Protecting valuable design investments</li>
+                        <li><strong>Renovation planning:</strong> Phased approaches minimizing business disruption</li>
+                    </ul>
+                    
+                    <h4>Market Performance:</h4>
+                    <ul>
+                        <li><strong>RevPAR premiums:</strong> 20-40% above market average</li>
+                        <li><strong>Occupancy rates:</strong> Consistently higher performance</li>
+                        <li><strong>Guest demographics:</strong> Affluent, design-conscious travelers</li>
+                        <li><strong>Event bookings:</strong> Popular venues for high-end events</li>
+                        <li><strong>Award recognition:</strong> Design awards enhancing reputation</li>
+                    </ul>
+                    
+                    <h4>Regional Adaptations:</h4>
+                    <ul>
+                        <li><strong>Asian markets:</strong> Incorporating local cultural elements</li>
+                        <li><strong>European properties:</strong> Respecting historical building constraints</li>
+                        <li><strong>American hotels:</strong> Bold interpretations with modern conveniences</li>
+                        <li><strong>Middle Eastern luxury:</strong> Opulent materials và grand scale</li>
+                        <li><strong>Emerging markets:</strong> Art Deco as symbol of sophistication</li>
+                    </ul>
+                    
+                    <h4>Future Developments:</h4>
+                    <p>Sustainable luxury materials. Virtual reality guest previews. Personalized room customization. Integration with wellness trends. Adaptive spaces for changing guest needs. Art Deco aesthetic applied to boutique và lifestyle hotel segments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Design Modal -->
+    <div id="product-design-modal" class="detail-modal">
+        <div class="detail-modal-content">
+            <span class="detail-close">&times;</span>
+            <div class="detail-modal-header">
+                <h2>Product Design: Art Deco Trong Sản Phẩm Hiện Đại</h2>
+                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
+            </div>
+            <div class="detail-modal-body">
+                <div class="modal-image-container">
+                    <img src="images/product-design-modern.jpg" alt="Modern Product Design" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
+                </div>
+                <div class="modal-content-scroll">
+                    <h3>Art Deco Trong Product Design Hiện Đại</h3>
+                    <p>Nguyên tắc thiết kế Art Deco vẫn có influence mạnh mẽ trong product design đương đại. Từ luxury automobiles đến high-end electronics, designers áp dụng geometric forms, premium materials và attention to detail để tạo ra products với timeless appeal.</p>
+                    
+                    <h4>Automotive Design:</h4>
+                    <ul>
+                        <li><strong>Rolls-Royce:</strong> Phantom series với Art Deco inspired interiors</li>
+                        <li><strong>Bentley:</strong> Continental GT featuring geometric dashboard elements</li>
+                        <li><strong>Mercedes-Maybach:</strong> S-Class với luxury appointments</li>
+                        <li><strong>Aston Martin:</strong> DB series incorporating streamlined Art Deco forms</li>
+                        <li><strong>Bugatti:</strong> Chiron với sculptural body language</li>
+                    </ul>
+                    
+                    <h4>Luxury Electronics:</h4>
+                    <ul>
+                        <li><strong>Bang & Olufsen:</strong> Audio equipment với geometric aesthetic</li>
+                        <li><strong>Apple:</strong> Product design philosophy influenced by Art Deco simplicity</li>
+                        <li><strong>Vertu:</strong> Luxury smartphones với precious material construction</li>
+                        <li><strong>Leica:</strong> Camera designs honoring Art Deco industrial heritage</li>
+                        <li><strong>Braun:</strong> Appliances featuring clean geometric forms</li>
+                    </ul>
+                    
+                    <h4>Timepiece Design:</h4>
+                    <ul>
+                        <li><strong>Cartier:</strong> Tank collection directly inspired by Art Deco</li>
+                        <li><strong>Jaeger-LeCoultre:</strong> Reverso với geometric case design</li>
+                        <li><strong>Van Cleef & Arpels:</strong> Art Deco motifs in jewelry watches</li>
+                        <li><strong>Patek Philippe:</strong> Calatrava series với minimalist elegance</li>
+                        <li><strong>Omega:</strong> De Ville collection featuring period-inspired elements</li>
+                    </ul>
+                    
+                    <h4>Home Appliances:</h4>
+                    <ul>
+                        <li><strong>Smeg:</strong> Retro refrigerators với Art Deco styling cues</li>
+                        <li><strong>KitchenAid:</strong> Stand mixers maintaining classic design language</li>
+                        <li><strong>Dyson:</strong> Vacuum cleaners với sculptural industrial design</li>
+                        <li><strong>Nespresso:</strong> Coffee machines featuring streamlined forms</li>
+                        <li><strong>Sub-Zero:</strong> Built-in appliances với architectural integration</li>
+                    </ul>
+                    
+                    <h4>Design Principles Applied:</h4>
+                    <ul>
+                        <li><strong>Geometric forms:</strong> Angular shapes, stepped profiles, linear elements</li>
+                        <li><strong>Streamlined aesthetics:</strong> Aerodynamic forms suggesting speed và efficiency</li>
+                        <li><strong>Premium materials:</strong> Metal finishes, exotic materials, precision construction</li>
+                        <li><strong>Functional beauty:</strong> Form following function với artistic expression</li>
+                        <li><strong>Attention to detail:</strong> Precise tolerances, quality finishes</li>
+                    </ul>
+                    
+                    <h4>Manufacturing Techniques:</h4>
+                    <ul>
+                        <li><strong>CNC machining:</strong> Precision manufacturing cho complex geometries</li>
+                        <li><strong>Advanced materials:</strong> Carbon fiber, titanium, ceramic applications</li>
+                        <li><strong>Surface treatments:</strong> Anodizing, PVD coating, hand finishing</li>
+                        <li><strong>Assembly methods:</strong> Precision fitting, minimal fasteners</li>
+                        <li><strong>Quality control:</strong> Six Sigma processes ensuring consistency</li>
+                    </ul>
+                    
+                    <h4>Consumer Electronics:</h4>
+                    <ul>
+                        <li><strong>Smartphones:</strong> Premium models với metal construction, geometric forms</li>
+                        <li><strong>Laptops:</strong> Thin profiles, minimal aesthetics, quality materials</li>
+                        <li><strong>Audio equipment:</strong> Hi-fi components với architectural presence</li>
+                        <li><strong>Gaming hardware:</strong> Consoles featuring sophisticated industrial design</li>
+                        <li><strong>Wearables:</strong> Smartwatches inspired by luxury timepiece tradition</li>
+                    </ul>
+                    
+                    <h4>Furniture & Lighting:</h4>
+                    <ul>
+                        <li><strong>Task lighting:</strong> Desk lamps với adjustable geometric elements</li>
+                        <li><strong>Seating design:</strong> Office chairs featuring ergonomic Art Deco forms</li>
+                        <li><strong>Storage solutions:</strong> Modular systems với clean geometric lines</li>
+                        <li><strong>Decorative lighting:</strong> Pendant và floor lamps với period inspiration</li>
+                        <li><strong>Workspace furniture:</strong> Desks combining function với aesthetic appeal</li>
+                    </ul>
+                    
+                    <h4>Packaging Design:</h4>
+                    <ul>
+                        <li><strong>Luxury goods:</strong> Boxes và containers reflecting product quality</li>
+                        <li><strong>Cosmetics:</strong> Geometric packaging với premium finishes</li>
+                        <li><strong>Spirits:</strong> Bottle designs featuring Art Deco motifs</li>
+                        <li><strong>Technology:</strong> Product packaging reinforcing design language</li>
+                        <li><strong>Jewelry:</strong> Presentation cases honoring Art Deco tradition</li>
+                    </ul>
+                    
+                    <h4>Market Positioning:</h4>
+                    <ul>
+                        <li><strong>Premium positioning:</strong> Art Deco associations với luxury và quality</li>
+                        <li><strong>Target demographics:</strong> Affluent, design-conscious consumers</li>
+                        <li><strong>Price premiums:</strong> 20-50% above comparable products</li>
+                        <li><strong>Brand differentiation:</strong> Unique positioning trong competitive markets</li>
+                        <li><strong>Collector appeal:</strong> Limited editions với investment potential</li>
+                    </ul>
+                    
+                    <h4>Design Process:</h4>
+                    <ul>
+                        <li><strong>Research phase:</strong> Historical analysis, trend forecasting</li>
+                        <li><strong>Concept development:</strong> Sketching, 3D modeling, prototyping</li>
+                        <li><strong>Material testing:</strong> Durability, aesthetics, cost analysis</li>
+                        <li><strong>User testing:</strong> Ergonomics, functionality validation</li>
+                        <li><strong>Production planning:</strong> Manufacturing optimization, quality systems</li>
+                    </ul>
+                    
+                    <h4>Global Trends:</h4>
+                    <ul>
+                        <li><strong>Sustainability:</strong> Eco-friendly materials với Art Deco aesthetics</li>
+                        <li><strong>Customization:</strong> Personalized products maintaining design coherence</li>
+                        <li><strong>Smart integration:</strong> Technology hidden within elegant forms</li>
+                        <li><strong>Cultural adaptation:</strong> Regional interpretations của Art Deco principles</li>
+                        <li><strong>Vintage revival:</strong> Retro-inspired products với modern functionality</li>
+                    </ul>
+                    
+                    <h4>Investment Returns:</h4>
+                    <ul>
+                        <li><strong>Development costs:</strong> Higher upfront investment in design và tooling</li>
+                        <li><strong>Manufacturing premiums:</strong> Quality materials và processes increase costs</li>
+                        <li><strong>Market performance:</strong> Strong sales to design-conscious segments</li>
+                        <li><strong>Brand value:</strong> Design leadership enhancing overall brand equity</li>
+                        <li><strong>Long-term appeal:</strong> Timeless designs maintaining relevance</li>
+                    </ul>
+                    
+                    <h4>Future Directions:</h4>
+                    <p>Sustainable luxury materials. AI-assisted design optimization. Mass customization capabilities. Augmented reality design tools. Global design collaboration platforms. Art Deco principles applied to emerging product categories như IoT devices và renewable energy products.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer style="background: var(--primary-dark); color: var(--primary-light); padding: 3rem 0; text-align: center;">
@@ -416,6 +2212,84 @@
         document.querySelectorAll('.art-deco-card').forEach((card, index) => {
             card.style.transitionDelay = `${index * 0.1}s`;
         });
+
+        // Modal System
+        class ModalManager {
+            constructor() {
+                this.initializeModals();
+            }
+
+            initializeModals() {
+                // Get all clickable cards
+                const clickableCards = document.querySelectorAll('.clickable-card');
+                
+                // Add click event listeners
+                clickableCards.forEach(card => {
+                    card.addEventListener('click', (e) => {
+                        const modalId = card.getAttribute('data-modal');
+                        this.openModal(modalId);
+                    });
+                });
+
+                // Close buttons
+                const closeButtons = document.querySelectorAll('.detail-close');
+                closeButtons.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        this.closeModal();
+                    });
+                });
+
+                // Close when clicking outside
+                document.addEventListener('click', (e) => {
+                    if (e.target.classList.contains('detail-modal')) {
+                        this.closeModal();
+                    }
+                });
+
+                // Close with ESC key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') {
+                        this.closeModal();
+                    }
+                });
+            }
+
+            openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                if (modal) {
+                    modal.style.display = 'flex';
+                    modal.style.opacity = '0';
+                    modal.style.transform = 'scale(0.9)';
+                    
+                    // Animate in
+                    setTimeout(() => {
+                        modal.style.opacity = '1';
+                        modal.style.transform = 'scale(1)';
+                    }, 10);
+                    
+                    // Prevent body scroll
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            closeModal() {
+                const openModals = document.querySelectorAll('.detail-modal[style*="display: flex"]');
+                openModals.forEach(modal => {
+                    modal.style.opacity = '0';
+                    modal.style.transform = 'scale(0.9)';
+                    
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                    }, 300);
+                });
+                
+                // Restore body scroll
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Initialize modal manager
+        const modalManager = new ModalManager();
     </script>
 </body>
 </html> 
