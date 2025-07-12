@@ -829,6 +829,99 @@
             card.style.transitionDelay = `${index * 0.1}s`;
         });
 
+        // Detail Modal System
+        function openDetailModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                
+                // Add entrance animation
+                const modalContent = modal.querySelector('.detail-modal-content');
+                modalContent.style.animation = 'slideInScale 0.5s ease-out';
+            }
+        }
+
+        function closeDetailModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                const modalContent = modal.querySelector('.detail-modal-content');
+                modalContent.style.animation = 'fadeOut 0.3s ease-out';
+                
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+        }
+
+        function closeAllDetailModals() {
+            document.querySelectorAll('.detail-modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        }
+
+        // Click handlers for clickable cards
+        document.querySelectorAll('.clickable-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                e.preventDefault();
+                const modalId = this.getAttribute('data-modal');
+                if (modalId) {
+                    openDetailModal(modalId);
+                }
+            });
+        });
+
+        // Close button handlers
+        document.querySelectorAll('.detail-close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                const modal = this.closest('.detail-modal');
+                if (modal) {
+                    closeDetailModal(modal.id);
+                }
+            });
+        });
+
+        // Click outside to close
+        document.querySelectorAll('.detail-modal').forEach(modal => {
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeDetailModal(this.id);
+                }
+            });
+        });
+
+        // ESC key to close all modals
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeAllDetailModals();
+            }
+        });
+
+        // Prevent modal content scroll from closing modal
+        document.querySelectorAll('.detail-modal-content').forEach(content => {
+            content.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        });
+
+        // Add fadeOut animation keyframe
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                    transform: scale(1);
+                }
+                to {
+                    opacity: 0;
+                    transform: scale(0.95);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
 
     </script>
 </body>
