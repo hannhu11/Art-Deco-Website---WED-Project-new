@@ -5,10 +5,886 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Deco Hiện Đại - Ảnh Hưởng Và Xu Hướng</title>
     <link rel="stylesheet" href="art-deco-design-system.css">
+    <!-- Performance Optimizations -->
+    <link rel="preload" href="art-deco-design-system.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
+    <link rel="preload" href="images/modern-cityscape-hero.jpg" as="image">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Critical CSS for Above-the-fold -->
+    <style>
+        /* Critical CSS - inline for faster loading */
+        .hero-section { min-height: 100vh; position: relative; }
+        .hero-image-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
+        .hero-image { width: 100%; height: 100%; object-fit: cover; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        .hero-content { position: relative; z-index: 2; text-align: center; padding: 8rem 0; }
+        .hero-title { font-size: 5rem; font-weight: 700; color: var(--primary-gold); margin-bottom: 2rem; }
+        .navbar { background: var(--primary-dark); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
+        .art-deco-card { background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        
+        /* Art Deco Loading Animation */
+        .art-deco-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .art-deco-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader-container {
+            text-align: center;
+            color: var(--primary-gold);
+        }
+
+        .loader-diamond {
+            width: 80px;
+            height: 80px;
+            border: 4px solid var(--primary-gold);
+            border-top: 4px solid transparent;
+            border-bottom: 4px solid transparent;
+            animation: diamondRotate 2s linear infinite;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .loader-diamond::before,
+        .loader-diamond::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 4px solid transparent;
+        }
+
+        .loader-diamond::before {
+            border-left: 4px solid var(--primary-gold);
+            border-right: 4px solid var(--primary-gold);
+            animation: diamondRotate 1.5s linear infinite reverse;
+        }
+
+        .loader-diamond::after {
+            border-top: 4px solid var(--primary-gold);
+            border-bottom: 4px solid var(--primary-gold);
+            animation: diamondRotate 1s linear infinite;
+        }
+
+        @keyframes diamondRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-zigzag {
+            width: 200px;
+            height: 20px;
+            background: linear-gradient(45deg, transparent 30%, var(--primary-gold) 30%, var(--primary-gold) 70%, transparent 70%),
+                        linear-gradient(-45deg, transparent 30%, var(--primary-gold) 30%, var(--primary-gold) 70%, transparent 70%);
+            background-size: 30px 20px;
+            animation: zigzagMove 2s linear infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes zigzagMove {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 30px 0, -30px 0; }
+        }
+
+        .loader-sunburst {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin: 2rem auto;
+            animation: sunburstRotate 3s linear infinite;
+        }
+
+        .loader-sunburst::before,
+        .loader-sunburst::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 40px;
+            background: var(--primary-gold);
+            transform-origin: 2px 2px;
+        }
+
+        .loader-sunburst::before {
+            transform: translate(-50%, -50%) rotate(0deg);
+            box-shadow: 0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold);
+        }
+
+        .loader-sunburst::after {
+            transform: translate(-50%, -50%) rotate(45deg);
+            box-shadow: 0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold),
+                        0 0 0 0 var(--primary-gold);
+        }
+
+        @keyframes sunburstRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .loader-text {
+            font-size: 1.2rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            animation: textPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes textPulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        /* Particle System */
+        .art-deco-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--primary-gold);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: particleFloat 8s linear infinite;
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Typewriter Effect */
+        .typewriter {
+            overflow: hidden;
+            border-right: 3px solid var(--primary-gold);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: 0.1em;
+            animation: typewriter 3s steps(8) 1s both, blink 0.7s infinite;
+        }
+
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent; }
+            50% { border-color: var(--primary-gold); }
+        }
+
+        /* Scroll Reveal Animation */
+        .reveal-element {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-element.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Parallax Effects */
+        .parallax-slow {
+            will-change: transform;
+        }
+
+        /* Enhanced Hover Effects */
+        .clickable-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .clickable-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
+            transition: left 0.5s ease;
+            z-index: 1;
+        }
+
+        .clickable-card:hover::before {
+            left: 100%;
+        }
+
+        .clickable-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .click-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(212, 175, 55, 0.9), rgba(139, 69, 19, 0.9));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+
+        .clickable-card:hover .click-overlay {
+            opacity: 1;
+        }
+
+        .click-hint {
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Golden Sweep Effect */
+        .golden-sweep {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .golden-sweep::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.3), transparent);
+            transform: translateX(-100%) translateY(-100%) rotate(45deg);
+            transition: transform 0.6s ease;
+            z-index: 1;
+        }
+
+        .golden-sweep:hover::after {
+            transform: translateX(100%) translateY(100%) rotate(45deg);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 3rem; }
+            .hero-content { padding: 4rem 0; }
+            .loader-diamond { width: 60px; height: 60px; }
+            .loader-zigzag { width: 150px; }
+            .loader-sunburst { width: 80px; height: 80px; }
+        }
+
+        /* Performance optimizations */
+        @media (prefers-reduced-motion: reduce) {
+            .particle,
+            .typewriter,
+            .reveal-element,
+            .art-deco-card,
+            .golden-sweep::before,
+            .click-overlay {
+                animation: none;
+                transition: none;
+            }
+        }
+        
+        /* Fadeout animation for modals */
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+        }
+
+        @keyframes slideInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95) translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        /* === INTERACTIVE TIMELINE STYLES === */
+        .art-deco-timeline-section {
+            background: var(--primary-dark);
+            color: var(--primary-light);
+            padding: 5rem 0;
+        }
+
+        .timeline-title {
+            color: var(--primary-gold);
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            font-weight: 300;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .timeline-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary-light);
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .breakthrough-interactive-timeline {
+            position: relative;
+            padding: 4rem 0;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline-line-modern {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(to bottom, var(--primary-gold), var(--primary-bronze), var(--primary-gold));
+            transform: translateX(-50%);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .timeline-milestone {
+            position: relative;
+            margin: 4rem 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-milestone:nth-child(odd) .milestone-content {
+            text-align: right;
+            padding-right: calc(50% + 4rem);
+        }
+
+        .timeline-milestone:nth-child(even) .milestone-content {
+            text-align: left;
+            padding-left: calc(50% + 4rem);
+        }
+
+        .milestone-marker {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 120px;
+            height: 120px;
+            z-index: 10;
+        }
+
+        .marker-ring {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--primary-gold);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        .marker-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--primary-bronze));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-dark);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4);
+            font-family: 'Cinzel', serif;
+        }
+
+        .marker-pulse {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 2px solid var(--primary-gold);
+            border-radius: 50%;
+            animation: ripple 3s infinite;
+        }
+
+        .milestone-content h3 {
+            font-size: 1.8rem;
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        .milestone-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .timeline-click-hint {
+            position: absolute;
+            left: 50%;
+            bottom: -2rem;
+            transform: translateX(-50%);
+            background: rgba(212, 175, 55, 0.9);
+            color: var(--primary-dark);
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .timeline-milestone:hover .timeline-click-hint {
+            opacity: 1;
+        }
+
+        .timeline-milestone:hover {
+            transform: scale(1.05);
+        }
+
+        .timeline-milestone:hover .marker-core {
+            box-shadow: 0 8px 30px rgba(212, 175, 55, 0.6);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+
+        /* === COLOR PALETTE STUDIO STYLES === */
+        .art-deco-color-section {
+            background: var(--primary-light);
+            padding: 5rem 0;
+        }
+
+        .palette-title {
+            color: var(--primary-navy);
+            text-align: center;
+            margin-bottom: 1rem;
+            font-size: 2.8rem;
+            font-weight: 300;
+            font-family: 'Cinzel', serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .palette-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--primary-navy);
+            opacity: 0.8;
+            margin-bottom: 3rem;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .color-palette-studio {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .palette-categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .palette-category {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 3px solid transparent;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .palette-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .palette-category.active {
+            border-color: var(--primary-gold);
+            background: linear-gradient(135deg, #fff, #fefefe);
+        }
+
+        .category-preview {
+            margin-bottom: 1.5rem;
+        }
+
+        .preview-colors {
+            display: flex;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .preview-colors div {
+            flex: 1;
+            transition: all 0.3s ease;
+        }
+
+        .palette-category:hover .preview-colors div {
+            transform: scale(1.1);
+        }
+
+        .category-info h3 {
+            color: var(--primary-navy);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        .category-info p {
+            color: var(--primary-dark);
+            font-size: 0.95rem;
+            opacity: 0.8;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .active-palette-display {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border: 2px solid var(--primary-gold);
+        }
+
+        .palette-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .palette-header h3 {
+            color: var(--primary-navy);
+            font-size: 1.8rem;
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        .palette-actions {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .action-btn {
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            font-family: 'Cinzel', serif;
+        }
+
+        .action-btn:hover {
+            background: var(--primary-bronze);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .main-color-swatches {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .color-swatch-premium {
+            aspect-ratio: 1;
+            border-radius: 15px;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .color-swatch-premium:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .swatch-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .color-swatch-premium:hover .swatch-overlay {
+            opacity: 1;
+        }
+
+        .color-info-detailed {
+            text-align: center;
+            color: white;
+        }
+
+        .color-name-premium {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-family: 'Cinzel', serif;
+        }
+
+        .color-hex-premium {
+            font-size: 1rem;
+            font-family: monospace;
+            margin-bottom: 0.5rem;
+        }
+
+        .color-usage-premium {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .color-usage-guide {
+            border-top: 2px solid var(--primary-gold);
+            padding-top: 2rem;
+        }
+
+        .color-usage-guide h4 {
+            color: var(--primary-navy);
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        .usage-examples {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .usage-example {
+            text-align: center;
+        }
+
+        .usage-demo {
+            width: 100%;
+            height: 100px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        #demo-text {
+            font-size: 1.3rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Cinzel', serif;
+        }
+
+        .usage-tips h5 {
+            color: var(--primary-burgundy);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 600;
+        }
+
+        .usage-tips ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .usage-tips li {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            line-height: 1.6;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .usage-tips li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+
+        .copy-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-gold);
+            color: var(--primary-dark);
+            padding: 1rem 2rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 10000;
+            font-family: 'Cinzel', serif;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .copy-notification.show {
+            transform: translateX(0);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .timeline-milestone:nth-child(odd) .milestone-content,
+            .timeline-milestone:nth-child(even) .milestone-content {
+                text-align: center;
+                padding: 0 2rem;
+            }
+
+            .milestone-marker {
+                position: relative;
+                left: auto;
+                top: auto;
+                transform: none;
+                margin: 2rem auto;
+            }
+
+            .timeline-line-modern {
+                display: none;
+            }
+
+            .timeline-title {
+                font-size: 2.2rem;
+            }
+
+            .milestone-content h3 {
+                font-size: 1.5rem;
+            }
+
+            .palette-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .usage-examples {
+                grid-template-columns: 1fr;
+            }
+
+            .main-color-swatches {
+                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            }
+
+            .palette-title {
+                font-size: 2.2rem;
+            }
+
+            .palette-category {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Art Deco Loading Animation -->
+    <div id="art-deco-loader" class="art-deco-loader">
+        <div class="loader-container">
+            <div class="loader-diamond"></div>
+            <div class="loader-zigzag"></div>
+            <div class="loader-sunburst"></div>
+            <div class="loader-text">ART DECO NEWS</div>
+        </div>
+    </div>
+
+    <!-- Particle System -->
+    <div id="art-deco-particles" class="art-deco-particles"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -30,11 +906,11 @@
         
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">ART DECO HIỆN ĐẠI</h1>
+                <h1 class="hero-title typewriter">TIN TỨC ART DECO</h1>
                 <p style="font-size: 1.5rem; margin: 2rem 0; color: var(--primary-light); font-style: italic;">
                     Ảnh hưởng của Art Deco trong thế giới số và nghệ thuật đương đại
                 </p>
-                <div class="zigzag-pattern" style="margin: 3rem auto; width: 300px;"></div>
+                <div class="zigzag-pattern parallax-slow" style="margin: 3rem auto; width: 300px;"></div>
                 <p style="font-size: 1.2rem; max-width: 900px; margin: 0 auto; color: var(--primary-light); text-align: center;">
                     Từ UX/UI design đến kiến trúc hiện đại, từ fashion show đến game design - 
                     Art Deco vẫn tiếp tục định hình thẩm mỹ của thế kỷ 21
@@ -44,12 +920,12 @@
     </section>
 
     <!-- Featured News -->
-    <section class="section">
+    <section class="section reveal-element">
         <div class="container">
             <h2 class="section-title">Tin Tức Nổi Bật</h2>
             
             <!-- Main Featured Article -->
-            <div class="art-deco-card" style="background: var(--gradient-gold); color: var(--primary-dark); margin-bottom: 3rem;">
+            <div class="art-deco-card golden-sweep" style="background: var(--gradient-gold); color: var(--primary-dark); margin-bottom: 3rem;">
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
                     <div class="clickable-card" data-modal="featured-main-modal">
                         <!-- Image: 500x350px - Modern UX UI with Art Deco influence -->
@@ -141,7 +1017,7 @@
     </section>
 
     <!-- Cultural Impact Section -->
-    <section class="section" style="background: var(--primary-light);">
+    <section class="section reveal-element" style="background: var(--primary-light);">
         <div class="container">
             <h2 class="section-title">Tác Động Văn Hóa</h2>
             <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: var(--primary-navy); font-style: italic;">
@@ -229,7 +1105,7 @@
     </section>
 
     <!-- Digital Art & Technology -->
-    <section class="section">
+    <section class="section reveal-element">
         <div class="container">
             <h2 class="section-title">Art Deco Trong Thời Đại Số</h2>
             
@@ -331,7 +1207,7 @@
     </section>
 
     <!-- Future Trends -->
-    <section class="section" style="background: var(--primary-light);">
+    <section class="section reveal-element" style="background: var(--primary-light);">
         <div class="container">
             <h2 class="section-title">Xu Hướng Tương Lai</h2>
             <p style="text-align: center; font-size: 1.2rem; margin-bottom: 3rem; color: var(--primary-navy); font-style: italic;">
@@ -402,7 +1278,7 @@
     </section>
 
     <!-- Expert Predictions -->
-    <section class="section" style="background: var(--primary-navy); color: var(--primary-light);">
+    <section class="section reveal-element" style="background: var(--primary-navy); color: var(--primary-light);">
         <div class="container">
             <h2 style="color: var(--primary-gold); text-align: center; margin-bottom: 3rem; font-size: 2.5rem;">Dự Đoán Chuyên Gia</h2>
             
@@ -453,6 +1329,199 @@
             </div>
         </div>
     </section>
+
+    <!-- Timeline Art Deco Tương Tác -->
+    <section class="art-deco-timeline-section">
+        <div class="container">
+            <h2 class="timeline-title">Timeline Art Deco Tương Tác</h2>
+            <p class="timeline-subtitle">Nhấp vào từng mốc thời gian để khám phá câu chuyện đầy thú vị</p>
+            <div class="zigzag-pattern"></div>
+            
+            <div class="breakthrough-interactive-timeline">
+                <div class="timeline-line-modern"></div>
+                
+                <div class="timeline-milestone" data-year="1920" data-title="Bình Minh Art Deco" data-description="Paris 1920s - Thời kỳ hoàng kim bắt đầu với triển lãm quốc tế, định hình aesthetic cả thế kỷ. Les Années Folles mang đến cuộc cách mạng thẩm mỹ từ thời trang đến kiến trúc." data-details="Từ Exposition Internationale des Arts Décoratifs et Industriels Modernes năm 1925, Art Deco trở thành biểu tượng của modernism và luxury. Các nghệ sĩ như Tamara de Lempicka, René Lalique bắt đầu tạo nên những tác phẩm định hình cả một thời đại.">
+                    <div class="milestone-marker">
+                        <div class="marker-ring"></div>
+                        <div class="marker-core">1920</div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="milestone-content">
+                        <h3>Bình Minh Art Deco</h3>
+                        <p>Paris - Cái nôi của phong cách hiện đại</p>
+                    </div>
+                    <div class="timeline-click-hint">
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" data-year="1930" data-title="Thống Trị Toàn Cầu" data-description="New York trở thành biểu tượng Art Deco với Chrysler Building và Empire State. Hollywood áp dụng Art Deco vào cinema, lan tỏa aesthetic trên toàn thế giới qua movie industry." data-details="Thập niên 1930s chứng kiến Art Deco trở thành global phenomenon. Từ skyscrapers của Manhattan đến luxury ocean liners, từ automotive design đến fashion shows của Paris. Streamline Moderne emergence tạo ra evolution mới của Art Deco.">
+                    <div class="milestone-marker">
+                        <div class="marker-ring"></div>
+                        <div class="marker-core">1930</div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="milestone-content">
+                        <h3>Thống Trị Toàn Cầu</h3>
+                        <p>Art Deco lan rộng khắp thế giới</p>
+                    </div>
+                    <div class="timeline-click-hint">
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" data-year="1980" data-title="Tái Sinh Postmodern" data-description="Art Deco được rediscover trong postmodern movement. Miami Beach Art Deco District được preserve, architects như Michael Graves incorporate Art Deco elements vào contemporary designs." data-details="1980s marking major revival của Art Deco. Preservation efforts cứu các architectural treasures, trong khi contemporary designers tìm inspiration từ geometric patterns và luxury materials. MTV aesthetic heavily influenced by Art Deco graphics.">
+                    <div class="milestone-marker">
+                        <div class="marker-ring"></div>
+                        <div class="marker-core">1980</div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="milestone-content">
+                        <h3>Tái Sinh Postmodern</h3>
+                        <p>Art Deco quay trở lại mạnh mẽ</p>
+                    </div>
+                    <div class="timeline-click-hint">
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" data-year="2024" data-title="Kỷ Nguyên Digital" data-description="AI và machine learning tái tạo Art Deco patterns. Web3, NFTs, metaverse platforms sử dụng Art Deco để establish luxury branding. Social media viral trends mang Art Deco đến Gen Z." data-details="2024 witnesses Art Deco digital renaissance. AI art generators trained trên Art Deco datasets, luxury brands áp dụng vào digital experiences, VR/AR recreating 1920s environments. TikTok trends featuring Art Deco makeup, fashion, interior design.">
+                    <div class="milestone-marker">
+                        <div class="marker-ring"></div>
+                        <div class="marker-core">2024</div>
+                        <div class="marker-pulse"></div>
+                    </div>
+                    <div class="milestone-content">
+                        <h3>Kỷ Nguyên Digital</h3>
+                        <p>AI và metaverse kết hợp Art Deco</p>
+                    </div>
+                    <div class="timeline-click-hint">
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bảng Màu Art Deco Studio -->
+    <section class="art-deco-color-section">
+        <div class="container">
+            <h2 class="palette-title">Bảng Màu Art Deco Studio</h2>
+            <p class="palette-subtitle">Tạo và khám phá những bảng màu Art Deco cho dự án của bạn</p>
+            <div class="zigzag-pattern"></div>
+            
+            <div class="color-palette-studio">
+                <!-- Palette Categories -->
+                <div class="palette-categories-grid">
+                    <div class="palette-category active" data-palette="heritage">
+                        <div class="category-preview">
+                            <div class="preview-colors">
+                                <div style="background: #D4AF37;"></div>
+                                <div style="background: #1C3F60;"></div>
+                                <div style="background: #CD7F32;"></div>
+                                <div style="background: #8B1538;"></div>
+                            </div>
+                        </div>
+                        <div class="category-info">
+                            <h3>Heritage Classic</h3>
+                            <p>Gam màu cổ điển từ thập niên 1920s</p>
+                        </div>
+                    </div>
+
+                    <div class="palette-category" data-palette="luxury">
+                        <div class="category-preview">
+                            <div class="preview-colors">
+                                <div style="background: #FFD700;"></div>
+                                <div style="background: #000000;"></div>
+                                <div style="background: #C0C0C0;"></div>
+                                <div style="background: #FFFFFF;"></div>
+                            </div>
+                        </div>
+                        <div class="category-info">
+                            <h3>Luxury Modern</h3>
+                            <p>Phong cách sang trọng hiện đại</p>
+                        </div>
+                    </div>
+
+                    <div class="palette-category" data-palette="digital">
+                        <div class="category-preview">
+                            <div class="preview-colors">
+                                <div style="background: #00FFFF;"></div>
+                                <div style="background: #FF1493;"></div>
+                                <div style="background: #9400D3;"></div>
+                                <div style="background: #000080;"></div>
+                            </div>
+                        </div>
+                        <div class="category-info">
+                            <h3>Digital Fusion</h3>
+                            <p>Art Deco kết hợp cyberpunk</p>
+                        </div>
+                    </div>
+
+                    <div class="palette-category" data-palette="nature">
+                        <div class="category-preview">
+                            <div class="preview-colors">
+                                <div style="background: #228B22;"></div>
+                                <div style="background: #DAA520;"></div>
+                                <div style="background: #8B4513;"></div>
+                                <div style="background: #F5DEB3;"></div>
+                            </div>
+                        </div>
+                        <div class="category-info">
+                            <h3>Natural Elegance</h3>
+                            <p>Thiên nhiên với nét Art Deco</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Active Palette Display -->
+                <div class="active-palette-display">
+                    <div class="palette-header">
+                        <h3 id="active-palette-name">Heritage Classic</h3>
+                        <div class="palette-actions">
+                                                    <button class="action-btn golden-sweep" id="generate-random-btn">
+                            <span>Tạo Ngẫu Nhiên</span>
+                        </button>
+                        <button class="action-btn golden-sweep" id="export-palette-btn">
+                            <span>Xuất CSS</span>
+                        </button>
+                        </div>
+                    </div>
+                    
+                    <div id="main-color-swatches" class="main-color-swatches">
+                        <!-- Color swatches sẽ được tạo bởi JavaScript -->
+                    </div>
+
+                    <!-- Color Usage Guide -->
+                    <div class="color-usage-guide">
+                        <h4>Hướng Dẫn Sử Dụng</h4>
+                        <div class="usage-examples">
+                            <div class="usage-example">
+                                <div class="usage-demo" id="demo-background">
+                                    <div id="demo-text">Art Deco Text</div>
+                                </div>
+                                <p>Primary + Accent Colors</p>
+                            </div>
+                            <div class="usage-tips">
+                                <h5>Tips Chuyên Nghiệp:</h5>
+                                <ul>
+                                    <li>Sử dụng 60% neutral, 30% primary, 10% accent</li>
+                                    <li>Gold accent tạo luxury feeling</li>
+                                    <li>High contrast cho readability</li>
+                                    <li>Metallic finishes cho premium look</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Copy Notification -->
+    <div id="copy-notification" class="copy-notification">
+        Đã sao chép mã màu!
+    </div>
 
     <!-- Call to Action -->
     <section class="section" style="background: var(--gradient-gold); text-align: center;">
@@ -3296,11 +4365,12 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Handle clickable card clicks
+        // Handle clickable card clicks  
         document.addEventListener('DOMContentLoaded', function() {
             // Add click event listeners to all clickable cards
             document.querySelectorAll('.clickable-card').forEach(card => {
-                card.addEventListener('click', function() {
+                card.addEventListener('click', function(e) {
+                    e.preventDefault();
                     const modalId = this.getAttribute('data-modal');
                     if (modalId) {
                         openDetailModal(modalId);
@@ -3310,17 +4380,633 @@
 
             // Add click event listeners to all modal close buttons
             document.querySelectorAll('.detail-close').forEach(closeBtn => {
-                closeBtn.addEventListener('click', closeDetailModal);
+                closeBtn.addEventListener('click', function() {
+                    const modal = this.closest('.detail-modal');
+                    if (modal) {
+                        closeDetailModal(modal.id);
+                    }
+                });
             });
 
             // Close modal when clicking outside content
             document.querySelectorAll('.detail-modal').forEach(modal => {
                 modal.addEventListener('click', function(e) {
                     if (e.target === this) {
-                        closeDetailModal();
+                        closeDetailModal(this.id);
                     }
                 });
             });
+
+            // ESC key to close all modals
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeAllDetailModals();
+                }
+            });
+
+            // Prevent modal content scroll from closing modal
+            document.querySelectorAll('.detail-modal-content').forEach(content => {
+                content.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            });
+        });
+
+        // === INTERACTIVE TIMELINE FUNCTIONALITY ===
+        class ArtDecoTimeline {
+            constructor() {
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+            }
+
+            bindEvents() {
+                const milestones = document.querySelectorAll('.timeline-milestone');
+                
+                milestones.forEach(milestone => {
+                    milestone.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        this.handleMilestoneClick(milestone);
+                    });
+                });
+            }
+
+            handleMilestoneClick(milestone) {
+                const year = milestone.dataset.year;
+                const title = milestone.dataset.title;
+                const description = milestone.dataset.description;
+                const details = milestone.dataset.details;
+                
+                this.showTimelineModal(year, title, description, details);
+            }
+
+            showTimelineModal(year, title, description, details) {
+                const modal = document.createElement('div');
+                modal.className = 'timeline-modal';
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0, 0, 0, 0.9);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 10000;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                `;
+                
+                modal.innerHTML = `
+                    <div class="modal-content" style="
+                        background: linear-gradient(135deg, var(--primary-navy), var(--primary-burgundy));
+                        color: var(--primary-light);
+                        padding: 3rem;
+                        border-radius: 20px;
+                        border: 3px solid var(--primary-gold);
+                        max-width: 700px;
+                        max-height: 80vh;
+                        overflow-y: auto;
+                        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+                        position: relative;
+                    ">
+                        <div class="modal-header" style="text-align: center; margin-bottom: 2rem;">
+                            <div class="modal-year" style="
+                                font-size: 4rem; 
+                                color: var(--primary-gold); 
+                                font-weight: bold; 
+                                margin-bottom: 1rem;
+                                text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+                                font-family: 'Cinzel', serif;
+                            ">${year}</div>
+                            <h2 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary-light); font-family: 'Cinzel', serif;">${title}</h2>
+                            <div class="modal-zigzag" style="
+                                width: 150px; 
+                                height: 15px;
+                                margin: 0 auto 2rem;
+                                background: linear-gradient(45deg, transparent 30%, var(--primary-gold) 30%, var(--primary-gold) 70%, transparent 70%),
+                                            linear-gradient(-45deg, transparent 30%, var(--primary-gold) 30%, var(--primary-gold) 70%, transparent 70%);
+                                background-size: 15px 15px;
+                            "></div>
+                        </div>
+                        
+                        <div class="modal-body" style="line-height: 1.8; font-size: 1.1rem; margin-bottom: 2rem; font-family: 'Cormorant Garamond', serif;">
+                            <p style="margin-bottom: 1.5rem; font-weight: 500;">${description}</p>
+                            <p style="opacity: 0.9;">${details}</p>
+                        </div>
+                        
+                        <div class="modal-footer" style="text-align: center;">
+                            <button class="close-modal-btn" style="
+                                background: var(--primary-gold);
+                                color: var(--primary-dark);
+                                border: none;
+                                padding: 1rem 2rem;
+                                border-radius: 25px;
+                                font-weight: 600;
+                                cursor: pointer;
+                                font-size: 1.1rem;
+                                transition: all 0.3s ease;
+                                text-transform: uppercase;
+                                letter-spacing: 1px;
+                                font-family: 'Cinzel', serif;
+                            ">ĐÓNG</button>
+                        </div>
+                    </div>
+                `;
+                
+                // Close modal functionality
+                const closeBtn = modal.querySelector('.close-modal-btn');
+                closeBtn.addEventListener('click', () => {
+                    modal.style.opacity = '0';
+                    setTimeout(() => {
+                        document.body.removeChild(modal);
+                    }, 300);
+                });
+
+                // Close on backdrop click
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        modal.style.opacity = '0';
+                        setTimeout(() => {
+                            document.body.removeChild(modal);
+                        }, 300);
+                    }
+                });
+                
+                document.body.appendChild(modal);
+                
+                // Animate in
+                setTimeout(() => {
+                    modal.style.opacity = '1';
+                }, 50);
+            }
+        }
+
+        // === COLOR PALETTE STUDIO FUNCTIONALITY ===
+        class ArtDecoColorPalette {
+            constructor() {
+                this.colorPalettes = {
+                    heritage: [
+                        { name: 'Vàng Hoàng Gia', hex: '#D4AF37', usage: 'Accent chính' },
+                        { name: 'Xanh Navy Sâu', hex: '#1C3F60', usage: 'Background chính' },
+                        { name: 'Đồng Cổ Điển', hex: '#CD7F32', usage: 'Accent phụ' },
+                        { name: 'Burgundy Sang Trọng', hex: '#8B1538', usage: 'Highlight' },
+                        { name: 'Kem Ngọc Trai', hex: '#F8F6F0', usage: 'Text background' }
+                    ],
+                    luxury: [
+                        { name: 'Vàng Kim Cương', hex: '#FFD700', usage: 'Premium accent' },
+                        { name: 'Đen Tuyệt Đối', hex: '#000000', usage: 'Primary dark' },
+                        { name: 'Bạc Platinum', hex: '#C0C0C0', usage: 'Metallic accent' },
+                        { name: 'Trắng Tinh Khiết', hex: '#FFFFFF', usage: 'Clean background' },
+                        { name: 'Xám Charcoal', hex: '#36454F', usage: 'Text color' }
+                    ],
+                    digital: [
+                        { name: 'Cyan Neon', hex: '#00FFFF', usage: 'Digital accent' },
+                        { name: 'Hồng Electric', hex: '#FF1493', usage: 'Vibrant highlight' },
+                        { name: 'Tím Galaxy', hex: '#9400D3', usage: 'Deep accent' },
+                        { name: 'Xanh Midnight', hex: '#000080', usage: 'Base color' },
+                        { name: 'Bạc Cyber', hex: '#C0C0C0', usage: 'Tech metallic' }
+                    ],
+                    nature: [
+                        { name: 'Xanh Rừng', hex: '#228B22', usage: 'Natural base' },
+                        { name: 'Vàng Mật Ong', hex: '#DAA520', usage: 'Warm accent' },
+                        { name: 'Nâu Gỗ', hex: '#8B4513', usage: 'Earth tone' },
+                        { name: 'Kem Vanilla', hex: '#F5DEB3', usage: 'Soft background' },
+                        { name: 'Xanh Lá Olive', hex: '#808000', usage: 'Muted green' }
+                    ]
+                };
+
+                this.paletteNames = {
+                    heritage: 'Heritage Classic',
+                    luxury: 'Luxury Modern', 
+                    digital: 'Digital Fusion',
+                    nature: 'Natural Elegance'
+                };
+
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+                this.generatePalette('heritage');
+            }
+
+            bindEvents() {
+                // Category selection
+                const categories = document.querySelectorAll('.palette-category');
+                categories.forEach(category => {
+                    category.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const paletteType = category.dataset.palette;
+                        
+                        // Update active category
+                        categories.forEach(cat => cat.classList.remove('active'));
+                        category.classList.add('active');
+                        
+                        // Generate palette
+                        this.generatePalette(paletteType);
+                    });
+                });
+
+                // Random palette generation
+                const randomBtn = document.getElementById('generate-random-btn');
+                if (randomBtn) {
+                    randomBtn.addEventListener('click', () => {
+                        this.generateRandomPalette();
+                    });
+                }
+
+                // Export palette
+                const exportBtn = document.getElementById('export-palette-btn');
+                if (exportBtn) {
+                    exportBtn.addEventListener('click', () => {
+                        this.exportPalette();
+                    });
+                }
+            }
+
+            generatePalette(type) {
+                const swatchesContainer = document.getElementById('main-color-swatches');
+                const paletteNameElement = document.getElementById('active-palette-name');
+                
+                const colors = this.colorPalettes[type];
+                
+                paletteNameElement.textContent = this.paletteNames[type];
+                swatchesContainer.innerHTML = '';
+                
+                colors.forEach((color, index) => {
+                    const swatch = document.createElement('div');
+                    swatch.className = 'color-swatch-premium';
+                    swatch.style.background = color.hex;
+                    swatch.setAttribute('data-color', color.hex);
+                    
+                    swatch.innerHTML = `
+                        <div class="swatch-overlay">
+                            <div class="color-info-detailed">
+                                <div class="color-name-premium">${color.name}</div>
+                                <div class="color-hex-premium">${color.hex}</div>
+                                <div class="color-usage-premium">${color.usage}</div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    swatch.addEventListener('click', () => {
+                        this.copyColorToClipboard(color.hex, color.name);
+                    });
+                    
+                    // Stagger animation
+                    setTimeout(() => {
+                        swatch.style.opacity = '0';
+                        swatch.style.transform = 'scale(0) rotate(45deg)';
+                        swatch.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+                        swatchesContainer.appendChild(swatch);
+                        
+                        setTimeout(() => {
+                            swatch.style.opacity = '1';
+                            swatch.style.transform = 'scale(1) rotate(0deg)';
+                        }, 100);
+                    }, index * 150);
+                });
+                
+                // Update usage demo
+                this.updateUsageDemo(colors);
+            }
+
+            generateRandomPalette() {
+                const hues = [];
+                const colorNames = ['Ngọc Lục', 'Hổ Phách', 'Sapphire', 'Ruby', 'Ngọc Trai'];
+                const usages = ['Primary', 'Secondary', 'Accent', 'Highlight', 'Background'];
+                
+                // Generate harmonious colors
+                const baseHue = Math.floor(Math.random() * 360);
+                
+                for (let i = 0; i < 5; i++) {
+                    let hue;
+                    if (i === 0) {
+                        hue = baseHue;
+                    } else if (i === 1) {
+                        hue = (baseHue + 180) % 360; // Complementary
+                    } else if (i === 2) {
+                        hue = (baseHue + 120) % 360; // Triadic
+                    } else if (i === 3) {
+                        hue = (baseHue + 240) % 360; // Triadic
+                    } else {
+                        hue = (baseHue + 60) % 360; // Analogous
+                    }
+                    
+                    const saturation = Math.floor(Math.random() * 40) + 40; // 40-80%
+                    const lightness = Math.floor(Math.random() * 30) + 30; // 30-60%
+                    
+                    const hex = this.hslToHex(hue, saturation, lightness);
+                    hues.push({
+                        name: colorNames[i],
+                        hex: hex,
+                        usage: usages[i]
+                    });
+                }
+                
+                // Update display with random palette
+                const swatchesContainer = document.getElementById('main-color-swatches');
+                const paletteNameElement = document.getElementById('active-palette-name');
+                
+                paletteNameElement.textContent = 'Random Harmony';
+                swatchesContainer.innerHTML = '';
+                
+                hues.forEach((color, index) => {
+                    const swatch = document.createElement('div');
+                    swatch.className = 'color-swatch-premium';
+                    swatch.style.background = color.hex;
+                    swatch.setAttribute('data-color', color.hex);
+                    
+                    swatch.innerHTML = `
+                        <div class="swatch-overlay">
+                            <div class="color-info-detailed">
+                                <div class="color-name-premium">${color.name}</div>
+                                <div class="color-hex-premium">${color.hex}</div>
+                                <div class="color-usage-premium">${color.usage}</div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    swatch.addEventListener('click', () => {
+                        this.copyColorToClipboard(color.hex, color.name);
+                    });
+                    
+                    setTimeout(() => {
+                        swatch.style.opacity = '0';
+                        swatch.style.transform = 'scale(0) rotate(45deg)';
+                        swatch.style.transition = 'all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+                        swatchesContainer.appendChild(swatch);
+                        
+                        setTimeout(() => {
+                            swatch.style.opacity = '1';
+                            swatch.style.transform = 'scale(1) rotate(0deg)';
+                        }, 100);
+                    }, index * 150);
+                });
+                
+                this.updateUsageDemo(hues);
+            }
+
+            updateUsageDemo(colors) {
+                const demoBackground = document.getElementById('demo-background');
+                const demoText = document.getElementById('demo-text');
+                
+                if (colors.length >= 3) {
+                    demoBackground.style.background = `linear-gradient(135deg, ${colors[1].hex}, ${colors[0].hex})`;
+                    demoText.style.color = colors[2].hex;
+                    demoText.style.textShadow = `2px 2px 4px ${colors[3]?.hex || '#000000'}`;
+                }
+            }
+
+            hslToHex(h, s, l) {
+                l /= 100;
+                const a = s * Math.min(l, 1 - l) / 100;
+                const f = n => {
+                    const k = (n + h / 30) % 12;
+                    const color = l - a * Math.max(Math.min(k - 3, 9 - k, 1), -1);
+                    return Math.round(255 * color).toString(16).padStart(2, '0');
+                };
+                return `#${f(0)}${f(8)}${f(4)}`;
+            }
+
+            copyColorToClipboard(hex, name) {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(hex).then(() => {
+                        this.showCopyNotification(`Đã sao chép ${name}: ${hex}`);
+                    });
+                } else {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = hex;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    this.showCopyNotification(`Đã sao chép ${name}: ${hex}`);
+                }
+            }
+
+            exportPalette() {
+                const swatches = document.querySelectorAll('.color-swatch-premium');
+                const colors = Array.from(swatches).map(swatch => {
+                    const hex = swatch.dataset.color;
+                    const name = swatch.querySelector('.color-name-premium').textContent;
+                    return { name, hex };
+                });
+                
+                const css = `:root {
+${colors.map((color, index) => `  --art-deco-${color.name.toLowerCase().replace(/\s+/g, '-')}: ${color.hex};`).join('\n')}
+}
+
+/* Art Deco Palette Usage */
+.art-deco-primary { color: ${colors[0]?.hex}; }
+.art-deco-secondary { color: ${colors[1]?.hex}; }
+.art-deco-accent { color: ${colors[2]?.hex}; }`;
+                
+                const blob = new Blob([css], { type: 'text/css' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'art-deco-palette.css';
+                a.click();
+                URL.revokeObjectURL(url);
+                
+                this.showCopyNotification('Đã xuất file CSS palette!');
+            }
+
+            showCopyNotification(message) {
+                const notification = document.getElementById('copy-notification');
+                if (notification) {
+                    notification.textContent = message;
+                    notification.classList.add('show');
+                    
+                    setTimeout(() => {
+                        notification.classList.remove('show');
+                    }, 3000);
+                }
+            }
+        }
+
+        // Art Deco Performance & Effects Manager
+        class ArtDecoEffects {
+            constructor() {
+                this.isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                this.particles = [];
+                this.init();
+            }
+
+            init() {
+                this.handleLoading();
+                if (!this.isReducedMotion) {
+                    this.initParticles();
+                    this.initParallax();
+                    this.initScrollReveal();
+                    this.initTypewriter();
+                }
+                this.initLazyLoading();
+            }
+
+            handleLoading() {
+                const loader = document.getElementById('art-deco-loader');
+                window.addEventListener('load', () => {
+                    setTimeout(() => {
+                        loader.classList.add('hidden');
+                        setTimeout(() => {
+                            loader.style.display = 'none';
+                        }, 500);
+                    }, 1000);
+                });
+            }
+
+            initParticles() {
+                const particleContainer = document.getElementById('art-deco-particles');
+                const particleCount = Math.min(window.innerWidth / 50, 15); // Responsive particle count
+
+                for (let i = 0; i < particleCount; i++) {
+                    this.createParticle(particleContainer);
+                }
+
+                // Create new particles periodically
+                setInterval(() => {
+                    if (this.particles.length < particleCount) {
+                        this.createParticle(particleContainer);
+                    }
+                }, 2000);
+            }
+
+            createParticle(container) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 4 + 2;
+                const left = Math.random() * 100;
+                const delay = Math.random() * 8;
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = left + '%';
+                particle.style.animationDelay = delay + 's';
+                
+                container.appendChild(particle);
+                this.particles.push(particle);
+
+                // Remove particle after animation
+                setTimeout(() => {
+                    if (particle.parentNode) {
+                        particle.parentNode.removeChild(particle);
+                        this.particles = this.particles.filter(p => p !== particle);
+                    }
+                }, 8000 + delay * 1000);
+            }
+
+            initParallax() {
+                const parallaxElements = document.querySelectorAll('.parallax-slow');
+                
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    const rate = scrolled * -0.5;
+                    
+                    parallaxElements.forEach(element => {
+                        if (element.getBoundingClientRect().top < window.innerHeight) {
+                            element.style.transform = `translateY(${rate}px)`;
+                        }
+                    });
+                });
+            }
+
+            initScrollReveal() {
+                const revealElements = document.querySelectorAll('.reveal-element');
+                
+                const revealObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('revealed');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                revealElements.forEach(element => {
+                    revealObserver.observe(element);
+                });
+            }
+
+            initTypewriter() {
+                const heroTitle = document.querySelector('.hero-title');
+                if (heroTitle) {
+                    heroTitle.classList.add('typewriter');
+                }
+            }
+
+            initLazyLoading() {
+                const images = document.querySelectorAll('img[loading="lazy"]');
+                
+                if ('IntersectionObserver' in window) {
+                    const imageObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                img.style.transition = 'opacity 0.3s ease';
+                                img.style.opacity = '0';
+                                
+                                img.onload = () => {
+                                    img.style.opacity = '1';
+                                };
+                                
+                                imageObserver.unobserve(img);
+                            }
+                        });
+                    });
+
+                    images.forEach(img => imageObserver.observe(img));
+                }
+            }
+        }
+
+        // Detail Modal System
+        function openDetailModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden';
+                
+                // Add entrance animation
+                const modalContent = modal.querySelector('.detail-modal-content');
+                if (modalContent) {
+                    modalContent.style.animation = 'slideInScale 0.5s ease-out';
+                }
+            }
+        }
+
+        function closeDetailModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                const modalContent = modal.querySelector('.detail-modal-content');
+                if (modalContent) {
+                    modalContent.style.animation = 'fadeOut 0.3s ease-out';
+                }
+                
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+        }
+
+        function closeAllDetailModals() {
+            document.querySelectorAll('.detail-modal').forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        }
+
+        // Initialize all effects, Timeline and Color Palette
+        document.addEventListener('DOMContentLoaded', () => {
+            new ArtDecoEffects();
+            new ArtDecoTimeline();
+            new ArtDecoColorPalette();
         });
     </script>
 </body>
