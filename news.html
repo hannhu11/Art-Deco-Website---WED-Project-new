@@ -399,100 +399,16 @@
                     học hỏi từ masters và apply Art Deco principles vào creative work của mình.
                 </p>
                 <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                    <!-- Nút Khám phá thêm -->
-                    <a href="https://www.independent.co.uk/topic/art-deco" target="_blank" class="btn-art-deco" style="background: var(--primary-burgundy); color: white; text-decoration: none;">
-                        <span>🔍 KHÁM PHÁ THÊM</span>
-                    </a>
-                    
-                    <!-- Nút Theo dõi tin tức -->
-                    <button class="btn-art-deco btn-newsletter" onclick="openNewsletterModal()" style="background: var(--primary-navy); color: white;">
-                        <span>📧 THEO DÕI TIN TỨC</span>
+                    <button class="btn-art-deco" style="background: var(--primary-burgundy); color: white;">
+                        <span>Khám Phá Thêm</span>
+                    </button>
+                    <button class="btn-art-deco" style="background: var(--primary-navy); color: white;">
+                        <span>Theo Dõi Tin Tức</span>
                     </button>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Newsletter Modal -->
-    <div id="newsletterModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeNewsletterModal()">&times;</span>
-            <div class="modal-header">
-                <h2 style="color: var(--primary-gold); margin-bottom: 1rem;">📧 Đăng Ký Nhận Tin Tức</h2>
-                <div class="zigzag-pattern" style="width: 150px; margin: 0 auto;"></div>
-            </div>
-            
-            <div class="modal-body">
-                <p style="color: var(--primary-navy); font-size: 1.1rem; margin-bottom: 2rem; text-align: center;">
-                    Nhận những tin tức mới nhất về Art Deco, triển lãm nghệ thuật, và xu hướng thiết kế hiện đại.
-                </p>
-                
-                <form id="newsletterForm" style="max-width: 400px; margin: 0 auto;">
-                    <div class="form-group">
-                        <label for="email" style="display: block; margin-bottom: 0.5rem; color: var(--primary-navy); font-weight: bold;">
-                            Email của bạn:
-                        </label>
-                        <input type="email" id="email" name="email" required 
-                               style="width: 100%; padding: 1rem; border: 2px solid var(--primary-gold); border-radius: 5px; font-size: 1rem; box-sizing: border-box;" 
-                               placeholder="Nhập email của bạn...">
-                    </div>
-                    
-                    <button type="submit" class="btn-art-deco" style="width: 100%; margin-top: 1.5rem;">
-                        <span>XÁC NHẬN ĐĂNG KÝ</span>
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Success Message Modal -->
-    <div id="successModal" class="modal">
-        <div class="modal-content success-modal">
-            <span class="close" onclick="closeSuccessModal()">&times;</span>
-            <div class="modal-header">
-                <h2 style="color: var(--primary-gold); margin-bottom: 1rem;">🎉 Cảm Ơn Bạn!</h2>
-                <div class="zigzag-pattern" style="width: 150px; margin: 0 auto;"></div>
-            </div>
-            
-            <div class="modal-body">
-                <p style="color: var(--primary-navy); font-size: 1.2rem; margin-bottom: 1.5rem; text-align: center;">
-                    Đăng ký thành công! Bạn sẽ nhận được những tin tức mới nhất về Art Deco.
-                </p>
-                
-                <div style="background: var(--primary-light); padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
-                    <h3 style="color: var(--primary-burgundy); margin-bottom: 1rem; text-align: center;">
-                        Những gì bạn sẽ nhận được:
-                    </h3>
-                    <ul style="list-style: none; padding: 0; color: var(--primary-navy);">
-                        <li style="margin: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-gold);">✦</span>
-                            Tin tức về triển lãm Art Deco mới nhất
-                        </li>
-                        <li style="margin: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-gold);">✦</span>
-                            Xu hướng thiết kế Art Deco hiện đại
-                        </li>
-                        <li style="margin: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-gold);">✦</span>
-                            Khám phá tác phẩm nghệ thuật mới
-                        </li>
-                        <li style="margin: 0.5rem 0; padding-left: 1.5rem; position: relative;">
-                            <span style="position: absolute; left: 0; color: var(--primary-gold);">✦</span>
-                            Mẹo trang trí nội thất phong cách Art Deco
-                        </li>
-                    </ul>
-                </div>
-                
-                <p style="font-style: italic; color: var(--primary-navy); text-align: center; margin-bottom: 2rem;">
-                    "Art Deco không chỉ là một phong cách - đó là một lối sống tinh tế và sang trọng!"
-                </p>
-                
-                <button class="btn-art-deco" onclick="closeSuccessModal()" style="width: 100%;">
-                    <span>ĐÓNG</span>
-                </button>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer style="background: var(--primary-dark); color: var(--primary-light); padding: 3rem 0; text-align: center;">

@@ -4,350 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Deco - Phong Cách Nghệ Thuật Tinh Tế</title>
-    
-    <!-- Performance Optimizations -->
-    <link rel="preload" href="art-deco-design-system.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
-    <link rel="preload" href="images/art-deco-hero-bg.jpg" as="image">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    
     <link rel="stylesheet" href="art-deco-design-system.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Critical CSS for Above-the-fold -->
-    <style>
-        /* Critical CSS - inline for faster loading */
-        .hero-section { min-height: 100vh; position: relative; }
-        .hero-image-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        .hero-image { width: 100%; height: 100%; object-fit: cover; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        .hero-content { position: relative; z-index: 2; text-align: center; padding: 8rem 0; }
-        .hero-title { font-size: 5rem; font-weight: 700; color: var(--primary-gold); margin-bottom: 2rem; }
-        .navbar { background: var(--primary-dark); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
-        .art-deco-card { background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-        
-        /* Art Deco Loading Animation */
-        .art-deco-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .art-deco-loader.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader-container {
-            text-align: center;
-            color: var(--primary-gold);
-        }
-
-        .loader-diamond {
-            width: 80px;
-            height: 80px;
-            border: 4px solid var(--primary-gold);
-            border-top: 4px solid transparent;
-            border-bottom: 4px solid transparent;
-            animation: diamondRotate 2s linear infinite;
-            margin: 0 auto 2rem;
-            position: relative;
-        }
-
-        .loader-diamond::before,
-        .loader-diamond::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            border: 4px solid transparent;
-        }
-
-        .loader-diamond::before {
-            border-left: 4px solid var(--primary-gold);
-            border-right: 4px solid var(--primary-gold);
-            animation: diamondRotate 1.5s linear infinite reverse;
-        }
-
-        .loader-diamond::after {
-            border-top: 4px solid var(--primary-gold);
-            border-bottom: 4px solid var(--primary-gold);
-            animation: diamondRotate 1s linear infinite;
-        }
-
-        @keyframes diamondRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loader-zigzag {
-            width: 200px;
-            height: 20px;
-            background: linear-gradient(45deg, transparent 30%, var(--primary-gold) 30%, var(--primary-gold) 70%, transparent 70%),
-                        linear-gradient(-45deg, transparent 30%, var(--primary-gold) 30%, var(--primary-gold) 70%, transparent 70%);
-            background-size: 30px 20px;
-            animation: zigzagMove 2s linear infinite;
-            margin: 2rem auto;
-        }
-
-        @keyframes zigzagMove {
-            0% { background-position: 0 0, 0 0; }
-            100% { background-position: 30px 0, -30px 0; }
-        }
-
-        .loader-sunburst {
-            width: 100px;
-            height: 100px;
-            position: relative;
-            margin: 2rem auto;
-            animation: sunburstRotate 3s linear infinite;
-        }
-
-        .loader-sunburst::before,
-        .loader-sunburst::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 4px;
-            height: 40px;
-            background: var(--primary-gold);
-            transform-origin: 2px 2px;
-        }
-
-        .loader-sunburst::before {
-            transform: translate(-50%, -50%) rotate(0deg);
-            box-shadow: 0 0 0 0 var(--primary-gold),
-                        0 0 0 0 var(--primary-gold),
-                        0 0 0 0 var(--primary-gold),
-                        0 0 0 0 var(--primary-gold);
-        }
-
-        .loader-sunburst::after {
-            transform: translate(-50%, -50%) rotate(45deg);
-            box-shadow: 0 0 0 0 var(--primary-gold),
-                        0 0 0 0 var(--primary-gold),
-                        0 0 0 0 var(--primary-gold),
-                        0 0 0 0 var(--primary-gold);
-        }
-
-        @keyframes sunburstRotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .loader-text {
-            font-size: 1.2rem;
-            font-weight: 600;
-            letter-spacing: 3px;
-            animation: textPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes textPulse {
-            0%, 100% { opacity: 0.7; }
-            50% { opacity: 1; }
-        }
-
-        /* Particle System */
-        .art-deco-particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .particle {
-            position: absolute;
-            background: var(--primary-gold);
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: particleFloat 8s linear infinite;
-        }
-
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% {
-                transform: translateY(-100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-
-        /* Typewriter Effect */
-        .typewriter {
-            overflow: hidden;
-            border-right: 3px solid var(--primary-gold);
-            white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: 0.1em;
-            animation: typewriter 3s steps(8) 1s both, blink 0.7s infinite;
-        }
-
-        @keyframes typewriter {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink {
-            from, to { border-color: transparent; }
-            50% { border-color: var(--primary-gold); }
-        }
-
-        /* Scroll Reveal Animation */
-        .reveal-element {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-
-        .reveal-element.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Parallax Effects */
-        .parallax-slow {
-            will-change: transform;
-        }
-
-        /* Enhanced Hover Effects */
-        .clickable-card {
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .clickable-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.15), transparent);
-            transition: left 0.5s ease;
-            z-index: 1;
-        }
-
-        .clickable-card:hover::before {
-            left: 100%;
-        }
-
-        .clickable-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .click-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(212, 175, 55, 0.9), rgba(139, 69, 19, 0.9));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 2;
-        }
-
-        .clickable-card:hover .click-overlay {
-            opacity: 1;
-        }
-
-        .click-hint {
-            color: white;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Golden Sweep Effect */
-        .golden-sweep {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .golden-sweep::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.3), transparent);
-            transform: translateX(-100%) translateY(-100%) rotate(45deg);
-            transition: transform 0.6s ease;
-            z-index: 1;
-        }
-
-        .golden-sweep:hover::after {
-            transform: translateX(100%) translateY(100%) rotate(45deg);
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 3rem; }
-            .hero-content { padding: 4rem 0; }
-            .loader-diamond { width: 60px; height: 60px; }
-            .loader-zigzag { width: 150px; }
-            .loader-sunburst { width: 80px; height: 80px; }
-        }
-
-        /* Performance optimizations */
-        @media (prefers-reduced-motion: reduce) {
-            .particle,
-            .typewriter,
-            .reveal-element,
-            .art-deco-card,
-            .golden-sweep::before,
-            .click-overlay {
-                animation: none;
-                transition: none;
-            }
-        }
-    </style>
 </head>
 <body>
-    <!-- Art Deco Loading Animation -->
-    <div id="art-deco-loader" class="art-deco-loader">
-        <div class="loader-container">
-            <div class="loader-diamond"></div>
-            <div class="loader-zigzag"></div>
-            <div class="loader-sunburst"></div>
-            <div class="loader-text">ART DECO</div>
-        </div>
-    </div>
-
-    <!-- Particle System -->
-    <div id="art-deco-particles" class="art-deco-particles"></div>
-
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -364,21 +25,21 @@
     <section class="hero-section sun-rays" id="hero">
         <!-- Hero Image Container -->
         <div class="hero-image-container">
-            <img src="images/art-deco-hero-bg.jpg" alt="Art Deco Architecture" class="hero-image parallax-slow" style="opacity: 0.7; display: block;" loading="eager">
+            <img src="images/art-deco-hero-bg.jpg" alt="Art Deco Architecture" class="hero-image" style="opacity: 0.4;">
         </div>
         
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title typewriter">ART DECO</h1>
+                <h1 class="hero-title">ART DECO</h1>
                 <p style="font-size: 1.5rem; margin: 2rem 0; color: var(--primary-light); font-style: italic;">
                     Phong cách nghệ thuật - thiết kế sang trọng của thế kỷ 20
                 </p>
-                <div class="zigzag-pattern parallax-slow" style="margin: 3rem auto; width: 300px;"></div>
+                <div class="zigzag-pattern" style="margin: 3rem auto; width: 300px;"></div>
                 <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; color: var(--primary-light);">
                     Khám phá vẻ đẹp hình học táo bạo, sự cân đối chính xác và vật liệu sang trọng 
                     của phong cách Art Deco - biểu tượng của sự hiện đại và tinh tế.
                 </p>
-                <button class="btn-art-deco golden-sweep" style="margin-top: 2rem;" onclick="scrollToHistory()">
+                <button class="btn-art-deco" style="margin-top: 2rem;" onclick="scrollToHistory()">
                     <span>KHÁM PHÁ NGAY</span>
                 </button>
             </div>
@@ -386,22 +47,19 @@
     </section>
 
     <!-- Lịch sử & Nguồn gốc -->
-    <section class="section slide-up reveal-element" id="history">
+    <section class="section slide-up" id="history">
         <div class="container">
             <h2 class="section-title">Lịch Sử & Nguồn Gốc</h2>
             
             <!-- Timeline với ảnh lịch sử -->
             <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: center; margin-bottom: 3rem;">
-                <div class="art-deco-card clickable-card golden-sweep" data-modal="paris-modal">
+                <div class="art-deco-card">
                     <!-- Image: 400x500px - Ảnh Paris 1920s hoặc Art Deco exhibition -->
-                    <img src="images/paris-1920s.jpg" alt="Paris 1920s Art Deco Era" style="width: 100%; height: 400px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
+                    <img src="images/paris-1920s.jpg" alt="Paris 1920s Art Deco Era" style="width: 100%; height: 400px; object-fit: cover; margin-bottom: 1rem;">
                     <h3 style="color: var(--primary-gold); text-align: center; margin-bottom: 1rem;">Paris 1920-1930</h3>
                     <p style="text-align: center; font-style: italic;">"Trung tâm của Art Deco"</p>
-                    <div class="click-overlay">
-                        <span class="click-hint">Nhấp để khám phá</span>
-                    </div>
                 </div>
-                <div class="reveal-element">
+                <div>
                     <div class="art-deco-card" style="max-width: 100%;">
                         <p style="font-size: 1.2rem; line-height: 1.8; text-align: justify;">
                             <strong>Art Deco</strong> (còn viết là Art Déco) là một phong cách nghệ thuật – thiết kế thịnh hành từ đầu thế kỷ 20, 
@@ -430,9 +88,9 @@
             
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
                 <!-- Hình học & Đối xứng -->
-                <div class="art-deco-card clickable-card" data-modal="geometric-modal">
+                <div class="art-deco-card">
                     <!-- Image: 320x200px - Geometric patterns, zigzag designs -->
-                    <img src="images/geometric-patterns.jpg" alt="Art Deco Geometric Patterns" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1.5rem; cursor: pointer;">
+                    <img src="images/geometric-patterns.jpg" alt="Art Deco Geometric Patterns" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1.5rem;">
                     <h3 style="color: var(--primary-navy); font-size: 1.4rem; margin-bottom: 1rem;">Hình Học & Đối Xứng</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Hình dạng hình học: tam giác, zigzag, chevron</li>
@@ -440,15 +98,12 @@
                         <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Bố cục cân đối và đường nét đối xứng</li>
                         <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Tạo cảm giác hài hoà và sang trọng</li>
                     </ul>
-                    <div class="click-overlay">
-                        <span class="click-hint">Nhấp để khám phá</span>
-                    </div>
                 </div>
 
                 <!-- Chất liệu & Màu sắc -->
-                <div class="art-deco-card clickable-card" data-modal="materials-modal">
+                <div class="art-deco-card">
                     <!-- Image: 320x200px - Luxury materials: gold, marble, wood -->
-                    <img src="images/luxury-materials.jpg" alt="Art Deco Luxury Materials" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1.5rem; cursor: pointer;">
+                    <img src="images/luxury-materials.jpg" alt="Art Deco Luxury Materials" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1.5rem;">
                     <h3 style="color: var(--primary-navy); font-size: 1.4rem; margin-bottom: 1rem;">Chất Liệu & Màu Sắc Cao Cấp</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Kim loại: nhôm, chrome, thép không gỉ</li>
@@ -456,15 +111,12 @@
                         <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Phối màu tương phản: đen – vàng kim</li>
                         <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Hiệu ứng bóng sang trọng</li>
                     </ul>
-                    <div class="click-overlay">
-                        <span class="click-hint">Nhấp để khám phá</span>
-                    </div>
                 </div>
 
                 <!-- Tính quốc tế -->
-                <div class="art-deco-card clickable-card" data-modal="global-modal">
+                <div class="art-deco-card">
                     <!-- Image: 320x200px - Global Art Deco buildings montage -->
-                    <img src="images/global-art-deco.jpg" alt="Art Deco Around the World" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1.5rem; cursor: pointer;">
+                    <img src="images/global-art-deco.jpg" alt="Art Deco Around the World" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1.5rem;">
                     <h3 style="color: var(--primary-navy); font-size: 1.4rem; margin-bottom: 1rem;">Tính Quốc Tế & Đa Văn Hóa</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Phong cách toàn cầu</li>
@@ -472,9 +124,6 @@
                         <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Đồ trang sức, ô tô, poster</li>
                         <li style="margin: 0.5rem 0; color: var(--primary-dark);">✦ Phản ánh đặc thù địa phương</li>
                     </ul>
-                    <div class="click-overlay">
-                        <span class="click-hint">Nhấp để khám phá</span>
-                    </div>
                 </div>
             </div>
         </div>
@@ -486,37 +135,28 @@
             <h2 class="section-title">Kiến Trúc Art Deco Nổi Tiếng</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 
-                <div class="art-deco-card clickable-card" data-modal="chrysler-modal">
+                <div class="art-deco-card">
                     <!-- Image: 300x400px - Chrysler Building -->
-                    <img src="images/chrysler-building.jpg" alt="Chrysler Building New York" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
+                    <img src="images/chrysler-building.jpg" alt="Chrysler Building New York" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem;">
                     <h3 style="color: var(--primary-burgundy); margin-bottom: 0.5rem;">Tòa Nhà Chrysler</h3>
                     <p style="color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">New York, USA (1930)</p>
                     <p style="line-height: 1.6;">Biểu tượng Art Deco với đỉnh kim loại đặc trưng và những đường nét hình học tinh xảo.</p>
-                    <div class="click-overlay">
-                        <span class="click-hint">Nhấp để khám phá</span>
-                    </div>
                 </div>
 
-                <div class="art-deco-card clickable-card" data-modal="empire-modal">
+                <div class="art-deco-card">
                     <!-- Image: 300x400px - Empire State Building -->
-                    <img src="images/empire-state-building.jpg" alt="Empire State Building" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
+                    <img src="images/empire-state-building.jpg" alt="Empire State Building" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem;">
                     <h3 style="color: var(--primary-burgundy); margin-bottom: 0.5rem;">Tòa Nhà Empire State</h3>
                     <p style="color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">New York, USA (1931)</p>
                     <p style="line-height: 1.6;">Kiệt tác kiến trúc Art Deco với thiết kế bậc thang đặc trưng và đỉnh tòa nhà iconic.</p>
-                    <div class="click-overlay">
-                        <span class="click-hint">Nhấp để khám phá</span>
-                    </div>
                 </div>
 
-                <div class="art-deco-card clickable-card" data-modal="miami-modal">
+                <div class="art-deco-card">
                     <!-- Image: 300x400px - Miami Beach Art Deco District -->
-                    <img src="images/miami-beach-art-deco.jpg" alt="Miami Beach Art Deco District" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
+                    <img src="images/miami-beach-art-deco.jpg" alt="Miami Beach Art Deco District" style="width: 100%; height: 300px; object-fit: cover; margin-bottom: 1rem;">
                     <h3 style="color: var(--primary-burgundy); margin-bottom: 0.5rem;">Khu Art Deco Miami</h3>
                     <p style="color: var(--primary-navy); font-style: italic; margin-bottom: 1rem;">Miami Beach, USA (1930s)</p>
                     <p style="line-height: 1.6;">Khu phố Art Deco lớn nhất thế giới với màu sắc pastel và thiết kế streamline moderne.</p>
-                    <div class="click-overlay">
-                        <span class="click-hint">Nhấp để khám phá</span>
-                    </div>
                 </div>
 
             </div>
@@ -543,593 +183,30 @@
             <h2 class="section-title">Ứng Dụng Trong Nhiều Lĩnh Vực</h2>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
                 
-                <div class="art-deco-card clickable-card" data-modal="architecture-modal">
+                <div class="art-deco-card">
                     <!-- Image: 320x200px - Modern Art Deco architecture -->
-                    <img src="images/modern-architecture.jpg" alt="Modern Art Deco Architecture" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
-                    <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Kiến Trúc</h3>
+                    <img src="images/modern-architecture.jpg" alt="Modern Art Deco Architecture" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">🏛️ Kiến Trúc</h3>
                     <p>Tòa nhà Chrysler (New York), Nhà hát Radio City, khách sạn ở Miami Beach với những đường nét hình học đặc trưng.</p>
-                    <div class="click-overlay">
-                        <span class="click-hint">Nhấp để khám phá</span>
-                    </div>
                 </div>
 
-                <div class="art-deco-card clickable-card" data-modal="graphic-modal">
+                <div class="art-deco-card">
                     <!-- Image: 320x200px - Art Deco graphic design, posters -->
-                    <img src="images/graphic-design.jpg" alt="Art Deco Graphic Design" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
-                    <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Thiết Kế Đồ Họa</h3>
+                    <img src="images/graphic-design.jpg" alt="Art Deco Graphic Design" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">🎨 Thiết Kế Đồ Họa</h3>
                     <p>Áp phích quảng cáo, bìa sách, mẫu logo với kiểu chữ serif thanh mảnh và trang trí hình học.</p>
-                    <div class="click-overlay">
-                        <span class="click-hint">Nhấp để khám phá</span>
-                    </div>
                 </div>
 
-                <div class="art-deco-card clickable-card" data-modal="fashion-modal">
+                <div class="art-deco-card">
                     <!-- Image: 320x200px - Art Deco fashion and furniture -->
-                    <img src="images/fashion-furniture.jpg" alt="Art Deco Fashion and Furniture" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem; cursor: pointer;">
-                    <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">Thời Trang & Nội Thất</h3>
+                    <img src="images/fashion-furniture.jpg" alt="Art Deco Fashion and Furniture" style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 1rem;">
+                    <h3 style="color: var(--primary-burgundy); font-size: 1.3rem; margin-bottom: 1rem;">👗 Thời Trang & Nội Thất</h3>
                     <p>Váy flapper, đồ trang sức hình học, ghế và bàn với viền kim loại và mặt kính.</p>
-                    <div class="click-overlay">
-                        <span class="click-hint">Nhấp để khám phá</span>
-                    </div>
                 </div>
 
             </div>
         </div>
     </section>
-
-    <!-- Modal System -->
-    <!-- Paris 1920-1930 Modal -->
-    <div id="paris-modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <span class="detail-close">&times;</span>
-            <div class="detail-modal-header">
-                <h2>Paris 1920-1930: Cội Nguồn Của Art Deco</h2>
-                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
-            </div>
-            <div class="detail-modal-body">
-                <div class="modal-image-container">
-                    <img src="images/paris-1920s.jpg" alt="Paris Art Deco Era" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
-                </div>
-                <div class="modal-content-scroll">
-                    <h3>Thời Đại Hoàng Kim Của Nghệ Thuật</h3>
-                    <p>Paris những năm 1920-1930 được coi là "Les Années Folles" (Những năm điên cuồng) - thời kỳ bùng nổ văn hóa, nghệ thuật và kiến trúc sau Thế chiến thứ nhất. Đây chính là nơi phong cách Art Deco ra đời và phát triển mạnh mẽ nhất.</p>
-                    
-                    <h4>Bối Cảnh Lịch Sử:</h4>
-                    <p>Sau chiến tranh thế giới thứ nhất, Paris trở thành trung tâm của một cuộc cách mạng văn hóa. Xã hội khao khát sự đổi mới, hiện đại hóa và quên đi những đau thương của chiến tranh. Phụ nữ có được quyền tự do hơn, công nghệ phát triển vượt bậc, và nghệ thuật cần một ngôn ngữ mới để thể hiện tinh thần thời đại.</p>
-                    
-                    <h4>Các Sự Kiện Quan Trọng:</h4>
-                    <ul>
-                        <li><strong>1925:</strong> Triển lãm Quốc tế Nghệ thuật Trang trí và Công nghiệp Hiện đại (Exposition Internationale des Arts Décoratifs et Industriels Modernes) - sự kiện đặt tên cho phong cách "Art Déco"</li>
-                        <li><strong>1924-1930:</strong> Xây dựng hàng loạt biệt thự, khách sạn và công trình công cộng theo phong cách mới</li>
-                        <li><strong>1920s:</strong> Văn hóa quán cà phê và hộp đêm phát triển mạnh, trở thành nơi giao lưu nghệ thuật</li>
-                        <li><strong>1928:</strong> Khai trương nhiều cửa hàng bách hóa và phòng trưng bày nghệ thuật theo phong cách Art Deco</li>
-                    </ul>
-                    
-                    <h4>Đặc Trưng Kiến Trúc Paris Art Deco:</h4>
-                    <ul>
-                        <li>Mặt tiền tòa nhà với đường nét hình học sắc nét, tạo hiệu ứng ánh sáng và bóng râm</li>
-                        <li>Sử dụng bê tông cốt thép kết hợp với trang trí kim loại tinh xảo</li>
-                        <li>Cửa sổ hình chữ nhật lớn với khung kim loại mảnh, tối ưu hóa ánh sáng tự nhiên</li>
-                        <li>Trang trí hoa văn cách điệu và họa tiết hình học lấy cảm hứng từ nghệ thuật Ai Cập và châu Á</li>
-                        <li>Sử dụng màu sắc tương phản mạnh mẽ: vàng kim, đen, trắng, và bạc</li>
-                    </ul>
-                    
-                    <h4>Ảnh Hưởng Đến Thế Giới:</h4>
-                    <p>Từ Paris, phong cách Art Deco lan tỏa khắp thế giới như một làn sóng văn hóa. New York tiếp nhận và phát triển thành những tòa nhà chọc trời hùng vĩ như Chrysler Building và Empire State Building. London, Berlin, Buenos Aires, và thậm chí các thành phố châu Á như Shanghai, Mumbai đều có những công trình Art Deco đặc sắc.</p>
-                    
-                    <h4>Di Sản Văn Hóa:</h4>
-                    <p>Nhiều công trình Art Deco của Paris từ thời kỳ này vẫn được bảo tồn nguyên vẹn cho đến ngày nay, trở thành di sản văn hóa vô giá. Chúng không chỉ là những tòa nhà mà còn là biểu tượng của một thời đại đầy sáng tạo và hy vọng.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Geometric Patterns Modal -->
-    <div id="geometric-modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <span class="detail-close">&times;</span>
-            <div class="detail-modal-header">
-                <h2>Ngôn Ngữ Hình Học Art Deco</h2>
-                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
-            </div>
-            <div class="detail-modal-body">
-                <div class="modal-image-container">
-                    <img src="images/geometric-patterns.jpg" alt="Art Deco Geometric Patterns" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
-                </div>
-                <div class="modal-content-scroll">
-                    <h3>Triết Lý Hình Học Trong Art Deco</h3>
-                    <p>Art Deco đặt hình học ở vị trí trung tâm, thể hiện niềm tin vào sự trật tự, tiến bộ và tương lai. Các họa tiết hình học không chỉ là trang trí mà còn thể hiện tinh thần thời đại máy móc và công nghiệp hóa, phản ánh khao khát của con người về một thế giới hiện đại và có trật tự.</p>
-                    
-                    <h4>Nguồn Gốc Triết Lý:</h4>
-                    <p>Sau sự hỗn loạn của chiến tranh thế giới thứ nhất, xã hội khao khát sự ổn định và trật tự. Hình học mang đến cảm giác an toàn, dự đoán được và kiểm soát được. Đồng thời, sự phát triển của khoa học và toán học cũng ảnh hưởng mạnh mẽ đến tư duy thiết kế.</p>
-                    
-                    <h4>Các Họa Tiết Hình Học Cơ Bản:</h4>
-                    <ul>
-                        <li><strong>Zigzag (Gấp khúc):</strong> Biểu tượng năng lượng, chuyển động và sự phá vỡ truyền thống, thể hiện tính năng động của thời đại mới</li>
-                        <li><strong>Chevron (Hình chữ V):</strong> Hình mũi tên cách điệu, thể hiện sự tiến bộ và hướng lên, tượng trưng cho tham vọng vươn cao</li>
-                        <li><strong>Sunburst (Tia nắng):</strong> Tia nắng tỏa ra từ trung tâm, tượng trưng cho ánh sáng, hy vọng và sự khởi đầu mới</li>
-                        <li><strong>Fan patterns (Hình quạt):</strong> Lấy cảm hứng từ nghệ thuật Ai Cập và châu Á, thể hiện sự tinh tế và thanh lịch</li>
-                        <li><strong>Stepped forms (Hình bậc thang):</strong> Như tháp kim tự tháp, thể hiện sự vững chãi và hướng lên cao</li>
-                        <li><strong>Circles và Spirals (Hình tròn và xoắn ốc):</strong> Biểu tượng của sự hoàn hảo và vận động liên tục</li>
-                    </ul>
-                    
-                    <h4>Ứng Dụng Trong Thiết Kế:</h4>
-                    <ul>
-                        <li><strong>Kiến trúc:</strong> Mặt tiền tòa nhà, cửa ra vào, cửa sổ, và các chi tiết trang trí</li>
-                        <li><strong>Nội thất:</strong> Gạch lát sàn, giấy dán tường, thảm, và đồ nội thất</li>
-                        <li><strong>Đồ trang sức:</strong> Thiết kế ghim cài áo, vòng cổ, đồng hồ và nhẫn</li>
-                        <li><strong>Thiết kế chữ:</strong> Font chữ và thiết kế biểu tượng thương hiệu</li>
-                        <li><strong>Nghệ thuật ứng dụng:</strong> Poster, bìa sách, và quảng cáo</li>
-                    </ul>
-                    
-                    <h4>Tâm Lý Học Màu Sắc:</h4>
-                    <p>Art Deco sử dụng sự tương phản mạnh mẽ: đen-trắng, vàng-đen, bạc-đen để tạo kịch tính và sự sang trọng. Màu vàng kim thể hiện sự xa hoa và quyền lực, màu đen thể hiện bí ẩn và tinh tế, màu bạc đại diện cho công nghệ và hiện đại.</p>
-                    
-                    <h4>Ảnh Hưởng Đến Ngày Nay:</h4>
-                    <p>Ngôn ngữ hình học của Art Deco vẫn ảnh hưởng mạnh mẽ đến thiết kế hiện đại. Từ logo của các thương hiệu xa xỉ đến thiết kế ứng dụng di động, chúng ta vẫn thấy dấu ấn của những họa tiết hình học Art Deco.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Luxury Materials Modal -->
-    <div id="materials-modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <span class="detail-close">&times;</span>
-            <div class="detail-modal-header">
-                <h2>Chất Liệu Cao Cấp Trong Art Deco</h2>
-                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
-            </div>
-            <div class="detail-modal-body">
-                <div class="modal-image-container">
-                    <img src="images/luxury-materials.jpg" alt="Luxury Art Deco Materials" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
-                </div>
-                <div class="modal-content-scroll">
-                    <h3>Cuộc Cách Mạng Vật Liệu</h3>
-                    <p>Art Deco đánh dấu sự chuyển đổi từ vật liệu tự nhiên truyền thống sang vật liệu công nghiệp hiện đại, tạo nên vẻ đẹp thẩm mỹ thời đại máy móc độc đáo. Đây là lần đầu tiên trong lịch sử nghệ thuật, vật liệu công nghiệp được nâng lên tầm nghệ thuật cao.</p>
-                    
-                    <h4>Triết Lý Vật Liệu Mới:</h4>
-                    <p>Art Deco không chỉ sử dụng vật liệu mới mà còn tôn vinh chúng. Các nhà thiết kế tin rằng vẻ đẹp có thể được tạo ra từ chính những sản phẩm của công nghiệp, không nhất thiết phải ẩn giấu hay che đậy chúng.</p>
-                    
-                    <h4>Kim Loại Hiện Đại:</h4>
-                    <ul>
-                        <li><strong>Chrome (Crom):</strong> Bề mặt phản chiếu hoàn hảo như gương, biểu tượng của tương lai và sự tiến bộ</li>
-                        <li><strong>Thép không gỉ:</strong> Bền bỉ, sáng bóng, thể hiện tinh thần công nghiệp và sự vĩnh cửu</li>
-                        <li><strong>Nhôm:</strong> Kim loại nhẹ, hiện đại, được sử dụng trong ngành hàng không và ô tô</li>
-                        <li><strong>Đồng thau và Đồng:</strong> Ấm áp hơn crom, thường dùng cho đồ nội thất và phụ kiện chiếu sáng</li>
-                        <li><strong>Bạc và Vàng:</strong> Kim loại quý được sử dụng để tạo điểm nhấn và thể hiện sự xa hoa</li>
-                    </ul>
-                    
-                    <h4>Đá Tự Nhiên Cao Cấp:</h4>
-                    <ul>
-                        <li><strong>Đá cẩm thạch đen:</strong> Tạo nền tối kịch tính, phản chiếu ánh sáng tuyệt đẹp</li>
-                        <li><strong>Đá mã não (Onyx):</strong> Có kết cấu trong suốt độc đáo, tạo hiệu ứng ánh sáng huyền bí</li>
-                        <li><strong>Đá vôi (Travertine):</strong> Màu kem thanh lịch, bề mặt mịn màng tự nhiên</li>
-                        <li><strong>Đá granite:</strong> Cứng cáp, bền vững, có nhiều màu sắc từ đen đến hồng</li>
-                        <li><strong>Đá serpentine:</strong> Màu xanh độc đáo, có vân mây tự nhiên</li>
-                    </ul>
-                    
-                    <h4>Vật Liệu Quý Hiếm:</h4>
-                    <ul>
-                        <li><strong>Da cá mập (Shagreen):</strong> Kết cấu hạt nhỏ độc đáo, biểu tượng của sự xa hoa tột độ</li>
-                        <li><strong>Gỗ mun (Ebony):</strong> Màu đen tuyền, cực kỳ hiếm và đắt giá</li>
-                        <li><strong>Xà cừ (Mother-of-pearl):</strong> Có màu sắc chuyển đổi tự nhiên, ánh kim lấp lánh</li>
-                        <li><strong>Mai rùa (Tortoiseshell):</strong> Họa tiết tự nhiên tuyệt đẹp, màu nâu vàng ấm áp</li>
-                        <li><strong>Ngà voi:</strong> Trắng ngà tinh khiết, biểu tượng của sự thanh lịch (hiện đã bị cấm)</li>
-                    </ul>
-                    
-                    <h4>Kỹ Thuật Gia Công Tinh Xảo:</h4>
-                    <ul>
-                        <li><strong>Đánh bóng như gương:</strong> Tạo bề mặt phản chiếu hoàn hảo</li>
-                        <li><strong>Sơn mài nhiều lớp:</strong> Tạo độ bóng sâu và bền màu</li>
-                        <li><strong>Khảm (Inlay):</strong> Ghép các vật liệu khác nhau tạo họa tiết</li>
-                        <li><strong>Khắc hoa văn (Etching):</strong> Tạo họa tiết tinh vi trên bề mặt kim loại</li>
-                        <li><strong>Đúc và dập nổi:</strong> Tạo hình khối ba chiều</li>
-                    </ul>
-                    
-                    <h4>Ảnh Hưởng Đến Thiết Kế Hiện Đại:</h4>
-                    <p>Cách mạng vật liệu của Art Deco đã mở đường cho thiết kế hiện đại. Ngày nay, chúng ta vẫn thấy ảnh hưởng này trong thiết kế nội thất cao cấp, đồng hồ xa xỉ, và kiến trúc hiện đại.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Global Art Deco Modal -->
-    <div id="global-modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <span class="detail-close">&times;</span>
-            <div class="detail-modal-header">
-                <h2>Art Deco Toàn Cầu: Một Ngôn Ngữ Quốc Tế</h2>
-                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
-            </div>
-            <div class="detail-modal-body">
-                <div class="modal-image-container">
-                    <img src="images/global-art-deco.jpg" alt="Global Art Deco Architecture" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
-                </div>
-                <div class="modal-content-scroll">
-                    <h3>Lan Tỏa Khắp Thế Giới</h3>
-                    <p>Art Deco không chỉ là phong cách của Paris hay New York, mà đã trở thành ngôn ngữ thiết kế quốc tế, thích ứng với văn hóa địa phương ở mỗi quốc gia.</p>
-                    
-                    <h4>Châu Âu:</h4>
-                    <ul>
-                        <li><strong>London:</strong> BBC Broadcasting House, Hoover Building</li>
-                        <li><strong>Berlin:</strong> Cinema và nhà hàng với style Streamline Moderne</li>
-                        <li><strong>Barcelona:</strong> Kết hợp với Modernisme của Catalonia</li>
-                        <li><strong>Prague:</strong> Functionalist architecture với Art Deco details</li>
-                    </ul>
-                    
-                    <h4>Châu Mỹ:</h4>
-                    <ul>
-                        <li><strong>New York:</strong> Chrysler, Empire State - đỉnh cao skyscraper design</li>
-                        <li><strong>Miami:</strong> Tropical Deco với pastel colors</li>
-                        <li><strong>Buenos Aires:</strong> Tango culture meets Art Deco</li>
-                        <li><strong>Rio de Janeiro:</strong> Christ the Redeemer statue (1931)</li>
-                    </ul>
-                    
-                    <h4>Châu Á & Châu Đại Dương:</h4>
-                    <ul>
-                        <li><strong>Mumbai:</strong> Marine Drive buildings, Cinema architecture</li>
-                        <li><strong>Shanghai:</strong> The Bund - International Settlement buildings</li>
-                        <li><strong>Sydney:</strong> AWA Tower, grace building</li>
-                        <li><strong>Tokyo:</strong> Department stores và hotel design</li>
-                    </ul>
-                    
-                    <h4>Châu Phi & Trung Đông:</h4>
-                    <ul>
-                        <li><strong>Casablanca:</strong> French Colonial Art Deco</li>
-                        <li><strong>Cairo:</strong> Kết hợp với Islamic motifs</li>
-                        <li><strong>Tel Aviv:</strong> White City - Bauhaus meets Art Deco</li>
-                    </ul>
-                    
-                    <h4>Đặc Điểm Adaptation:</h4>
-                    <p>Mỗi vùng đã thích ứng Art Deco với climate, materials địa phương và cultural traditions, tạo nên các biến thể độc đáo nhưng vẫn giữ được tinh thần cốt lõi của phong cách.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Chrysler Building Modal -->
-    <div id="chrysler-modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <span class="detail-close">&times;</span>
-            <div class="detail-modal-header">
-                <h2>Chrysler Building: Biểu Tượng Art Deco</h2>
-                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
-            </div>
-            <div class="detail-modal-body">
-                <div class="modal-image-container">
-                    <img src="images/chrysler-building.jpg" alt="Chrysler Building Details" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
-                </div>
-                <div class="modal-content-scroll">
-                    <h3>Kiệt Tác Của William Van Alen</h3>
-                    <p>Chrysler Building (1928-1930) được coi là đỉnh cao của Art Deco architecture, kết hợp hoàn hảo giữa function và ornamentation, giữa công nghệ hiện đại và nghệ thuật trang trí.</p>
-                    
-                    <h4>Thông Số Kỹ Thuật:</h4>
-                    <ul>
-                        <li><strong>Chiều cao:</strong> 319m (77 tầng)</li>
-                        <li><strong>Thời gian xây dựng:</strong> 1928-1930</li>
-                        <li><strong>Kiến trúc sư:</strong> William Van Alen</li>
-                        <li><strong>Chủ đầu tư:</strong> Walter Chrysler (Chrysler Corporation)</li>
-                    </ul>
-                    
-                    <h4>Đặc Điểm Thiết Kế Iconic:</h4>
-                    <ul>
-                        <li><strong>Crown/Spire:</strong> 7 tầng metallic arches với silver finish</li>
-                        <li><strong>Eagle gargoyles:</strong> Điêu khắc đại bàng ở tầng 61</li>
-                        <li><strong>Metalwork:</strong> Stainless steel với chrome-nickel alloy</li>
-                        <li><strong>Setbacks:</strong> Stepped silhouette theo New York zoning laws</li>
-                    </ul>
-                    
-                    <h4>Automotive Motifs:</h4>
-                    <ul>
-                        <li>Hub caps và wheel decorations của Chrysler cars</li>
-                        <li>Radiator grille patterns trong lobby design</li>
-                        <li>Speed lines và streamlined forms</li>
-                        <li>Chrome finish thể hiện machine age aesthetic</li>
-                    </ul>
-                    
-                    <h4>Lobby Interior:</h4>
-                    <p>Nội thất lobby là museum piece với African marble, onyx, amber và chrome details. Mural ceiling mô tả industrial scenes và transportation themes.</p>
-                    
-                    <h4>Legacy:</h4>
-                    <p>Chrysler Building đã trở thành template cho Art Deco skyscrapers worldwide, ảnh hưởng đến architecture từ Mumbai đến Buenos Aires.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Empire State Building Modal -->
-    <div id="empire-modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <span class="detail-close">&times;</span>
-            <div class="detail-modal-header">
-                <h2>Empire State Building: Kỳ Quan Art Deco</h2>
-                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
-            </div>
-            <div class="detail-modal-body">
-                <div class="modal-image-container">
-                    <img src="images/empire-state-building.jpg" alt="Empire State Building" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
-                </div>
-                <div class="modal-content-scroll">
-                    <h3>Biểu Tượng Của Giấc Mơ Mỹ</h3>
-                    <p>Empire State Building (1930-1931) là embodiment của American optimism và Art Deco grandeur, được xây dựng trong thời kỳ Great Depression nhưng vẫn thể hiện niềm tin vào tương lai.</p>
-                    
-                    <h4>Kỷ Lục Xây Dựng:</h4>
-                    <ul>
-                        <li><strong>Thời gian xây dựng:</strong> Chỉ 410 ngày</li>
-                        <li><strong>Tốc độ:</strong> 14 tầng/tuần</li>
-                        <li><strong>Công nhân:</strong> 3,500 người (đa phần là thổ dân Mohawk)</li>
-                        <li><strong>Chi phí:</strong> $40.9 triệu (1931)</li>
-                    </ul>
-                    
-                    <h4>Thiết Kế Art Deco:</h4>
-                    <ul>
-                        <li><strong>Stepped silhouette:</strong> Pyramid form thu nhỏ dần</li>
-                        <li><strong>Limestone facade:</strong> Indiana limestone với metal details</li>
-                        <li><strong>Entrance lobby:</strong> Marble từ 4 quốc gia khác nhau</li>
-                        <li><strong>Ceiling mural:</strong> Planets và stars trong gold leaf</li>
-                    </ul>
-                    
-                    <h4>Iconic Features:</h4>
-                    <ul>
-                        <li><strong>Observation Deck:</strong> Tầng 86 và 102</li>
-                        <li><strong>Lighting system:</strong> LED từ 2012, 16 triệu màu</li>
-                        <li><strong>Spire:</strong> Mooring mast cho airships (không bao giờ dùng)</li>
-                        <li><strong>King Kong:</strong> Immortalized in 1933 film</li>
-                    </ul>
-                    
-                    <h4>Sustainability Modern:</h4>
-                    <p>Renovation 2019 đạt LEED Gold certification, kết hợp preservation với green technology - minh chứng Art Deco có thể adapt với environmental consciousness.</p>
-                    
-                    <h4>Cultural Impact:</h4>
-                    <p>Không chỉ là architectural marvel, Empire State Building đã trở thành symbol của perseverance, ambition và American dream.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Miami Beach Art Deco Modal -->
-    <div id="miami-modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <span class="detail-close">&times;</span>
-            <div class="detail-modal-header">
-                <h2>Miami Beach: Tropical Deco Paradise</h2>
-                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
-            </div>
-            <div class="detail-modal-body">
-                <div class="modal-image-container">
-                    <img src="images/miami-beach-art-deco.jpg" alt="Miami Beach Art Deco District" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
-                </div>
-                <div class="modal-content-scroll">
-                    <h3>Khu Phố Art Deco Lớn Nhất Thế Giới</h3>
-                    <p>South Beach Miami (1930s-1940s) tạo nên một interpretation độc đáo của Art Deco, thích ứng với climate nhiệt đới và beach culture, tạo ra "Tropical Deco" style.</p>
-                    
-                    <h4>Đặc Trưng Tropical Deco:</h4>
-                    <ul>
-                        <li><strong>Pastel colors:</strong> Pink, mint green, lavender, coral</li>
-                        <li><strong>Horizontal lines:</strong> Streamline Moderne influence</li>
-                        <li><strong>Nautical motifs:</strong> Portholes, waves, maritime themes</li>
-                        <li><strong>Neon lighting:</strong> Dramatic nighttime illumination</li>
-                    </ul>
-                    
-                    <h4>Kiến Trúc Đặc Biệt:</h4>
-                    <ul>
-                        <li><strong>Flat roofs:</strong> Thích hợp climate Florida</li>
-                        <li><strong>Glass blocks:</strong> Cho phép natural light nhưng privacy</li>
-                        <li><strong>Curved corners:</strong> Soft modernism</li>
-                        <li><strong>Terrazzo floors:</strong> Decorative concrete với patterns</li>
-                    </ul>
-                    
-                    <h4>Tòa Nhà Iconic:</h4>
-                    <ul>
-                        <li><strong>The Carlyle:</strong> Featured in "The Birdcage" movie</li>
-                        <li><strong>The Colony Hotel:</strong> Neon sign landmark</li>
-                        <li><strong>The Delano:</strong> Philippe Starck renovation</li>
-                        <li><strong>Essex House:</strong> Perfect preservation example</li>
-                    </ul>
-                    
-                    <h4>Preservation Effort:</h4>
-                    <p>1970s-80s: Barbara Baer Capitman dẫn đầu movement cứu Art Deco District khỏi demolition. 1979: Listed in National Register of Historic Places.</p>
-                    
-                    <h4>Modern Revival:</h4>
-                    <p>1980s-90s: "Miami Vice" TV show tạo global awareness. Renovation và adaptive reuse biến khu này thành luxury destination với hotels, restaurants, nightlife.</p>
-                    
-                    <h4>Festival & Culture:</h4>
-                    <p>Art Deco Weekend (annually): Celebration với vintage fashion, classic cars, architecture tours, và live music.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Architecture Applications Modal -->
-    <div id="architecture-modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <span class="detail-close">&times;</span>
-            <div class="detail-modal-header">
-                <h2>Art Deco Trong Kiến Trúc Hiện Đại</h2>
-                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
-            </div>
-            <div class="detail-modal-body">
-                <div class="modal-image-container">
-                    <img src="images/modern-architecture.jpg" alt="Modern Art Deco Architecture" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
-                </div>
-                <div class="modal-content-scroll">
-                    <h3>Renaissance Của Art Deco</h3>
-                    <p>Thế kỷ 21 chứng kiến sự revival mạnh mẽ của Art Deco trong architecture, từ luxury hotels đến residential developments, office buildings đến cultural venues.</p>
-                    
-                    <h4>Contemporary Interpretations:</h4>
-                    <ul>
-                        <li><strong>Neo-Art Deco:</strong> Giữ nguyên principles nhưng modern materials</li>
-                        <li><strong>Minimalist Deco:</strong> Simplified forms, clean geometry</li>
-                        <li><strong>Sustainable Deco:</strong> Green building techniques với Art Deco aesthetics</li>
-                        <li><strong>Digital Deco:</strong> LED integration, smart building features</li>
-                    </ul>
-                    
-                    <h4>Luxury Hotels & Resorts:</h4>
-                    <ul>
-                        <li><strong>The St. Regis New York:</strong> Lobby renovation với Art Deco details</li>
-                        <li><strong>Ritz-Carlton Dubai:</strong> Middle Eastern interpretation</li>
-                        <li><strong>Four Seasons Shanghai:</strong> Oriental Art Deco fusion</li>
-                        <li><strong>The Ned London:</strong> Banking hall transformed</li>
-                    </ul>
-                    
-                    <h4>Residential Projects:</h4>
-                    <ul>
-                        <li><strong>15 Central Park West NYC:</strong> Robert A.M. Stern design</li>
-                        <li><strong>One57 Manhattan:</strong> Extell Development</li>
-                        <li><strong>Chelsea Barracks London:</strong> Luxury development</li>
-                        <li><strong>Marina Bay Singapore:</strong> Integrated resort</li>
-                    </ul>
-                    
-                    <h4>Cultural & Commercial:</h4>
-                    <ul>
-                        <li><strong>Museum of Arts and Design NYC:</strong> Brad Cloepfil renovation</li>
-                        <li><strong>Apple Stores:</strong> Clean geometry inspired by Deco</li>
-                        <li><strong>Luxury retail:</strong> Bulgari, Cartier flagships</li>
-                        <li><strong>Casino design:</strong> Las Vegas, Macau developments</li>
-                    </ul>
-                    
-                    <h4>Why Art Deco Today?</h4>
-                    <ul>
-                        <li><strong>Timeless elegance:</strong> Never goes out of style</li>
-                        <li><strong>Flexibility:</strong> Adapts to any building type</li>
-                        <li><strong>Luxury association:</strong> Suggests quality và craftsmanship</li>
-                        <li><strong>Instagram-ready:</strong> Photogenic architecture</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Graphic Design Modal -->
-    <div id="graphic-modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <span class="detail-close">&times;</span>
-            <div class="detail-modal-header">
-                <h2>Art Deco Graphic Design: Typography & Visual Identity</h2>
-                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
-            </div>
-            <div class="detail-modal-body">
-                <div class="modal-image-container">
-                    <img src="images/graphic-design.jpg" alt="Art Deco Graphic Design" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
-                </div>
-                <div class="modal-content-scroll">
-                    <h3>Visual Language Của Thời Đại Máy Móc</h3>
-                    <p>Art Deco graphic design đã revolutionize cách thế giới nhìn nhận typography, advertising, và visual communication, tạo nên standards cho modern design.</p>
-                    
-                    <h4>Typography Characteristics:</h4>
-                    <ul>
-                        <li><strong>Geometric sans-serif:</strong> Clean, bold letterforms</li>
-                        <li><strong>Condensed fonts:</strong> Tall, narrow proportions</li>
-                        <li><strong>Inline details:</strong> Decorative lines within letters</li>
-                        <li><strong>Shadow effects:</strong> 3D depth và dimension</li>
-                    </ul>
-                    
-                    <h4>Famous Art Deco Fonts:</h4>
-                    <ul>
-                        <li><strong>Broadway:</strong> Morris Fuller Benton (1927)</li>
-                        <li><strong>Bifur:</strong> A.M. Cassandre (1929)</li>
-                        <li><strong>Metropolis:</strong> William A. Dwiggins (1929)</li>
-                        <li><strong>Kabel:</strong> Rudolf Koch (1927)</li>
-                    </ul>
-                    
-                    <h4>Poster Design Principles:</h4>
-                    <ul>
-                        <li><strong>Bold imagery:</strong> Simplified, iconic representations</li>
-                        <li><strong>Limited color palette:</strong> High contrast cho impact</li>
-                        <li><strong>Geometric composition:</strong> Mathematical precision</li>
-                        <li><strong>Streamlined forms:</strong> Speed và modernity</li>
-                    </ul>
-                    
-                    <h4>Modern Applications:</h4>
-                    <ul>
-                        <li><strong>Logo design:</strong> Luxury brands, hotels, fashion</li>
-                        <li><strong>Movie posters:</strong> "The Great Gatsby," "Blade Runner"</li>
-                        <li><strong>Video games:</strong> "BioShock," retro-futuristic aesthetics</li>
-                        <li><strong>Web design:</strong> CSS3 effects, responsive layouts</li>
-                    </ul>
-                    
-                    <h4>Masters of Art Deco Graphics:</h4>
-                    <ul>
-                        <li><strong>A.M. Cassandre:</strong> Transportation posters</li>
-                        <li><strong>Edward McKnight Kauffer:</strong> London Underground</li>
-                        <li><strong>Jean Carlu:</strong> Corporate identity pioneer</li>
-                        <li><strong>Paul Colin:</strong> Theater và cabaret posters</li>
-                    </ul>
-                    
-                    <h4>Digital Age Revival:</h4>
-                    <p>Social media, particularly Instagram và Pinterest, đã tạo renewed interest trong Art Deco graphics. Modern designers sử dụng digital tools để recreate textures, gradients, và effects của 1920s-30s.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Fashion & Furniture Modal -->
-    <div id="fashion-modal" class="detail-modal">
-        <div class="detail-modal-content">
-            <span class="detail-close">&times;</span>
-            <div class="detail-modal-header">
-                <h2>Art Deco Fashion & Furniture: Lifestyle Revolution</h2>
-                <div class="zigzag-pattern" style="width: 200px; margin: 1rem auto;"></div>
-            </div>
-            <div class="detail-modal-body">
-                <div class="modal-image-container">
-                    <img src="images/fashion-furniture.jpg" alt="Art Deco Fashion and Furniture" style="width: 100%; max-height: 400px; object-fit: cover; border-radius: 10px;">
-                </div>
-                <div class="modal-content-scroll">
-                    <h3>Cách Mạng Trong Cách Sống</h3>
-                    <p>Art Deco không chỉ thay đổi architecture mà còn transform hoàn toàn lifestyle, từ cách ăn mặc đến cách trang trí nhà cửa, reflecting new freedoms và attitudes của phụ nữ modern.</p>
-                    
-                    <h4>Fashion Revolution:</h4>
-                    <ul>
-                        <li><strong>Flapper dresses:</strong> Straight silhouettes, dropped waistlines</li>
-                        <li><strong>Beaded embellishments:</strong> Geometric patterns với sequins</li>
-                        <li><strong>Accessories:</strong> Long pearl necklaces, headbands, T-bar shoes</li>
-                        <li><strong>Makeup:</strong> Kohl-rimmed eyes, dark lips, pale powder</li>
-                    </ul>
-                    
-                    <h4>Iconic Fashion Designers:</h4>
-                    <ul>
-                        <li><strong>Coco Chanel:</strong> Simplified elegance, jersey fabric</li>
-                        <li><strong>Paul Poiret:</strong> Exotic influences, draped silhouettes</li>
-                        <li><strong>Madeleine Vionnet:</strong> Bias cut technique</li>
-                        <li><strong>Jeanne Lanvin:</strong> Mother-daughter collections</li>
-                    </ul>
-                    
-                    <h4>Furniture & Interior Design:</h4>
-                    <ul>
-                        <li><strong>Streamlined forms:</strong> Curved edges, aerodynamic shapes</li>
-                        <li><strong>Luxury materials:</strong> Exotic woods, chrome, glass</li>
-                        <li><strong>Built-in furniture:</strong> Space-saving, geometric design</li>
-                        <li><strong>Cocktail culture:</strong> Bar carts, specialized glassware</li>
-                    </ul>
-                    
-                    <h4>Famous Furniture Designers:</h4>
-                    <ul>
-                        <li><strong>Émile-Jacques Ruhlmann:</strong> French luxury furniture</li>
-                        <li><strong>Donald Deskey:</strong> Radio City Music Hall interiors</li>
-                        <li><strong>Gilbert Rohde:</strong> Mass-produced modernist pieces</li>
-                        <li><strong>Warren McArthur:</strong> Aluminum furniture pioneer</li>
-                    </ul>
-                    
-                    <h4>Jewelry & Accessories:</h4>
-                    <ul>
-                        <li><strong>Cartier:</strong> Geometric brooches, watches</li>
-                        <li><strong>Van Cleef & Arpels:</strong> Egyptian revival pieces</li>
-                        <li><strong>Boucheron:</strong> Art Deco tiaras và necklaces</li>
-                        <li><strong>Lalique:</strong> Glass jewelry và perfume bottles</li>
-                    </ul>
-                    
-                    <h4>Modern Revival:</h4>
-                    <p>Contemporary fashion shows frequent Art Deco influences: geometric prints, metallic fabrics, structured silhouettes. High-end furniture makers continue producing Art Deco-inspired pieces for luxury homes và hotels.</p>
-                    
-                    <h4>Cultural Impact:</h4>
-                    <p>Art Deco fashion represented women's liberation - shorter skirts, bobbed hair, smoking, drinking. It was visual manifestation của social revolution happening in 1920s.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- Footer -->
     <footer style="background: var(--primary-dark); color: var(--primary-light); padding: 3rem 0; text-align: center;">
@@ -1149,146 +226,6 @@
     </footer>
 
     <script>
-        // Art Deco Performance & Effects Manager
-        class ArtDecoEffects {
-            constructor() {
-                this.isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-                this.particles = [];
-                this.init();
-            }
-
-            init() {
-                this.handleLoading();
-                if (!this.isReducedMotion) {
-                    this.initParticles();
-                    this.initParallax();
-                    this.initScrollReveal();
-                    this.initTypewriter();
-                }
-                this.initLazyLoading();
-            }
-
-            handleLoading() {
-                const loader = document.getElementById('art-deco-loader');
-                window.addEventListener('load', () => {
-                    setTimeout(() => {
-                        loader.classList.add('hidden');
-                        setTimeout(() => {
-                            loader.style.display = 'none';
-                        }, 500);
-                    }, 1000);
-                });
-            }
-
-            initParticles() {
-                const particleContainer = document.getElementById('art-deco-particles');
-                const particleCount = Math.min(window.innerWidth / 50, 15); // Responsive particle count
-
-                for (let i = 0; i < particleCount; i++) {
-                    this.createParticle(particleContainer);
-                }
-
-                // Create new particles periodically
-                setInterval(() => {
-                    if (this.particles.length < particleCount) {
-                        this.createParticle(particleContainer);
-                    }
-                }, 2000);
-            }
-
-            createParticle(container) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                
-                const size = Math.random() * 4 + 2;
-                const left = Math.random() * 100;
-                const delay = Math.random() * 8;
-                
-                particle.style.width = size + 'px';
-                particle.style.height = size + 'px';
-                particle.style.left = left + '%';
-                particle.style.animationDelay = delay + 's';
-                
-                container.appendChild(particle);
-                this.particles.push(particle);
-
-                // Remove particle after animation
-                setTimeout(() => {
-                    if (particle.parentNode) {
-                        particle.parentNode.removeChild(particle);
-                        this.particles = this.particles.filter(p => p !== particle);
-                    }
-                }, 8000 + delay * 1000);
-            }
-
-            initParallax() {
-                const parallaxElements = document.querySelectorAll('.parallax-slow');
-                
-                window.addEventListener('scroll', () => {
-                    const scrolled = window.pageYOffset;
-                    const rate = scrolled * -0.5;
-                    
-                    parallaxElements.forEach(element => {
-                        if (element.getBoundingClientRect().top < window.innerHeight) {
-                            element.style.transform = `translateY(${rate}px)`;
-                        }
-                    });
-                });
-            }
-
-            initScrollReveal() {
-                const revealElements = document.querySelectorAll('.reveal-element');
-                
-                const revealObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('revealed');
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                revealElements.forEach(element => {
-                    revealObserver.observe(element);
-                });
-            }
-
-            initTypewriter() {
-                const heroTitle = document.querySelector('.hero-title');
-                if (heroTitle) {
-                    heroTitle.classList.add('typewriter');
-                }
-            }
-
-            initLazyLoading() {
-                const images = document.querySelectorAll('img[loading="lazy"]');
-                
-                if ('IntersectionObserver' in window) {
-                    const imageObserver = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                const img = entry.target;
-                                img.style.transition = 'opacity 0.3s ease';
-                                img.style.opacity = '0';
-                                
-                                img.onload = () => {
-                                    img.style.opacity = '1';
-                                };
-                                
-                                imageObserver.unobserve(img);
-                            }
-                        });
-                    });
-
-                    images.forEach(img => imageObserver.observe(img));
-                }
-            }
-        }
-
-        // Initialize Art Deco Effects
-        document.addEventListener('DOMContentLoaded', () => {
-            window.artDecoEffectsInstance = new ArtDecoEffects();
-        });
-
         // Fix button "Khám phá ngay" - scroll to history section
         function scrollToHistory() {
             const historySection = document.getElementById('history');
@@ -1338,112 +275,6 @@
         document.querySelectorAll('.art-deco-card').forEach((card, index) => {
             card.style.transitionDelay = `${index * 0.1}s`;
         });
-
-        // Enhanced button hover effects
-        document.querySelectorAll('.btn-art-deco').forEach(button => {
-            button.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-2px) scale(1.05)';
-                this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.3)';
-            });
-            
-            button.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(0) scale(1)';
-                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.2)';
-            });
-        });
-
-        // Detail Modal System
-        function openDetailModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden';
-                
-                // Add entrance animation
-                const modalContent = modal.querySelector('.detail-modal-content');
-                modalContent.style.animation = 'slideInScale 0.5s ease-out';
-            }
-        }
-
-        function closeDetailModal(modalId) {
-            const modal = document.getElementById(modalId);
-            if (modal) {
-                const modalContent = modal.querySelector('.detail-modal-content');
-                modalContent.style.animation = 'fadeOut 0.3s ease-out';
-                
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                    document.body.style.overflow = 'auto';
-                }, 300);
-            }
-        }
-
-        function closeAllDetailModals() {
-            document.querySelectorAll('.detail-modal').forEach(modal => {
-                modal.style.display = 'none';
-            });
-            document.body.style.overflow = 'auto';
-        }
-
-        // Click handlers for clickable cards
-        document.querySelectorAll('.clickable-card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                e.preventDefault();
-                const modalId = this.getAttribute('data-modal');
-                if (modalId) {
-                    openDetailModal(modalId);
-                }
-            });
-        });
-
-        // Close button handlers
-        document.querySelectorAll('.detail-close').forEach(closeBtn => {
-            closeBtn.addEventListener('click', function() {
-                const modal = this.closest('.detail-modal');
-                if (modal) {
-                    closeDetailModal(modal.id);
-                }
-            });
-        });
-
-        // Click outside to close
-        document.querySelectorAll('.detail-modal').forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeDetailModal(this.id);
-                }
-            });
-        });
-
-        // ESC key to close all modals
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeAllDetailModals();
-            }
-        });
-
-        // Prevent modal content scroll from closing modal
-        document.querySelectorAll('.detail-modal-content').forEach(content => {
-            content.addEventListener('click', function(e) {
-                e.stopPropagation();
-            });
-        });
-
-        // Add fadeOut animation keyframe
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes fadeOut {
-                from {
-                    opacity: 1;
-                    transform: scale(1);
-                }
-                to {
-                    opacity: 0;
-                    transform: scale(0.95);
-                }
-            }
-        `;
-        document.head.appendChild(style);
     </script>
 </body>
 </html> 
