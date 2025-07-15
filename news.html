@@ -5,19 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Art Deco Hiện Đại - Ảnh Hưởng Và Xu Hướng</title>
     <link rel="stylesheet" href="art-deco-design-system.css">
-    <!-- Performance Optimizations -->
-    <link rel="preload" href="art-deco-design-system.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" as="style">
-    <link rel="preload" href="images/modern-cityscape-hero.jpg" as="image">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Critical CSS for Above-the-fold -->
+    <!-- Static CSS for Figma import - no animations -->
     <style>
-        /* Critical CSS - inline for faster loading */
+        /* Basic layout styles only */
         .hero-section { min-height: 100vh; position: relative; }
         .hero-image-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
         .hero-image { width: 100%; height: 100%; object-fit: cover; }
@@ -25,7 +19,7 @@
         .hero-content { position: relative; z-index: 2; text-align: center; padding: 8rem 0; }
         .hero-title { font-size: 5rem; font-weight: 700; color: var(--primary-gold); margin-bottom: 2rem; }
         .navbar { background: var(--primary-dark); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; }
-        .art-deco-card { background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+        .art-deco-card { background: white; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         
         /* Art Deco Loading Animation */
         .art-deco-loader {
