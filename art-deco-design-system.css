@@ -23,14 +23,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
 
-/* Font face fallbacks for better performance */
+/* Font face fallbacks for better performance - Fixed */
 @font-face {
   font-family: 'Cinzel';
+  src: local('Cinzel'), url('https://fonts.gstatic.com/s/cinzel/v23/8vIJ7wMr0my-WxlCxLjy.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Cormorant Garamond';
+  src: local('Cormorant Garamond'), url('https://fonts.gstatic.com/s/cormorantgaramond/v16/co3YmX5slCNuHLi8bLeY9MK7whWMhyjQAllvuQqLwIuC2CVDX3kn5Iy_N5JG.woff2') format('woff2');
   font-display: swap;
 }
 
@@ -433,6 +435,415 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* =========================== */
+/* FIX CHO FEATURED NEWS SECTION */
+/* Responsive Grid cho Featured News */
+/* =========================== */
+
+/* Featured News main article grid */
+.featured-news-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+/* Responsive cho Featured News */
+@media (max-width: 768px) {
+  .featured-news-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  /* Text trước, ảnh sau trên mobile */
+  .featured-news-grid .clickable-card {
+    order: 2;
+  }
+  
+  .featured-news-grid > div:last-child {
+    order: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-news-grid {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Override inline styles cho Featured News */
+[style*="grid-template-columns: 1fr 1fr"] {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 3rem !important;
+  align-items: center !important;
+}
+
+@media (max-width: 768px) {
+  [style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [style*="grid-template-columns: 1fr 1fr"] {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Featured News image responsive */
+.featured-news-image {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .featured-news-image {
+    height: 250px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-news-image {
+    height: 200px !important;
+  }
+}
+
+/* Override inline image styles cho Featured News */
+img[style*="height: 350px"] {
+  height: 350px !important;
+}
+
+@media (max-width: 768px) {
+  img[style*="height: 350px"] {
+    height: 250px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  img[style*="height: 350px"] {
+    height: 200px !important;
+  }
+}
+
+/* Featured News text responsive */
+.featured-news-content {
+  padding: 2rem;
+}
+
+.featured-news-title {
+  font-size: clamp(1.2rem, 3.5vw, 2rem); /* Giảm kích thước tối thiểu */
+  margin-bottom: 0.8rem; /* Giảm margin */
+  color: var(--primary-burgundy);
+  line-height: 1.2; /* Tighter line height */
+}
+
+.featured-news-text {
+  font-size: clamp(0.9rem, 2vw, 1.2rem); /* Giảm kích thước tối thiểu */
+  line-height: 1.5; /* Giảm line height */
+  margin-bottom: 1rem; /* Giảm margin */
+}
+
+.featured-news-tags {
+  display: flex;
+  gap: 0.8rem; /* Giảm gap */
+  flex-wrap: wrap;
+}
+
+.featured-news-tag {
+  background: rgba(212, 175, 55, 0.2);
+  padding: 0.4rem 0.8rem; /* Giảm padding */
+  border-radius: 15px;
+  font-size: clamp(0.7rem, 1.8vw, 0.9rem); /* Giảm kích thước */
+}
+
+/* Mobile adjustments cho Featured News */
+@media (max-width: 768px) {
+  .featured-news-content {
+    padding: 1rem !important; /* Giảm padding mạnh hơn */
+  }
+  
+  .featured-news-title {
+    font-size: 1.1rem !important; /* Giảm kích thước title */
+    margin-bottom: 0.5rem !important;
+    line-height: 1.1 !important;
+  }
+  
+  .featured-news-text {
+    font-size: 0.85rem !important; /* Giảm kích thước text */
+    line-height: 1.4 !important;
+    margin-bottom: 0.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-news-content {
+    padding: 0.8rem !important; /* Padding rất nhỏ cho điện thoại */
+  }
+  
+  .featured-news-title {
+    font-size: 1rem !important; /* Title nhỏ hơn nữa */
+    margin-bottom: 0.4rem !important;
+  }
+  
+  .featured-news-text {
+    font-size: 0.8rem !important; /* Text rất nhỏ */
+    line-height: 1.3 !important;
+    margin-bottom: 0.6rem !important;
+  }
+  
+  .featured-news-tags {
+    gap: 0.4rem !important; /* Gap rất nhỏ */
+  }
+  
+  .featured-news-tag {
+    font-size: 0.7rem !important; /* Tag text nhỏ */
+    padding: 0.3rem 0.6rem !important; /* Padding nhỏ */
+  }
+}
+
+/* Mobile responsive cho điện thoại 375px */
+@media (max-width: 375px) {
+  .featured-news-content {
+    padding: 0.6rem !important; /* Cực kỳ compact */
+  }
+  
+  .featured-news-title {
+    font-size: 0.95rem !important; /* Title cực nhỏ */
+    margin-bottom: 0.3rem !important;
+  }
+  
+  .featured-news-text {
+    font-size: 0.75rem !important; /* Text cực nhỏ */
+    line-height: 1.2 !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .featured-news-tag {
+    font-size: 0.65rem !important; /* Tag cực nhỏ */
+    padding: 0.25rem 0.5rem !important;
+  }
+}
+
+/* Override inline styles cho padding trong Featured News */
+[style*="padding: 2rem"] {
+  padding: clamp(0.8rem, 2.5vw, 2rem) !important; /* Giảm padding tối thiểu */
+}
+
+@media (max-width: 768px) {
+  [style*="padding: 2rem"] {
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [style*="padding: 2rem"] {
+    padding: 0.8rem !important; /* Padding rất nhỏ */
+  }
+}
+
+@media (max-width: 375px) {
+  [style*="padding: 2rem"] {
+    padding: 0.6rem !important; /* Cực kỳ compact */
+  }
+}
+
+/* Override inline font sizes trong Featured News */
+h3[style*="font-size: 2rem"] {
+  font-size: clamp(1rem, 3.5vw, 2rem) !important;
+}
+
+@media (max-width: 768px) {
+  h3[style*="font-size: 2rem"] {
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  h3[style*="font-size: 2rem"] {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  h3[style*="font-size: 2rem"] {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Override inline text sizes */
+p[style*="font-size: 1.2rem"] {
+  font-size: clamp(0.8rem, 2vw, 1.2rem) !important;
+}
+
+@media (max-width: 768px) {
+  p[style*="font-size: 1.2rem"] {
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  p[style*="font-size: 1.2rem"] {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  p[style*="font-size: 1.2rem"] {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* =========================== */
+/* Secondary News Grid trong Featured News */
+.secondary-news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .secondary-news-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .secondary-news-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Giảm minmax cho điện thoại nhỏ */
+  [style*="minmax(350px, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* News card content padding */
+.news-card-content {
+  padding: 1rem;
+}
+
+.news-card-title {
+  font-size: clamp(1.1rem, 3vw, 1.3rem);
+  margin: 0.5rem 0 1rem;
+  color: var(--primary-navy);
+}
+
+.news-card-text {
+  color: var(--primary-dark);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.news-card-category {
+  color: var(--primary-gold);
+  font-weight: bold;
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+}
+
+.news-card-date {
+  font-size: clamp(0.8rem, 2vw, 0.9rem);
+  color: var(--primary-bronze);
+}
+
+/* Mobile adjustments cho news cards */
+@media (max-width: 480px) {
+  .news-card-content {
+    padding: 0.8rem !important;
+  }
+  
+  .news-card-title {
+    font-size: 1.1rem !important;
+  }
+  
+  .news-card-text {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Featured News badges responsive */
+.news-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem; /* Giảm gap */
+  margin-bottom: 0.8rem; /* Giảm margin */
+  flex-wrap: wrap;
+}
+
+.trending-badge {
+  background: var(--primary-burgundy);
+  color: white;
+  padding: 0.4rem 0.8rem; /* Giảm padding */
+  border-radius: 20px;
+  font-size: clamp(0.7rem, 1.8vw, 0.9rem); /* Giảm kích thước */
+  font-weight: bold;
+}
+
+.date-badge {
+  color: var(--primary-navy);
+  font-weight: bold;
+  font-size: clamp(0.7rem, 1.8vw, 0.9rem); /* Giảm kích thước */
+}
+
+@media (max-width: 768px) {
+  .news-badges {
+    gap: 0.5rem !important;
+    margin-bottom: 0.6rem !important;
+  }
+  
+  .trending-badge {
+    padding: 0.3rem 0.6rem !important;
+    font-size: 0.7rem !important;
+  }
+  
+  .date-badge {
+    font-size: 0.7rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .news-badges {
+    gap: 0.4rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .trending-badge {
+    padding: 0.25rem 0.5rem !important;
+    font-size: 0.65rem !important;
+  }
+  
+  .date-badge {
+    font-size: 0.65rem !important;
+  }
+}
+
+@media (max-width: 375px) {
+  .trending-badge {
+    padding: 0.2rem 0.4rem !important;
+    font-size: 0.6rem !important;
+  }
+  
+  .date-badge {
+    font-size: 0.6rem !important;
+  }
+}
+
+/* Override inline styles cho badges */
+[style*="background: var(--primary-burgundy)"] {
+  background: var(--primary-burgundy) !important;
+  color: white !important;
+  padding: clamp(0.4rem, 1.5vw, 0.5rem) clamp(0.8rem, 2.5vw, 1rem) !important;
+  border-radius: 20px !important;
+  font-size: clamp(0.8rem, 2vw, 0.9rem) !important;
+  font-weight: bold !important;
+}
+
 /* FIX CHO HISTORY & ORIGINS SECTION */
 /* Responsive Grid cho 2 khung ngang */
 /* =========================== */
