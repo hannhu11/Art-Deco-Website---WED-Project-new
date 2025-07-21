@@ -308,6 +308,29 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 200px; /* Chiều cao tối thiểu cho card */
 }
 
+/* Fix cho hình ảnh trong card */
+.art-deco-card img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+/* Responsive image trong History section */
+@media (max-width: 768px) {
+  .art-deco-card img {
+    max-height: 250px;
+  }
+}
+
+@media (max-width: 480px) {
+  .art-deco-card img {
+    max-height: 200px;
+  }
+}
+
 .art-deco-card::before {
   content: '';
   position: absolute;
@@ -406,6 +429,64 @@ h1, h2, h3, h4, h5, h6 {
 @media (min-width: 1024px) {
   .section {
     padding: 5rem 0;
+  }
+}
+
+/* =========================== */
+/* FIX CHO HISTORY & ORIGINS SECTION */
+/* Responsive Grid cho 2 khung ngang */
+/* =========================== */
+
+/* Grid mặc định cho desktop */
+.history-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* Grid responsive cho mobile và tablet */
+@media (max-width: 768px) {
+  .history-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+  
+  /* Đảo thứ tự cho mobile - text trước, ảnh sau */
+  .history-grid .art-deco-card:first-child {
+    order: 2;
+  }
+  
+  .history-grid .reveal-element {
+    order: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .history-grid {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Features section grid fix */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .features-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
   }
 }
 
@@ -515,6 +596,144 @@ h1, h2, h3, h4, h5, h6 {
   .grid-responsive {
     grid-template-columns: repeat(4, 1fr) !important;
     gap: 2.5rem !important;
+  }
+}
+
+/* =========================== */
+/* =========================== */
+/* OVERRIDE INLINE STYLES CHO RESPONSIVE */
+/* Fix các style inline trong HTML */
+/* =========================== */
+
+/* Override inline grid styles */
+[style*="display: grid"][style*="grid-template-columns: 1fr 2fr"] {
+  display: grid !important;
+  grid-template-columns: 1fr 2fr !important;
+  gap: 3rem !important;
+  align-items: center !important;
+  margin-bottom: 3rem !important;
+}
+
+@media (max-width: 768px) {
+  [style*="display: grid"][style*="grid-template-columns: 1fr 2fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [style*="display: grid"][style*="grid-template-columns: 1fr 2fr"] {
+    gap: 1.5rem !important;
+  }
+}
+
+/* Override inline grid styles cho features */
+[style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)) !important;
+  gap: 2rem !important;
+}
+
+@media (max-width: 768px) {
+  [style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  [style*="grid-template-columns: repeat(auto-fit, minmax(350px, 1fr))"] {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+  
+  /* Giảm minmax cho điện thoại nhỏ */
+  [style*="minmax(350px, 1fr)"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Override inline image styles */
+.art-deco-card img[style*="height: 400px"] {
+  height: 400px !important;
+  object-fit: cover !important;
+}
+
+@media (max-width: 768px) {
+  .art-deco-card img[style*="height: 400px"] {
+    height: 250px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .art-deco-card img[style*="height: 400px"] {
+    height: 200px !important;
+  }
+}
+
+/* Override inline image styles cho features */
+.art-deco-card img[style*="height: 200px"] {
+  height: 200px !important;
+  object-fit: cover !important;
+}
+
+@media (max-width: 480px) {
+  .art-deco-card img[style*="height: 200px"] {
+    height: 150px !important;
+  }
+}
+
+/* TEXT RESPONSIVE CHO HISTORY SECTION */
+/* =========================== */
+
+/* Text styling trong History section */
+.history-text {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.history-text strong {
+  color: var(--primary-gold);
+}
+
+/* Title trong card */
+.card-title {
+  color: var(--primary-gold);
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+/* Subtitle trong card */
+.card-subtitle {
+  text-align: center;
+  font-style: italic;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  color: var(--primary-navy);
+}
+
+/* Mobile text adjustments */
+@media (max-width: 768px) {
+  .history-text {
+    text-align: left;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .history-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+  }
+  
+  .card-subtitle {
+    font-size: 0.85rem;
   }
 }
 
